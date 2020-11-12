@@ -1,4 +1,4 @@
-# 基于NodeJS的全栈开发、测试、部署的工具包
+# 基于NodeJS的全栈开发、测试、构建的工具包
 
 ## 重新审视 Backend For Frontend (BFF)
 

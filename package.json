@@ -1,6 +1,6 @@
 {
   "name": "devkit",
-  "description": "基于NodeJS的全栈开发、测试、部署的开发包",
+  "description": "基于NodeJS的全栈开发、测试、部署的工具包",
   "private": true,
   "scripts": {
     "install": "lerna bootstrap"

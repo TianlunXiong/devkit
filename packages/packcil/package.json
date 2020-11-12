@@ -1,9 +1,9 @@
 {
-  "name": "wp5-cli",
+  "name": "packcil",
   "version": "0.1.2-beta.2",
-  "description": "A Cli Tool With Webpack 5 Like Create-React-App",
+  "description": "A Cli Tool With Webpack Like Create-React-App",
   "bin": {
-    "wp5": "./bin/wp5.js"
+    "packcil": "./bin/wp5.js"
   },
   "keywords": [
     "webpack",

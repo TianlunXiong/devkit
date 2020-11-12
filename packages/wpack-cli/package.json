@@ -1,0 +1,61 @@
+{
+  "name": "wp5-cli",
+  "version": "0.1.2-beta.2",
+  "description": "A Cli Tool With Webpack 5 Like Create-React-App",
+  "bin": {
+    "wp5": "./bin/wp5.js"
+  },
+  "keywords": [
+    "webpack",
+    "module-federation",
+    "cli",
+    "react",
+    "tools"
+  ],
+  "author": "xiongtianlun",
+  "repository": "https://github.com/TianlunXiong/wp5-cli",
+  "license": "MIT",
+  "scripts": {
+    "build": "rm -rf lib && babel src --extensions .ts --out-dir lib --copy-files"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "7.11.4",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-decorators": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "7.10.4",
+    "@babel/preset-typescript": "^7.12.1",
+    "@babel/runtime": "^7.12.1",
+    "@babel/runtime-corejs3": "^7.12.1",
+    "babel-loader": "8.1.0",
+    "chalk": "^4.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "commander": "^6.2.0",
+    "css-loader": "^5.0.0",
+    "file-loader": "^6.2.0",
+    "fork-ts-checker-webpack-plugin": "^5.2.0",
+    "html-webpack-plugin": "5.0.0-alpha.3",
+    "import-local": "^3.0.2",
+    "less": "^3.12.2",
+    "less-loader": "^7.0.2",
+    "mini-css-extract-plugin": "^1.2.1",
+    "mkdirp": "^1.0.4",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "sass": "^1.27.0",
+    "sass-loader": "^10.0.4",
+    "serve": "11.3.2",
+    "signale": "^1.4.0",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^5.0.2",
+    "typescript": "^4.0.5",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.2.0",
+    "webpack-bundle-analyzer": "^3.9.0",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "3.11.0",
+    "webpack-merge": "^5.2.0",
+    "webpackbar": "^4.0.0"
+  }
+}

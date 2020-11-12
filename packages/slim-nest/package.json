@@ -1,0 +1,45 @@
+{
+  "name": "slim-nestjs",
+  "version": "0.0.5-beta1",
+  "description": "A Dependency-Inject Framework based on Koa.",
+  "main": "dist/src/index.js",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "dev": "tsnd ./test/index.ts",
+    "prepublish": "tsc",
+    "compile": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TianlunXiong/slim-nestjs"
+  },
+  "keywords": [
+    "bff",
+    "koa"
+  ],
+  "author": "jellyxiong <jellyxiong@outlook.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-typescript": "^7.10.4"
+  },
+  "dependencies": {
+    "@types/koa": "^2.11.4",
+    "@types/koa-router": "^7.4.1",
+    "@types/node": "^14.11.2",
+    "koa": "^2.13.0",
+    "koa-router": "^9.4.0",
+    "koa-static": "^5.0.0",
+    "reflect-metadata": "^0.1.13",
+    "ts-node-dev": "^1.0.0-pre.63",
+    "typescript": "^4.0.3",
+    "winston": "^3.3.3"
+  }
+}

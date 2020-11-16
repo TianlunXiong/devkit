@@ -29,12 +29,12 @@ const getProjectPath = (dir = './'): string => {
 };
 
 export interface CustomConfig extends Configuration {
-  entries?: object;
+  page?: string[];
   moduleFederation?: ConstructorParameters<typeof ModuleFederationPlugin>[0]
 }
 
 // 获取项目文件
-const getCustomConfig = (configFileName = 'wp5.config.js'): CustomConfig => {
+const getCustomConfig = (configFileName = 'packcil.config.js'): CustomConfig => {
   const configPath = path.join(process.cwd(), configFileName);
   if (fs.existsSync(configPath)) {
     // eslint-disable-next-line import/no-dynamic-require
@@ -43,8 +43,11 @@ const getCustomConfig = (configFileName = 'wp5.config.js'): CustomConfig => {
   return {};
 };
 
+const projectRelative = (filename) => path.join(process.cwd(), filename);
+
 export {
   fileTree,
   getProjectPath,
   getCustomConfig,
+  projectRelative,
 };

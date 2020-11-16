@@ -16,12 +16,17 @@ export default async function({ host, port }: IDevelopmentConfig) {
   if (fs.existsSync(getProjectPath('tsconfig.json'))) {
     config?.plugins?.push(new ForkTsCheckerWebpackPlugin());
   }
+  config?.plugins?.push(new webpack.HotModuleReplacementPlugin());
 
   const compiler = webpack(config);
   const serverConfig = {
     publicPath: '/',
     noInfo: true,
     inline: true,
+    hot: true,
+    liveReload: false,
+    //@ts-ignore
+    ...(config?.devServer || {})
   };
   const devServer = new WebpackDevServer(compiler, serverConfig);
   devServer.listen(port, host, (err) => {

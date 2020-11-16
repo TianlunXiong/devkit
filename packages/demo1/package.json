@@ -18,17 +18,20 @@
     "url": "git+https://github.com/TianlunXiong/devkit.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "dev": "packcil dev",
+    "build": "packcil build"
   },
   "bugs": {
     "url": "https://github.com/TianlunXiong/devkit/issues"
   },
   "devDependencies": {
-    "slim-nest": "file:../slim-nest",
-    "wp5-cli": "file:../wpack-cli"
+    "webpack-entry-middleware-plugin": "file:../webpack-entry-middleware-plugin"
   },
   "homepage": "https://github.com/TianlunXiong/devkit#readme",
   "dependencies": {
+    "nestin": "file:../nestin",
+    "packcil": "file:../packcil",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }

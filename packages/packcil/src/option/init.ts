@@ -42,7 +42,7 @@ export default async function () {
   };
 
 
-  const configFileName = 'wp5.config.js';
+  const configFileName = 'packcil.config.js';
   wirte(path.resolve(pwd, configFileName), WebpackTemplate());
 
   Object.keys(folders).forEach((key) => {

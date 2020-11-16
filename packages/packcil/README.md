@@ -28,3 +28,5 @@ npx wp5 build
 
 ## **配置(config)：**
 查看目录下wp5.config.js文件
+
+## 新版热替换  https://segmentfault.com/a/1190000023534941

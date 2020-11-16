@@ -1,14 +1,14 @@
 import dev from './webpack/webpack.config.dev';
 import prod from './webpack/webpack.config.prod';
-import { getCustomConfig } from './utils';
+import { getCustomConfig, projectRelative } from './utils';
 import { Configuration } from 'webpack';
 import webpackMerge from 'webpack-merge';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { StatsWriterPlugin } from 'webpack-stats-plugin';
 
 type WebpackConfigType = 'dev' | 'prod';
 
 function getWebpackConfig(type: WebpackConfigType) {
-  const { entries, ...webpackConfig } = getCustomConfig();
+  const { page, ...webpackConfig } = getCustomConfig();
 
   let config: Configuration;
 
@@ -24,18 +24,34 @@ function getWebpackConfig(type: WebpackConfigType) {
   }
 
   config.entry = {};
-  Object.keys(entries || {}).forEach((key) => {
-    if (entries?.[key].entry && config.entry) {
-      config.entry[key] = entries[key].entry;
+  if (page) {
+    for (let i = 0; i < page.length; i += 1) {
+      const fullPath = projectRelative(page[i]);
+      
+      const pagePathArr = fullPath.split('/');
+      const [fileName] = pagePathArr.slice(-1);
+      const name = /^(\w+)(\.\w+)?$/.exec(fileName)?.[1] || null;
+      if (name) {
+        config.entry[name] = fullPath;
+      } else {
+        throw new Event('无效文件名');
+      }
     }
-    config?.plugins?.push(new HtmlWebpackPlugin({
-      template: entries?.[key].template,
-      filename: `${key}.html`,
-      // chunks: ['manifest', key],
-      favicon: entries?.[key].favicon,
-      inject: entries?.[key].inject !== false,
-    }));
-  });
+  }
+
+  config.output = {
+    path: projectRelative('dist'),
+    filename: '[id].entry.js',
+    chunkFilename: '[id].chunk.js',
+  };
+
+  // console.log(config.entry);
+
+  config.plugins?.push(
+    new StatsWriterPlugin({
+      filename: "stats.json" // Default
+    })
+  )
 
   return webpackMerge(config, webpackConfig);
 }

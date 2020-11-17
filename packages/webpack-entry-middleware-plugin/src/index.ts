@@ -86,7 +86,7 @@ module.exports = class InitializeEntryPlugin {
         const target = result.dependencies[0];
 
         // 入口文件
-        if (target.type == 'entry') {
+        if (target.type == 'entry' && !/node_modules/.test(target.loc)) {
           let { loc } = target;
           
           // if(!loc) return result;

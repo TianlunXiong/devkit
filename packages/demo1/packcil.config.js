@@ -1,11 +1,24 @@
 // const { ModuleFederationPlugin } = require("webpack").container;
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const IntermediateEntryPlugin = require("webpack-intermediate-entry");
+const IntermediateEntryPlugin = require("webpack-entry-middleware-plugin");
+const path = require('path')
 
 module.exports = {
-  page: ['src/bootstrap.tsx'],
+  page: ['src/home.tsx'],
   mode: 'development',
+  module: {
+    rules: [
+      {
+        test: /src\/home.tsx/,
+        use: [
+          {
+            loader: path.resolve('./loader/re.js'),
+          }
+        ]
+      }
+    ]
+  },
   devServer: {
     before: function (app, server, compiler) {
       app.get('/', function (req, res) {
@@ -23,8 +36,7 @@ module.exports = {
           <body>
             <div id="app"></div>
           </body>
-          <script src="bootstrap.entry.js" ></script>
-          <script src="vendor.entry.js" ></script>
+          <script src="home.entry.js" ></script>
           </html>
         `);
       });

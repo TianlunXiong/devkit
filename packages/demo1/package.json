@@ -26,6 +26,9 @@
     "url": "https://github.com/TianlunXiong/devkit/issues"
   },
   "devDependencies": {
+    "@types/react": "^16.9.56",
+    "@types/react-dom": "^16.9.9",
+    "loader-utils": "^2.0.0",
     "webpack-entry-middleware-plugin": "file:../webpack-entry-middleware-plugin"
   },
   "homepage": "https://github.com/TianlunXiong/devkit#readme",

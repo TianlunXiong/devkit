@@ -3,7 +3,7 @@ import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import base from './webpack.config.base';
 import webpackMerge from 'webpack-merge';
 
-const prod = webpackMerge(base, {
+const prod = webpackMerge(base(), {
   mode: 'production',
   devtool: 'source-map',
   optimization: {

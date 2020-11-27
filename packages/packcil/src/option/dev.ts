@@ -25,6 +25,7 @@ export default async function({ host, port }: IDevelopmentConfig) {
     inline: true,
     hot: true,
     liveReload: false,
+    writeToDisk: true,
     //@ts-ignore
     ...(config?.devServer || {})
   };

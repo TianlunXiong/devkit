@@ -62,11 +62,13 @@ function getWebpackConfig(type: WebpackConfigType) {
         throw new Error('页面组件需要放到 page 文件夹下面');
       }
       const validPagePathArr = pagePathArr.slice(pageDir);
+      const dirName = validPagePathArr[validPagePathArr.length - 2];
       const fileName = validPagePathArr[validPagePathArr.length - 1];
       const fileNameSplitted = fileName.split('.');
-      const name = fileNameSplitted
+      let name = fileNameSplitted
         .slice(0, fileNameSplitted.length - 1)
         .join('.');
+      
       const fullName = `${validPagePathArr
         .slice(0, validPagePathArr.length - 1)
         .join('/')}/${name}.js`;
@@ -75,6 +77,9 @@ function getWebpackConfig(type: WebpackConfigType) {
         .join('/')}/${name}.html`;
       const ext = fileNameSplitted[fileNameSplitted.length - 1];
       if (name && ext) {
+        if (dirName !== 'page' && name === 'index') {
+          name = dirName;
+        }
         nameToFilenameMapping[name] = fullName;
         nameToHtmlFilenameMapping[name] = fullHtmlFileName;
         pathInfo.push({

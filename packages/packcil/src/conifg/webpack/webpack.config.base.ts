@@ -1,9 +1,6 @@
 import { Configuration } from 'webpack';
 import babelConfig from '../babel/base';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
-
-
 
 function baseConfig() {
   const resolve = {
@@ -98,7 +95,6 @@ function baseConfig() {
         filename: 'stylesheet/[name].[contenthash:8].css',
         chunkFilename: 'stylesheet/[id].[contenthash:8].css',
       }),
-      new CleanWebpackPlugin(),
     ],
   }
   return config;

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import './home.scss';
 
 const App = () => {
   useEffect(() => {
@@ -9,7 +8,7 @@ const App = () => {
   }, [])
 
   return <div className="title">
-    OK23
+    Overview
   </div>
 };
 

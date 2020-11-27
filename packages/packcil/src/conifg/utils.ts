@@ -32,6 +32,7 @@ const getProjectPath = (dir = './'): string => {
 export interface CustomConfig extends Configuration {
   pages?: string[];
   boot?: string,
+  template?: string,
   moduleFederation?: ConstructorParameters<typeof ModuleFederationPlugin>[0]
 }
 
@@ -48,7 +49,7 @@ const getCustomConfig = (configFileName = 'packcil.config.js'): CustomConfig => 
 const projectRelative = (filename) => path.join(process.cwd(), filename);
 
 interface PageInfo {
-  name: string; // 页面名称
+  name: string; // 入口名称
   loc: string; // 页面路径
   ext: string; // 后缀
   boot?: string; // 启动代码

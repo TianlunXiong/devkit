@@ -9,11 +9,17 @@ import {
 import { Configuration } from 'webpack';
 import webpackMerge from 'webpack-merge';
 import { StatsWriterPlugin } from 'webpack-stats-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import rimraf from 'rimraf';
+import path from 'path';
+import fs from 'fs';
+
+const DIST_NAME = 'dist';
 
 type WebpackConfigType = 'dev' | 'prod';
 
 function getWebpackConfig(type: WebpackConfigType) {
-  const { pages, boot, ...webpackConfig } = getCustomConfig();
+  const { pages, boot, template, ...webpackConfig } = getCustomConfig();
 
   let config: Configuration;
 
@@ -35,21 +41,42 @@ function getWebpackConfig(type: WebpackConfigType) {
       throw new Error('无效类型参数');
   }
 
+  if (!template) {
+    throw new Error('请指定 html 文件');
+  }
+  const htmlPath = projectRelative(template);
+  const htmls: HtmlWebpackPlugin[] = [];
+
   config.entry = {};
   if (pages) {
     const pathInfo: PageInfo[] = [];
+    const nameToFilenameMapping = {};
+    const nameToHtmlFilenameMapping = {};
+
     for (let i = 0; i < pages.length; i += 1) {
       const fullPath = projectRelative(pages[i]);
 
       const pagePathArr = fullPath.split('/');
-      const [fileName] = pagePathArr.slice(-1);
+      const pageDir = pagePathArr.indexOf('page');
+      if (pageDir === -1) {
+        throw new Error('页面组件需要放到 page 文件夹下面');
+      }
+      const validPagePathArr = pagePathArr.slice(pageDir);
+      const fileName = validPagePathArr[validPagePathArr.length - 1];
       const fileNameSplitted = fileName.split('.');
       const name = fileNameSplitted
-        .splice(0, fileNameSplitted.length - 1)
+        .slice(0, fileNameSplitted.length - 1)
         .join('.');
+      const fullName = `${validPagePathArr
+        .slice(0, validPagePathArr.length - 1)
+        .join('/')}/${name}.js`;
+      const fullHtmlFileName = `${validPagePathArr
+        .slice(0, validPagePathArr.length - 1)
+        .join('/')}/${name}.html`;
       const ext = fileNameSplitted[fileNameSplitted.length - 1];
       if (name && ext) {
-        // config.entry[name] = fullPath;
+        nameToFilenameMapping[name] = fullName;
+        nameToHtmlFilenameMapping[name] = fullHtmlFileName;
         pathInfo.push({
           name,
           loc: fullPath,
@@ -59,7 +86,7 @@ function getWebpackConfig(type: WebpackConfigType) {
       } else if (!name) {
         throw new Error('无效文件名');
       } else if (!ext) {
-        throw new Error('无文件拓展名');
+        throw new Error('请完善文件后缀');
       }
     }
 
@@ -68,22 +95,40 @@ function getWebpackConfig(type: WebpackConfigType) {
     const { entry } = config;
     proxyEntryInfo.forEach(({ name, loc }) => {
       if (name && loc) {
-        entry[name] = loc;
+        entry[name] = {
+          import: loc,
+          filename: nameToFilenameMapping[name],
+        };
+        htmls.push(
+          new HtmlWebpackPlugin({
+            filename: nameToHtmlFilenameMapping[name],
+            template: htmlPath,
+            chunks: [name]
+          })
+        )
       }
     });
   }
 
+  const dist = projectRelative(DIST_NAME);
+
   config.output = {
-    path: projectRelative('dist'),
-    filename: '[id].entry.js',
-    chunkFilename: '[id].chunk.js',
+    path: dist,
+    // filename: '[id].entry.js',
+    chunkFilename: (pathData) => {
+      // const dir = pathData.runtime;
+      return `chunk/[id].chunk.js`;
+    },
   };
 
   config.plugins?.push(
     new StatsWriterPlugin({
       filename: 'stats.json', // Default
     }),
+    ...htmls,
   );
+
+  if (fs.existsSync(dist)) rimraf.sync(dist);
 
   return webpackMerge(config, webpackConfig);
 }

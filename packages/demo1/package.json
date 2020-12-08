@@ -20,6 +20,7 @@
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
     "dev": "packcil dev",
+    "server": "tsnd ./server/app.ts",
     "build": "packcil build"
   },
   "bugs": {
@@ -28,7 +29,9 @@
   "devDependencies": {
     "@types/react": "^16.9.56",
     "@types/react-dom": "^16.9.9",
+    "@types/webpack-dev-middleware": "^3.7.2",
     "loader-utils": "^2.0.0",
+    "webpack-dev-middleware": "^4.0.2",
     "webpack-entry-middleware-plugin": "file:../webpack-entry-middleware-plugin"
   },
   "homepage": "https://github.com/TianlunXiong/devkit#readme",
@@ -36,9 +39,15 @@
     "@babel/parser": "^7.12.5",
     "@babel/traverse": "^7.12.5",
     "@babel/types": "^7.12.6",
+    "@loadable/component": "^5.14.1",
+    "@types/koa-proxy": "^1.0.1",
+    "koa-http2-proxy": "^0.0.4",
+    "koa-proxy": "^1.0.0-alpha.3",
     "nestin": "file:../nestin",
     "packcil": "file:../packcil",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "ts-node-dev": "^1.0.0",
+    "typescript": "^4.1.2"
   }
 }

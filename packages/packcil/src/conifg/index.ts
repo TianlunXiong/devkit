@@ -11,14 +11,13 @@ import webpackMerge from 'webpack-merge';
 import { StatsWriterPlugin } from 'webpack-stats-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import rimraf from 'rimraf';
-import path from 'path';
 import fs from 'fs';
 
 const DIST_NAME = 'dist';
 
 type WebpackConfigType = 'dev' | 'prod';
 
-function getWebpackConfig(type: WebpackConfigType) {
+function getWebpackConfig(type: WebpackConfigType): Configuration {
   const { pages, boot, template, ...webpackConfig } = getCustomConfig();
 
   let config: Configuration;
@@ -50,6 +49,7 @@ function getWebpackConfig(type: WebpackConfigType) {
   config.entry = {};
   if (pages) {
     const pathInfo: PageInfo[] = [];
+    const nameToDirnameMapping = {};
     const nameToFilenameMapping = {};
     const nameToHtmlFilenameMapping = {};
 
@@ -62,26 +62,25 @@ function getWebpackConfig(type: WebpackConfigType) {
         throw new Error('页面组件需要放到 page 文件夹下面');
       }
       const validPagePathArr = pagePathArr.slice(pageDir);
-      const dirName = validPagePathArr[validPagePathArr.length - 2];
+      const dirName = validPagePathArr.slice(0, validPagePathArr.length - 1);
       const fileName = validPagePathArr[validPagePathArr.length - 1];
       const fileNameSplitted = fileName.split('.');
-      let name = fileNameSplitted
-        .slice(0, fileNameSplitted.length - 1)
-        .join('.');
-      
-      const fullName = `${validPagePathArr
+      const filePureName = fileNameSplitted
+      .slice(0, fileNameSplitted.length - 1)
+      .join('.')
+      let name = `${validPagePathArr
         .slice(0, validPagePathArr.length - 1)
-        .join('/')}/${name}.js`;
-      const fullHtmlFileName = `${validPagePathArr
+        .join('-')}-${filePureName}`;
+      const preDirname = `${validPagePathArr
         .slice(0, validPagePathArr.length - 1)
-        .join('/')}/${name}.html`;
+        .join('/')}`;
+
       const ext = fileNameSplitted[fileNameSplitted.length - 1];
       if (name && ext) {
-        if (dirName !== 'page' && name === 'index') {
-          name = dirName;
-        }
-        nameToFilenameMapping[name] = fullName;
-        nameToHtmlFilenameMapping[name] = fullHtmlFileName;
+        const chunkName = `${dirName.join('/')}/${filePureName}`;
+        nameToDirnameMapping[name] = chunkName;
+        nameToFilenameMapping[name] = `${preDirname}/${filePureName}.js`;
+        nameToHtmlFilenameMapping[name] = `${preDirname}/${filePureName}.html`;
         pathInfo.push({
           name,
           loc: fullPath,
@@ -97,10 +96,12 @@ function getWebpackConfig(type: WebpackConfigType) {
 
     const proxyEntryInfo = createEntryProxy(pathInfo) || [];
 
+    
     const { entry } = config;
     proxyEntryInfo.forEach(({ name, loc }) => {
       if (name && loc) {
-        entry[name] = {
+        const entryName = nameToDirnameMapping[name];
+        entry[entryName] = {
           import: loc,
           filename: nameToFilenameMapping[name],
         };
@@ -108,7 +109,7 @@ function getWebpackConfig(type: WebpackConfigType) {
           new HtmlWebpackPlugin({
             filename: nameToHtmlFilenameMapping[name],
             template: htmlPath,
-            chunks: [name]
+            chunks: [entryName]
           })
         )
       }
@@ -120,15 +121,25 @@ function getWebpackConfig(type: WebpackConfigType) {
   config.output = {
     path: dist,
     // filename: '[id].entry.js',
-    chunkFilename: (pathData) => {
+    chunkFilename: () => {
       // const dir = pathData.runtime;
       return `chunk/[id].chunk.js`;
     },
   };
 
+  config.stats = {
+    preset: 'minimal',
+    entrypoints: true,
+  }
+
   config.plugins?.push(
     new StatsWriterPlugin({
-      filename: 'stats.json', // Default
+      filename: 'stats.json',
+      stats: {
+        preset: 'minimal',
+        assets: false,
+        entrypoints: true,
+      }
     }),
     ...htmls,
   );

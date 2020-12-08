@@ -1,9 +1,9 @@
 import path from 'path';
 import fs from 'fs';
-import { Configuration, container } from 'webpack';
+import { Configuration } from 'webpack';
 import rimraf from 'rimraf';
 
-const { ModuleFederationPlugin } = container;
+// const { ModuleFederationPlugin } = container;
 
 export interface FileInfo {
   filePath?: string;
@@ -33,7 +33,7 @@ export interface CustomConfig extends Configuration {
   pages?: string[];
   boot?: string,
   template?: string,
-  moduleFederation?: ConstructorParameters<typeof ModuleFederationPlugin>[0]
+  // moduleFederation?: ConstructorParameters<typeof ModuleFederationPlugin>[0]
 }
 
 // 获取项目文件

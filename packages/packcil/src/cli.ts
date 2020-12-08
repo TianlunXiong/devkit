@@ -3,9 +3,6 @@ import { program } from 'commander';
 import dev from './option/dev';
 import prod from './option/prod';
 import init from './option/init';
-import pkg from '../package.json';
-
-program.version(String(pkg.version));
 
 program
   .command('init')

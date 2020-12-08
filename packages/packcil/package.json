@@ -5,6 +5,8 @@
   "bin": {
     "packcil": "./bin/packcil.js"
   },
+  "main": "./lib/index.js",
+  "types": "./types/index.d.ts",
   "files": [
     "bin",
     "lib"
@@ -20,7 +22,8 @@
   "repository": "https://github.com/TianlunXiong/wp5-cli",
   "license": "MIT",
   "scripts": {
-    "build": "rimraf lib && babel src --extensions .ts --out-dir lib --copy-files"
+    "build": "rimraf lib && babel src --extensions .ts --out-dir lib --copy-files && npm run types",
+    "types": "rimraf types && tsc --project tsconfig.json"
   },
   "dependencies": {
     "@babel/cli": "^7.12.1",

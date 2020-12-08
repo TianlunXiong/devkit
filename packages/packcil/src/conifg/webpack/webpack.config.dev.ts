@@ -1,5 +1,4 @@
 import base from './webpack.config.base';
-import WebpackBar from 'webpackbar';
 import webpackMerge from 'webpack-merge';
 import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 
@@ -11,7 +10,6 @@ const dev = webpackMerge(base(), {
   },
   plugins: [
     new ReactRefreshPlugin(),
-    new WebpackBar(),
   ]
 })
 

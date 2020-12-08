@@ -1,11 +1,10 @@
-# `demo1`
+# packcil + nestin 联调 DEMO
 
-> TODO: description
+## 1. 目的
 
-## Usage
+packcil 负责页面打包
 
-```
-const demo1 = require('demo1');
+nestin  负责部署
 
-// TODO: DEMONSTRATE API
-```
+
+## 2. 目录

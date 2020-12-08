@@ -20,12 +20,21 @@ export default async function({ host, port }: IDevelopmentConfig) {
 
   const compiler = webpack(config);
   const serverConfig = {
-    publicPath: '/',
-    noInfo: true,
+    contentBase: config.output.path,
+    sockPort: port,
+    headers: {
+      'access-control-allow-origin': '*'
+    },
+    host: '0.0.0.0',
     inline: true,
     hot: true,
     liveReload: false,
     writeToDisk: true,
+    disableHostCheck: true,
+    stats: {
+      preset: 'minimal',
+      entrypoints: true,
+    },
     //@ts-ignore
     ...(config?.devServer || {})
   };

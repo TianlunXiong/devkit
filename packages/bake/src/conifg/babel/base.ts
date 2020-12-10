@@ -2,7 +2,7 @@ export function babelBaseConfig() {
   return {
     presets: [
       [require.resolve('@babel/preset-env'), {
-        useBuiltIns: "usage",
+        useBuiltIns: "usage", // 按需引入 polyfill
         // modules: false,
         corejs: 3,
       }],

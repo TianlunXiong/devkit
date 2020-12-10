@@ -1,5 +1,5 @@
 {
-  "name": "nestin",
+  "name": "@vikit/nest",
   "version": "0.0.5-beta1",
   "description": "A Dependency-Inject Framework based on Koa.",
   "main": "dist/src/index.js",

@@ -1,15 +1,9 @@
-import App from 'nestin';
-// import proxy from 'koa-proxy'
-var proxy = require('koa-http2-proxy');
+import App from '@vikit/nest';
+import { devConnector } from '@vikit/bake';
 
 const app = new App();
 
-app.use(
-  proxy({
-    target: 'http://0.0.0.0:3000',
-    ws: true,
-  })
-)
+app.use(devConnector())
 
 app.listen(9000, () => {
   app.cycleLog();

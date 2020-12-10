@@ -2046,13 +2046,6 @@
   dependencies:
     "@types/koa" "*"
 
-"@types/koa-proxy@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/@types/koa-proxy/-/koa-proxy-1.0.1.tgz#1ad6f21752be2632e04cff2a3250ba145dc0547d"
-  integrity sha512-KYBOnCvOlI8XQwTU6Rpss5b2mXFfDyUWksP+fjNZ/GTeKAYXQnV/EvjnbaROwDHRUjwBgu4P6pSS4bCFMFMNWw==
-  dependencies:
-    "@types/koa" "*"
-
 "@types/koa-router@^7.4.1":
   version "7.4.1"
   resolved "https://registry.npmjs.org/@types/koa-router/-/koa-router-7.4.1.tgz#3702a4cabe4558cc4eec70d5574acc04beecff7c"
@@ -2233,6 +2226,65 @@
     "@types/uglify-js" "*"
     "@types/webpack-sources" "*"
     source-map "^0.6.0"
+
+"@vikit/bake@file:packages/bake":
+  version "0.1.2-beta.2"
+  dependencies:
+    "@babel/cli" "^7.12.1"
+    "@babel/core" "7.11.4"
+    "@babel/plugin-proposal-class-properties" "^7.12.1"
+    "@babel/plugin-proposal-decorators" "^7.12.1"
+    "@babel/plugin-transform-runtime" "^7.12.1"
+    "@babel/preset-env" "^7.12.1"
+    "@babel/preset-react" "7.10.4"
+    "@babel/preset-typescript" "^7.12.1"
+    "@babel/runtime" "^7.12.1"
+    "@babel/runtime-corejs3" "^7.12.1"
+    "@pmmmwh/react-refresh-webpack-plugin" "^0.4.3"
+    babel-loader "8.1.0"
+    chalk "^4.1.0"
+    clean-webpack-plugin "^3.0.0"
+    commander "^6.2.0"
+    core-js "3"
+    css-loader "^5.0.0"
+    file-loader "^6.2.0"
+    fork-ts-checker-webpack-plugin "^5.2.0"
+    html-webpack-plugin "5.0.0-alpha.3"
+    import-local "^3.0.2"
+    less "^3.12.2"
+    less-loader "^7.0.2"
+    mini-css-extract-plugin "^1.2.1"
+    mkdirp "^1.0.4"
+    optimize-css-assets-webpack-plugin "^5.0.4"
+    react-refresh "^0.9.0"
+    rimraf "^3.0.2"
+    sass "^1.27.0"
+    sass-loader "^10.0.4"
+    serve "11.3.2"
+    signale "^1.4.0"
+    style-loader "^2.0.0"
+    terser-webpack-plugin "^5.0.2"
+    typescript "^4.0.5"
+    url-loader "^4.1.1"
+    webpack "^5.2.0"
+    webpack-bundle-analyzer "^3.9.0"
+    webpack-cli "3.3.12"
+    webpack-dev-server "3.11.0"
+    webpack-merge "^5.2.0"
+    webpack-stats-plugin "^1.0.2"
+    webpackbar "^4.0.0"
+
+"@vikit/nest@file:packages/nest":
+  version "0.0.5-beta1"
+  dependencies:
+    "@types/koa" "^2.11.4"
+    "@types/koa-router" "^7.4.1"
+    "@types/node" "^14.11.2"
+    koa "^2.13.0"
+    koa-router "^9.4.0"
+    koa-static "^5.0.0"
+    reflect-metadata "^0.1.13"
+    winston "^3.3.3"
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
@@ -6304,15 +6356,6 @@ koa-http2-proxy@^0.0.4:
     lodash "^4.17.14"
     micromatch "^4.0.2"
 
-koa-proxy@^1.0.0-alpha.3:
-  version "1.0.0-alpha.3"
-  resolved "https://registry.npmjs.org/koa-proxy/-/koa-proxy-1.0.0-alpha.3.tgz#afc61edc9dc6a195464664beccc162cfe994bf55"
-  integrity sha512-8ke0WoQKAsQ8BpkC9+I83lKsFaycE9fcLeTx12jQtEa5SrdTI6mNKR5M4LslHbvkX1hDhXreIszXsnom5Ej7RQ==
-  dependencies:
-    pause-stream "0.0.11"
-    request "^2.88.0"
-    request-promise-native "^1.0.5"
-
 koa-router@^9.4.0:
   version "9.4.0"
   resolved "https://registry.npmjs.org/koa-router/-/koa-router-9.4.0.tgz#7bd3cd4f6247256e4b56fbb2203bde3851acc15a"
@@ -7135,18 +7178,6 @@ neo-async@^2.6.0, neo-async@^2.6.2:
   resolved "https://registry.npm.taobao.org/neo-async/download/neo-async-2.6.2.tgz?cache=0&sync_timestamp=1594317437265&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fneo-async%2Fdownload%2Fneo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha1-tKr7k+OustgXTKU88WOrfXMIMF8=
 
-"nestin@file:packages/nestin":
-  version "0.0.5-beta1"
-  dependencies:
-    "@types/koa" "^2.11.4"
-    "@types/koa-router" "^7.4.1"
-    "@types/node" "^14.11.2"
-    koa "^2.13.0"
-    koa-router "^9.4.0"
-    koa-static "^5.0.0"
-    reflect-metadata "^0.1.13"
-    winston "^3.3.3"
-
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.npm.taobao.org/nice-try/download/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
@@ -7614,53 +7645,6 @@ p-waterfall@^1.0.0:
   dependencies:
     p-reduce "^1.0.0"
 
-"packcil@file:packages/packcil":
-  version "0.1.2-beta.2"
-  dependencies:
-    "@babel/cli" "^7.12.1"
-    "@babel/core" "7.11.4"
-    "@babel/plugin-proposal-class-properties" "^7.12.1"
-    "@babel/plugin-proposal-decorators" "^7.12.1"
-    "@babel/plugin-transform-runtime" "^7.12.1"
-    "@babel/preset-env" "^7.12.1"
-    "@babel/preset-react" "7.10.4"
-    "@babel/preset-typescript" "^7.12.1"
-    "@babel/runtime" "^7.12.1"
-    "@babel/runtime-corejs3" "^7.12.1"
-    "@pmmmwh/react-refresh-webpack-plugin" "^0.4.3"
-    babel-loader "8.1.0"
-    chalk "^4.1.0"
-    clean-webpack-plugin "^3.0.0"
-    commander "^6.2.0"
-    core-js "3"
-    css-loader "^5.0.0"
-    file-loader "^6.2.0"
-    fork-ts-checker-webpack-plugin "^5.2.0"
-    html-webpack-plugin "5.0.0-alpha.3"
-    import-local "^3.0.2"
-    less "^3.12.2"
-    less-loader "^7.0.2"
-    mini-css-extract-plugin "^1.2.1"
-    mkdirp "^1.0.4"
-    optimize-css-assets-webpack-plugin "^5.0.4"
-    react-refresh "^0.9.0"
-    rimraf "^3.0.2"
-    sass "^1.27.0"
-    sass-loader "^10.0.4"
-    serve "11.3.2"
-    signale "^1.4.0"
-    style-loader "^2.0.0"
-    terser-webpack-plugin "^5.0.2"
-    typescript "^4.0.5"
-    url-loader "^4.1.1"
-    webpack "^5.2.0"
-    webpack-bundle-analyzer "^3.9.0"
-    webpack-cli "3.3.12"
-    webpack-dev-server "3.11.0"
-    webpack-merge "^5.2.0"
-    webpack-stats-plugin "^1.0.2"
-    webpackbar "^4.0.0"
-
 parallel-transform@^1.1.0:
   version "1.2.0"
   resolved "https://registry.npm.taobao.org/parallel-transform/download/parallel-transform-1.2.0.tgz#9049ca37d6cb2182c3b1d2c720be94d14a5814fc"
@@ -7833,13 +7817,6 @@ path-type@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npmjs.org/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
-
-pause-stream@0.0.11:
-  version "0.0.11"
-  resolved "https://registry.npmjs.org/pause-stream/-/pause-stream-0.0.11.tgz#fe5a34b0cbce12b5aa6a2b403ee2e73b602f1445"
-  integrity sha1-/lo0sMvOErWqaitAPuLnO2AvFEU=
-  dependencies:
-    through "~2.3"
 
 performance-now@^2.1.0:
   version "2.1.0"
@@ -8734,22 +8711,6 @@ repeating@^2.0.0:
   dependencies:
     is-finite "^1.0.0"
 
-request-promise-core@1.1.4:
-  version "1.1.4"
-  resolved "https://registry.npmjs.org/request-promise-core/-/request-promise-core-1.1.4.tgz#3eedd4223208d419867b78ce815167d10593a22f"
-  integrity sha512-TTbAfBBRdWD7aNNOoVOBH4pN/KigV6LyapYNNlAPA8JwbovRti1E88m3sYAwsLi5ryhPKsE9APwnjFTgdUjTpw==
-  dependencies:
-    lodash "^4.17.19"
-
-request-promise-native@^1.0.5:
-  version "1.0.9"
-  resolved "https://registry.npmjs.org/request-promise-native/-/request-promise-native-1.0.9.tgz#e407120526a5efdc9a39b28a5679bf47b9d9dc28"
-  integrity sha512-wcW+sIUiWnKgNY0dqCpOZkUbF/I+YPi+f09JZIDa39Ec+q82CpSYniDp+ISgTTbKmnpJWASeJBPZmoxH84wt3g==
-  dependencies:
-    request-promise-core "1.1.4"
-    stealthy-require "^1.1.1"
-    tough-cookie "^2.3.3"
-
 request@^2.88.0:
   version "2.88.2"
   resolved "https://registry.npm.taobao.org/request/download/request-2.88.2.tgz#d73c918731cb5a87da047e207234146f664d12b3"
@@ -9456,11 +9417,6 @@ std-env@^2.2.1:
   dependencies:
     ci-info "^1.6.0"
 
-stealthy-require@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.npmjs.org/stealthy-require/-/stealthy-require-1.1.1.tgz#35b09875b4ff49f26a777e509b3090a3226bf24b"
-  integrity sha1-NbCYdbT/SfJqd35QmzCQoyJr8ks=
-
 stream-each@^1.1.0:
   version "1.2.3"
   resolved "https://registry.npm.taobao.org/stream-each/download/stream-each-1.2.3.tgz#ebe27a0c389b04fbcc233642952e10731afa9bae"
@@ -9801,7 +9757,7 @@ through2@^3.0.0:
     inherits "^2.0.4"
     readable-stream "2 || 3"
 
-through@2, "through@>=2.2.7 <3", through@^2.3.4, through@^2.3.6, through@~2.3:
+through@2, "through@>=2.2.7 <3", through@^2.3.4, through@^2.3.6:
   version "2.3.8"
   resolved "https://registry.npm.taobao.org/through/download/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
   integrity sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=
@@ -9865,7 +9821,7 @@ toidentifier@1.0.0:
   resolved "https://registry.npmjs.org/toidentifier/-/toidentifier-1.0.0.tgz#7e1be3470f1e77948bc43d94a3c8f4d7752ba553"
   integrity sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw==
 
-tough-cookie@^2.3.3, tough-cookie@~2.5.0:
+tough-cookie@~2.5.0:
   version "2.5.0"
   resolved "https://registry.npm.taobao.org/tough-cookie/download/tough-cookie-2.5.0.tgz#cd9fb2a0aa1d5a12b473bd9fb96fa3dcff65ade2"
   integrity sha1-zZ+yoKodWhK0c72fuW+j3P9lreI=

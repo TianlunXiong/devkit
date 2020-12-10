@@ -37,7 +37,7 @@ export interface CustomConfig extends Configuration {
 }
 
 // 获取项目文件
-const getCustomConfig = (configFileName = 'packcil.config.js'): CustomConfig => {
+const getCustomConfig = (configFileName = 'bake.config.js'): CustomConfig => {
   const configPath = path.join(process.cwd(), configFileName);
   if (fs.existsSync(configPath)) {
     // eslint-disable-next-line import/no-dynamic-require
@@ -58,7 +58,7 @@ interface PageInfo {
 const createEntryProxy = (pageInfo: PageInfo[]) => {
   const proxyEntry: { name: string, loc: string }[] = [];
 
-  const tmpPath = path.join(process.cwd(), 'node_modules', './packcil/tmp');
+  const tmpPath = path.join(path.dirname(require.resolve('@vikit/bake')), '../tmp');
   if (fs.existsSync(tmpPath)) rimraf.sync(tmpPath);
   fs.mkdirSync(tmpPath);
 

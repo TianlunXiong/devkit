@@ -1,9 +1,9 @@
 {
-  "name": "packcil",
+  "name": "@vikit/bake",
   "version": "0.1.2-beta.2",
-  "description": "A Cli Tool With Webpack Like Create-React-App",
+  "description": "a cli tool for development of application",
   "bin": {
-    "packcil": "./bin/packcil.js"
+    "bake": "./bin/bake.js"
   },
   "main": "./lib/index.js",
   "types": "./types/index.d.ts",
@@ -36,6 +36,7 @@
     "@babel/preset-typescript": "^7.12.1",
     "@babel/runtime": "^7.12.1",
     "@babel/runtime-corejs3": "^7.12.1",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
     "babel-loader": "8.1.0",
     "chalk": "^4.1.0",
     "clean-webpack-plugin": "^3.0.0",
@@ -46,11 +47,14 @@
     "fork-ts-checker-webpack-plugin": "^5.2.0",
     "html-webpack-plugin": "5.0.0-alpha.3",
     "import-local": "^3.0.2",
+    "koa-http2-proxy": "^0.0.4",
     "less": "^3.12.2",
     "less-loader": "^7.0.2",
     "mini-css-extract-plugin": "^1.2.1",
     "mkdirp": "^1.0.4",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "react-refresh": "^0.9.0",
+    "rimraf": "^3.0.2",
     "sass": "^1.27.0",
     "sass-loader": "^10.0.4",
     "serve": "11.3.2",
@@ -65,9 +69,6 @@
     "webpack-dev-server": "3.11.0",
     "webpack-merge": "^5.2.0",
     "webpack-stats-plugin": "^1.0.2",
-    "webpackbar": "^4.0.0",
-    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
-    "react-refresh": "^0.9.0",
-    "rimraf": "^3.0.2"
+    "webpackbar": "^4.0.0"
   }
 }

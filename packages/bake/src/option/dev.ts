@@ -2,8 +2,10 @@ import fs from 'fs';
 import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+import path from 'path';
 import { getProjectPath } from '../conifg/utils';
 import getWebpackConfig from '../conifg';
+import { createConnectorConfig } from '../module/connector';
 
 export interface IDevelopmentConfig {
   mode?: 'native';
@@ -21,11 +23,11 @@ export default async function({ host, port }: IDevelopmentConfig) {
   const compiler = webpack(config);
   const serverConfig = {
     contentBase: config.output.path,
-    sockPort: port,
     headers: {
       'access-control-allow-origin': '*'
     },
-    host: '0.0.0.0',
+    host,
+    sockPort: port,
     inline: true,
     hot: true,
     liveReload: false,
@@ -38,6 +40,14 @@ export default async function({ host, port }: IDevelopmentConfig) {
     //@ts-ignore
     ...(config?.devServer || {})
   };
+
+  createConnectorConfig(
+    JSON.stringify({
+      host,
+      port,
+    })
+  );
+
   const devServer = new WebpackDevServer(compiler, serverConfig);
   devServer.listen(port, host, (err) => {
     if (err) {

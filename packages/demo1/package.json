@@ -19,9 +19,9 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "dev": "packcil dev",
+    "dev": "bake dev -p 3002",
     "server": "tsnd ./server/app.ts",
-    "build": "packcil build"
+    "build": "bake build"
   },
   "bugs": {
     "url": "https://github.com/TianlunXiong/devkit/issues"
@@ -40,11 +40,8 @@
     "@babel/traverse": "^7.12.5",
     "@babel/types": "^7.12.6",
     "@loadable/component": "^5.14.1",
-    "@types/koa-proxy": "^1.0.1",
-    "koa-http2-proxy": "^0.0.4",
-    "koa-proxy": "^1.0.0-alpha.3",
-    "nestin": "file:../nestin",
-    "packcil": "file:../packcil",
+    "@vikit/nest": "file:../nest",
+    "@vikit/bake": "file:../bake",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "ts-node-dev": "^1.0.0",

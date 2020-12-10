@@ -9,7 +9,8 @@
   "types": "./types/index.d.ts",
   "files": [
     "bin",
-    "lib"
+    "lib",
+    "types"
   ],
   "keywords": [
     "webpack",

@@ -40,10 +40,11 @@
     "@babel/traverse": "^7.12.5",
     "@babel/types": "^7.12.6",
     "@loadable/component": "^5.14.1",
-    "@vikit/nest": "file:../nest",
     "@vikit/bake": "file:../bake",
+    "@vikit/nest": "file:../nest",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
     "ts-node-dev": "^1.0.0",
     "typescript": "^4.1.2"
   }

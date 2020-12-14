@@ -33,6 +33,7 @@ export default async function({ host, port }: IDevelopmentConfig) {
     liveReload: false,
     writeToDisk: true,
     disableHostCheck: true,
+    historyApiFallback: true,
     stats: {
       preset: 'minimal',
       entrypoints: true,

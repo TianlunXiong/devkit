@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import loadable from '@loadable/component';
 // import A from './a';
-import './index.scss';
+// import './index.scss';
 
 const A = loadable(() => import('./a'))
 

@@ -3,7 +3,6 @@ export function babelBaseConfig() {
     presets: [
       [require.resolve('@babel/preset-env'), {
         useBuiltIns: "usage", // 按需引入 polyfill
-        // modules: false,
         corejs: 3,
       }],
       require.resolve('@babel/preset-react'),

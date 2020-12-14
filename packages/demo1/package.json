@@ -20,8 +20,8 @@
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
     "dev": "bake dev -p 3002",
-    "server": "tsnd ./server/app.ts",
-    "build": "bake build"
+    "build": "bake build",
+    "server": "tsnd ./server/app.ts"
   },
   "bugs": {
     "url": "https://github.com/TianlunXiong/devkit/issues"

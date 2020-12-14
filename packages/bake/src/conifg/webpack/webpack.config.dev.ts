@@ -8,9 +8,7 @@ const dev = webpackMerge(base(), {
   optimization: {
     minimize: false,
   },
-  plugins: [
-    new ReactRefreshPlugin(),
-  ]
-})
+  plugins: [new ReactRefreshPlugin()],
+});
 
 export default dev;

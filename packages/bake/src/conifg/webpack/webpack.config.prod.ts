@@ -2,6 +2,7 @@ import TerserPlugin from 'terser-webpack-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import base from './webpack.config.base';
 import webpackMerge from 'webpack-merge';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 const prod = webpackMerge(base(), {
   mode: 'production',

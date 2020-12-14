@@ -29,15 +29,18 @@ const getProjectPath = (dir = './'): string => {
   return path.join(process.cwd(), dir);
 };
 
-export interface CustomConfig extends Configuration {
-  pages?: string[];
+interface CustomConfig extends Configuration {
+  app: string,
+  pages: string[];
   boot?: string,
-  template?: string,
+  html: string,
+  css?: string,
   // moduleFederation?: ConstructorParameters<typeof ModuleFederationPlugin>[0]
 }
 
 // 获取项目文件
-const getCustomConfig = (configFileName = 'bake.config.js'): CustomConfig => {
+const getCustomConfig = (configFileName = 'bake.config.js'): Partial<CustomConfig> => {
+  console.log(process.cwd())
   const configPath = path.join(process.cwd(), configFileName);
   if (fs.existsSync(configPath)) {
     // eslint-disable-next-line import/no-dynamic-require
@@ -94,6 +97,7 @@ export {
   fileTree,
   createEntryProxy,
   getProjectPath,
+  CustomConfig,
   getCustomConfig,
   projectRelative,
   PageInfo,

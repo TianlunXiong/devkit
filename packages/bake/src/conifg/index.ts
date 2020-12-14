@@ -1,3 +1,4 @@
+import { cssRule } from './webpack/webpack.config.base';
 import dev from './webpack/webpack.config.dev';
 import prod from './webpack/webpack.config.prod';
 import {
@@ -18,9 +19,9 @@ const DIST_NAME = 'dist';
 type WebpackConfigType = 'dev' | 'prod';
 
 function getWebpackConfig(type: WebpackConfigType): Configuration {
-  const { pages, boot, template, ...webpackConfig } = getCustomConfig();
+  const { app, pages, boot, html, css = 'style', ...webpackConfig } = getCustomConfig();
 
-  let config: Configuration;
+  let config: Configuration = {};
 
   switch (type) {
     case 'dev':
@@ -31,6 +32,28 @@ function getWebpackConfig(type: WebpackConfigType): Configuration {
           require.resolve('react-refresh/babel'),
         ]);
       }
+      if (css === 'style') {
+      // 增加 css-hot-loader 热替换插件
+      if (dev.module?.rules?.[1]) {
+        // @ts-ignore
+        dev.module.rules[1]?.use?.unshift(
+          {
+            loader: 'css-hot-loader',
+            options: {
+
+            },
+          }
+        );
+      }
+      // 增加 css-hot-loader 热替换插件
+      if (dev.module?.rules?.[2]) {
+        // @ts-ignore
+        dev.module.rules[2]?.use?.unshift({
+          loader: 'css-hot-loader',
+          options: {},
+        });
+      }
+      }
       config = dev;
       break;
     case 'prod':
@@ -40,10 +63,13 @@ function getWebpackConfig(type: WebpackConfigType): Configuration {
       throw new Error('无效类型参数');
   }
 
-  if (!template) {
+  config = webpackMerge(config, cssRule(css));
+
+  if (!html) {
     throw new Error('请指定 html 文件');
   }
-  const htmlPath = projectRelative(template);
+
+  const htmlPath = projectRelative(html);
   const htmls: HtmlWebpackPlugin[] = [];
 
   config.entry = {};
@@ -123,7 +149,7 @@ function getWebpackConfig(type: WebpackConfigType): Configuration {
     // filename: '[id].entry.js',
     chunkFilename: () => {
       // const dir = pathData.runtime;
-      return `chunk/[id].chunk.js`;
+      return `js/[id].chunk.js`;
     },
   };
 

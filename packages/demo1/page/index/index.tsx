@@ -13,7 +13,7 @@ const App = () => {
   }, [])
 
   return <div className="title">
-    OK2323
+    OK23232
     <A fallback={<div>Loading...</div>}  />
   </div>
 };

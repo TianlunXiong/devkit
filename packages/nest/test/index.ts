@@ -6,6 +6,27 @@ const app = new App();
 app.use(async function SSO(ctx, next) {
   await next();
 });
+app.use(async (ctx, next) => {
+  await next();
+});
+app.use(async (ctx, next) => {
+  await next();
+});
+app.use(async (ctx, next) => {
+  await next();
+});
+app.use(async (ctx, next) => {
+  await next();
+});
+app.use(async (ctx, next) => {
+  await next();
+});
+app.use(async (ctx, next) => {
+  await next();
+});
+app.use(async (ctx, next) => {
+  await next();
+});
 app.routes();
 
 app.use(async function Log(ctx, next) {

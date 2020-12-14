@@ -20,50 +20,6 @@ function baseConfig() {
         ],
       },
       {
-        test: /\.(css|scss)$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: '../',
-            },
-          },
-          {
-            loader: require.resolve('css-loader'),
-            options: {
-              importLoaders: 2,
-            },
-          },
-          {
-            loader: require.resolve('sass-loader'),
-            options: {
-              sourceMap: true,
-              implementation: require('sass'),
-            },
-          },
-        ],
-      },
-      {
-        test: /\.less$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: '../',
-            },
-          },
-          {
-            loader: require.resolve('css-loader'),
-            options: {
-              importLoaders: 2,
-            },
-          },
-          {
-            loader: require.resolve('less-loader'),
-          },
-        ],
-      },
-      {
         test: /\.(png|jpg|jpeg|gif|svg|ico)$/,
         exclude: /node_modules/,
         use: [
@@ -90,14 +46,119 @@ function baseConfig() {
   const config: Configuration = {
     module,
     resolve,
-    plugins: [
-      new MiniCssExtractPlugin({
-        filename: 'stylesheet/[name].[contenthash:8].css',
-        chunkFilename: 'stylesheet/[id].[contenthash:8].css',
-      }),
-    ],
+    plugins: [],
   }
   return config;
 }
 
+function cssRule(option) {
+  switch (option) {
+    case 'style':
+      return {
+        module: {
+          rules: [
+            {
+              test: /\.(css|scss)$/,
+              use: [
+                {
+                  loader: require.resolve('style-loader'),
+                },
+                {
+                  loader: require.resolve('css-loader'),
+                  options: {
+                    importLoaders: 1,
+                  },
+                },
+                {
+                  loader: require.resolve('sass-loader'),
+                  options: {
+                    sourceMap: true,
+                    implementation: require('sass'),
+                  },
+                },
+              ],
+            },
+            {
+              test: /\.less$/,
+              use: [
+                {
+                  loader: require.resolve('style-loader'),
+                },
+                {
+                  loader: require.resolve('css-loader'),
+                  options: {
+                    importLoaders: 1,
+                  },
+                },
+                {
+                  loader: require.resolve('less-loader'),
+                },
+              ],
+            },
+          ],
+        },
+      };
+    case 'link':
+      return {
+        module: {
+          rules: [
+            {
+              test: /\.(css|scss)$/,
+              use: [
+                {
+                  loader: MiniCssExtractPlugin.loader,
+                  options: {
+                    publicPath: '../',
+                  },
+                },
+                {
+                  loader: require.resolve('css-loader'),
+                  options: {
+                    importLoaders: 2,
+                  },
+                },
+                {
+                  loader: require.resolve('sass-loader'),
+                  options: {
+                    sourceMap: true,
+                    implementation: require('sass'),
+                  },
+                },
+              ],
+            },
+            {
+              test: /\.less$/,
+              use: [
+                {
+                  loader: MiniCssExtractPlugin.loader,
+                  options: {
+                    publicPath: '../',
+                  },
+                },
+                {
+                  loader: require.resolve('css-loader'),
+                  options: {
+                    importLoaders: 2,
+                  },
+                },
+                {
+                  loader: require.resolve('less-loader'),
+                },
+              ],
+            },
+          ]
+        },
+        plugins: [
+          new MiniCssExtractPlugin({
+            filename: 'css/[name].[contenthash:8].css',
+            chunkFilename: 'css/[id].[contenthash:8].css',
+          }),
+        ],
+      };
+    default: 
+      return {};
+  }
+}
+
+export { cssRule };
 export default baseConfig;

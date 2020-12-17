@@ -1,17 +1,12 @@
 module.exports = {
-  app: 'spa',
-  html: 'page/index.html',
-  boot: 'page/bootstrap.tsx',
+  app: 'mpa',
   pages: [
+    'page/index.tsx',
     {
-      src: 'page/index/index.tsx',
-      pathname: '/',
-      exact: true,
+      src: 'page/detail/index.tsx',
     },
-    {
-      src: 'page/overview/index.tsx',
-      pathname: '/overview'
-    },
+    'page/overview/index.tsx',
+    'page/overview/key.tsx',
+    'page/overview/student/index.tsx',
   ],
-  css: 'style',
 };

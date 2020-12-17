@@ -13,6 +13,7 @@ import { StatsWriterPlugin } from 'webpack-stats-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import rimraf from 'rimraf';
 import fs from 'fs';
+import path from 'path';
 
 const DIST_NAME = 'dist';
 
@@ -26,10 +27,16 @@ function getWebpackConfig(type: WebpackConfigType): Configuration {
     boot,
     html,
     css = 'style',
+    name = 'BAKE',
+    indent = 1,
     ...webpackConfig
   } = customConfig;
 
   let config: Configuration = {};
+
+  if (name) {
+    config.name = name;
+  }
 
   switch (type) {
     case 'dev':
@@ -72,6 +79,8 @@ function getWebpackConfig(type: WebpackConfigType): Configuration {
   let htmlPath;
   if (html) {
     htmlPath = projectRelative(html);
+  } else {
+    htmlPath = path.join(path.dirname(require.resolve('@vikit/bake')), './template/index.html')
   }
 
   const htmls: HtmlWebpackPlugin[] = [];
@@ -80,7 +89,7 @@ function getWebpackConfig(type: WebpackConfigType): Configuration {
   if (pages) {
     const pagesConfig = app === 'mpa' ? createMPAEntryProxy(customConfig) : createSPAEntryProxy(customConfig);
     pagesConfig.forEach(
-      ({ entryName, filename, entry, htmlFilename, name }) => {
+      ({ entryName, filename, entry, htmlFilename, name: subName, html }) => {
         if (entryName && filename) {
           config.entry[entryName] = {
             import: entry,
@@ -91,7 +100,8 @@ function getWebpackConfig(type: WebpackConfigType): Configuration {
             chunks: [entryName],
           };
           if (htmlPath) htmlConfig.template = htmlPath;
-          if (name) htmlConfig.title = name;
+          if (app === 'mpa' && html) htmlConfig.template = projectRelative(html);
+          htmlConfig.title = subName || name;
           htmls.push(new HtmlWebpackPlugin(htmlConfig));
         }
       },
@@ -105,6 +115,7 @@ function getWebpackConfig(type: WebpackConfigType): Configuration {
     chunkFilename: (pathData) => {
       return `js/[id].chunk.js`;
     },
+    publicPath: '/'
   };
 
   config.stats = {

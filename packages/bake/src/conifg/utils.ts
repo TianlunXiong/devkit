@@ -31,9 +31,10 @@ const getProjectPath = (dir = './'): string => {
 
 
 type PageDetail = {
-  src?: string,
   name?: string,
   pathname?: string,
+  src?: string,
+  html?: string,
   boot?: string,
 };
 type Page = string | PageDetail;
@@ -51,6 +52,7 @@ interface CustomConfig extends Configuration {
   boot?: string,
   html?: string,
   css?: string,
+  indent?: number,
   // moduleFederation?: ConstructorParameters<typeof ModuleFederationPlugin>[0]
 }
 
@@ -74,15 +76,20 @@ interface PageInfo {
 }
 
 function createSPAEntryProxy(config: CustomConfig): PageConfig[] {
-  const { pages, name, boot } = config;
-  
-  const tmpPath = path.join(path.dirname(require.resolve('@vikit/bake')), '../tmp');
+  const { pages, name, boot, indent = 1 } = config;
+
+  const tmpPath = path.join(
+    path.dirname(require.resolve('@vikit/bake')),
+    '../tmp',
+  );
   if (fs.existsSync(tmpPath)) rimraf.sync(tmpPath);
   fs.mkdirSync(tmpPath);
 
   let globalBootPath;
   if (boot) {
     globalBootPath = projectRelative(boot);
+  } else {
+    globalBootPath = path.join(path.dirname(require.resolve('@vikit/bake')), './template/spa-bootstrap.tsx');
   }
 
   const uniqueName = 'spa';
@@ -91,43 +98,65 @@ function createSPAEntryProxy(config: CustomConfig): PageConfig[] {
   const pageproxyloc = `${tmpPath}/${uniqueName}.page.proxy${ext}`;
   const bootstrapproxyloc = `${tmpPath}/${uniqueName}.bootstrap.proxy${ext}`;
 
-  // 代理入口
-  const entryCode = `
-  Promise.all([import('${bootstrapproxyloc}'), import('${pageproxyloc}')])
-    .then(([{ default: BOOTSTRAP_CODE }, { default: PAGE }]) => {
-      if (PAGE && typeof BOOTSTRAP_CODE === 'function') BOOTSTRAP_CODE(PAGE);
-    })
-  `;
-  fs.writeFileSync(entryProxyLoc, entryCode);
-
-
   // 页面信息
   let pageCode = '[';
   pages.forEach((item) => {
     if (typeof item === 'string') {
       const absolutePath = projectRelative(item);
-      const relativePath = path.relative(path.dirname(globalBootPath), absolutePath);
+      const relativePath = path.relative(
+        path.dirname(globalBootPath),
+        absolutePath,
+      );
+      const {
+        name,
+        dir,
+      } = path.parse(item);
+      const preDir = dir.split(path.sep).slice(indent).join(path.sep);
+      let pathname = 'undefined';
+      if (name === 'index') {
+        pathname = `/${preDir || ''}`;
+      } else {
+        pathname = `/${preDir ? `${preDir}/` : ''}${name}`;
+      }
+
       pageCode += `{
         src: '${path.dirname(relativePath)}/${path.basename(relativePath)}',
-        component: () => import('${absolutePath}')
+        component: () => import('${absolutePath}'),
+        pathname: '${pathname}',
       },`;
     } else {
       const { src, ...others } = item;
       const absolutePath = projectRelative(src);
-      const relativePath = path.relative(path.dirname(globalBootPath), absolutePath);
+      const relativePath = path.relative(
+        path.dirname(globalBootPath),
+        absolutePath,
+      );
       pageCode += `{
         src: '${path.dirname(relativePath)}/${path.basename(relativePath)}',
         component: () => import('${absolutePath}'),
         ...${JSON.stringify(others)}
       },`;
     }
-  })
+  });
   pageCode += ']';
 
   fs.writeFileSync(pageproxyloc, `export default ${pageCode}`);
 
   // 启动代码
-  if (globalBootPath) fs.writeFileSync(bootstrapproxyloc, `export { default } from '${globalBootPath}'`);
+  if (globalBootPath)
+    fs.writeFileSync(
+      bootstrapproxyloc,
+      `export { default } from '${globalBootPath}'`,
+    );
+
+  // 代理入口
+  const entryCode = `
+    Promise.all([import('${bootstrapproxyloc}'), import('${pageproxyloc}')])
+      .then(([{ default: BOOTSTRAP_CODE }, { default: PAGE }]) => {
+        if (PAGE && typeof BOOTSTRAP_CODE === 'function') BOOTSTRAP_CODE(PAGE);
+      })
+    `;
+  fs.writeFileSync(entryProxyLoc, entryCode);
 
   return [
     {
@@ -141,9 +170,10 @@ function createSPAEntryProxy(config: CustomConfig): PageConfig[] {
 }
 
 function createMPAEntryProxy(config: CustomConfig): PageConfig[] {
-  const { pages, boot } = config;
+  const { pages, boot, indent = 1 } = config;
   
   const tmpPath = path.join(path.dirname(require.resolve('@vikit/bake')), '../tmp');
+  const bakePath = path.join(path.dirname(require.resolve('@vikit/bake')), './');
   if (fs.existsSync(tmpPath)) rimraf.sync(tmpPath);
   fs.mkdirSync(tmpPath);
 
@@ -161,12 +191,28 @@ function createMPAEntryProxy(config: CustomConfig): PageConfig[] {
         name,
         dir,
         ext,
-      } = path.parse(pagePath);
+      } = path.parse(page);
 
-      const uniqueName = `${dir.split(path.sep).join('-')}-${name}`;
+      const preDir = dir.split(path.sep).slice(indent).join(path.sep);
+      let pureName;
+
+      if (name === 'index') {
+        pureName = `./${preDir ? `${preDir}/` : ''}${name}`;
+      } else {
+        pureName = `./${preDir ? `${preDir}/` : ''}${name}/index`;
+      }
+
+      const uniqueName = `${pureName.split(path.sep).join('-')}`;
       const entryProxyLoc = `${tmpPath}/${uniqueName}.entry.proxy${ext}`;
       const pageproxyloc = `${tmpPath}/${uniqueName}.page.proxy${ext}`;
       const bootstrapproxyloc = `${tmpPath}/${uniqueName}.bootstrap.proxy${ext}`;
+
+      fs.writeFileSync(pageproxyloc, `export { default } from '${pagePath}'`);
+      if (globalBootPath) {
+        fs.writeFileSync(bootstrapproxyloc, `export { default } from '${globalBootPath}'`);
+      } else {
+        fs.writeFileSync(bootstrapproxyloc, `export { default } from '${path.resolve(bakePath, './template/mpa-bootstrap.tsx')}'`);
+      }
 
       const async = `
       Promise.all([import('${bootstrapproxyloc}'), import('${pageproxyloc}')])
@@ -174,12 +220,7 @@ function createMPAEntryProxy(config: CustomConfig): PageConfig[] {
           if (PAGE && typeof BOOTSTRAP_CODE === 'function') BOOTSTRAP_CODE(PAGE);
         })
       `;
-
       fs.writeFileSync(entryProxyLoc, async);
-      fs.writeFileSync(pageproxyloc, `export { default } from '${pagePath}'`);
-      if (globalBootPath) fs.writeFileSync(bootstrapproxyloc, `export { default } from '${globalBootPath}'`);
-
-      const pureName = `${path.dirname(page)}/${name}`;
 
       pagesConfig.push({
         entry: entryProxyLoc,
@@ -189,7 +230,7 @@ function createMPAEntryProxy(config: CustomConfig): PageConfig[] {
       });
 
     } else {
-      const { src, boot: selfBoot, ...others } = page;
+      const { src, boot: selfBoot, pathname, ...others } = page;
       const pagePath = projectRelative(src);
 
       const { name, dir, ext } = path.parse(pagePath);
@@ -197,16 +238,8 @@ function createMPAEntryProxy(config: CustomConfig): PageConfig[] {
       const uniqueName = `${dir.split(path.sep).join('-')}-${name}`;
       const entryProxyLoc = `${tmpPath}/${uniqueName}.entry.proxy${ext}`;
       const pageproxyloc = `${tmpPath}/${uniqueName}.page.proxy${ext}`;
-      const bootstrapproxyloc = `${tmpPath}/${uniqueName}.bootstrap.proxy${ext}`;
+      let bootstrapproxyloc = `${tmpPath}/${uniqueName}.bootstrap.proxy${ext}`;
 
-      const async = `
-      Promise.all([import('${bootstrapproxyloc}'), import('${pageproxyloc}')])
-        .then(([{ default: BOOTSTRAP_CODE }, { default: PAGE }]) => {
-          if (PAGE && typeof BOOTSTRAP_CODE === 'function') BOOTSTRAP_CODE(PAGE);
-        })
-      `;
-
-      fs.writeFileSync(entryProxyLoc, async);
       fs.writeFileSync(pageproxyloc, `export { default } from '${pagePath}'`);
       if (selfBoot) {
         const selfBootPath = projectRelative(selfBoot);
@@ -220,9 +253,36 @@ function createMPAEntryProxy(config: CustomConfig): PageConfig[] {
             bootstrapproxyloc,
             `export { default } from '${globalBootPath}'`,
           );
+        } else {
+          fs.writeFileSync(
+            bootstrapproxyloc,
+            `export { default } from '${path.resolve(bakePath, './template/mpa-bootstrap.tsx')}'`,
+          );
         }
       }
-      const pureName = `${path.dirname(src)}/${name}`;
+
+      const async = `
+      Promise.all([import('${bootstrapproxyloc}'), import('${pageproxyloc}')])
+        .then(([{ default: BOOTSTRAP_CODE }, { default: PAGE }]) => {
+          if (PAGE && typeof BOOTSTRAP_CODE === 'function') BOOTSTRAP_CODE(PAGE);
+        })
+      `;
+      fs.writeFileSync(entryProxyLoc, async);
+
+      let pureName;
+      if (pathname) {
+        pureName = `${path.join('.', pathname, 'index')}`;
+      } else {
+        const { name, dir, ext } = path.parse(src);
+
+        const preDir = dir.split(path.sep).slice(indent).join(path.sep);
+
+        if (name === 'index') {
+          pureName = `./${preDir ? `${preDir}/` : ''}${name}`;
+        } else {
+          pureName = `./${preDir ? `${preDir}/` : ''}${name}/index`;
+        }
+      }
 
       pagesConfig.push({
         entry: entryProxyLoc,

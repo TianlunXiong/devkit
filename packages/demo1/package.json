@@ -31,8 +31,7 @@
     "@types/react-dom": "^16.9.9",
     "@types/webpack-dev-middleware": "^3.7.2",
     "loader-utils": "^2.0.0",
-    "webpack-dev-middleware": "^4.0.2",
-    "webpack-entry-middleware-plugin": "file:../webpack-entry-middleware-plugin"
+    "webpack-dev-middleware": "^4.0.2"
   },
   "homepage": "https://github.com/TianlunXiong/devkit#readme",
   "dependencies": {

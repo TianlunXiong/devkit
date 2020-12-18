@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch defaultChecked 1`] = `
+<span
+  class="mcore-switch"
+>
+  <input
+    checked=""
+    class="mcore-switch__input"
+    type="checkbox"
+    value="on"
+  />
+</span>
+`;
+
+exports[`Switch renders correctly 1`] = `
+<span
+  class="mcore-switch"
+>
+  <input
+    class="mcore-switch__input"
+    type="checkbox"
+    value="off"
+  />
+</span>
+`;

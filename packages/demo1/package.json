@@ -19,7 +19,7 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "dev": "bake dev -p 3002",
+    "dev": "bake dev -p 3003",
     "build": "bake build",
     "server": "tsnd ./server/app.ts"
   },

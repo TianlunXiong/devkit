@@ -1,0 +1,293 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoticeBar icon 1`] = `
+<div
+  class="mcore-message mcore-message--warning mcore-message--lg"
+>
+  <div
+    class="mcore-message__header"
+  >
+    <div
+      class="mcore-message__icon"
+    >
+      <img
+        alt=""
+        src="\\\\\\\\static.zhongan.com/website/health/zarm/images/icons/state.png"
+      />
+    </div>
+  </div>
+  <div
+    class="mcore-message__body"
+  >
+    <div
+      class="mcore-notice-bar"
+    >
+      <div
+        class="mcore-notice-bar__body"
+      >
+        foo
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`NoticeBar renders correctly 1`] = `
+<NoticeBar
+  closable={false}
+  delay={2000}
+  hasArrow={false}
+  icon={
+    <Icon
+      prefixCls="mcore-icon"
+      size="md"
+      theme="default"
+      type="broadcast"
+      viewBox="0 0 32 32"
+    />
+  }
+  prefixCls="mcore-notice-bar"
+  speed={50}
+  theme="warning"
+>
+  <Message
+    closable={false}
+    delay={2000}
+    hasArrow={false}
+    icon={
+      <Icon
+        prefixCls="mcore-icon"
+        size="md"
+        theme="default"
+        type="broadcast"
+        viewBox="0 0 32 32"
+      />
+    }
+    prefixCls="mcore-message"
+    size="lg"
+    speed={50}
+    theme="warning"
+  >
+    <div
+      className="mcore-message mcore-message--warning mcore-message--lg"
+      onClick={[Function]}
+    >
+      <div
+        className="mcore-message__header"
+      >
+        <div
+          className="mcore-message__icon"
+        >
+          <Icon
+            prefixCls="mcore-icon"
+            size="md"
+            theme="default"
+            type="broadcast"
+            viewBox="0 0 32 32"
+          >
+            <Iconfont
+              className="mcore-icon mcore-icon--broadcast mcore-icon--default mcore-icon--md"
+              size="md"
+              theme="default"
+              type="broadcast"
+            >
+              <Icon
+                className="mcore-icon mcore-icon--broadcast mcore-icon--default mcore-icon--md"
+                prefixCls="mcore-icon"
+                size="md"
+                theme="default"
+                type="broadcast"
+                viewBox="0 0 32 32"
+              >
+                <i
+                  className="mcore-icon mcore-icon--broadcast mcore-icon--default mcore-icon--md"
+                  size="md"
+                  theme="default"
+                  type="broadcast"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    viewBox="0 0 32 32"
+                    width="1em"
+                  >
+                    <use
+                      xlinkHref="#broadcast"
+                    />
+                  </svg>
+                </i>
+              </Icon>
+            </Iconfont>
+          </Icon>
+        </div>
+      </div>
+      <div
+        className="mcore-message__body"
+      >
+        <div
+          className="mcore-notice-bar"
+        >
+          <div
+            className="mcore-notice-bar__body"
+          >
+            foo
+          </div>
+        </div>
+      </div>
+    </div>
+  </Message>
+</NoticeBar>
+`;
+
+exports[`NoticeBar scrollable 1`] = `
+<NoticeBar
+  closable={false}
+  delay={2000}
+  hasArrow={false}
+  icon={
+    <Icon
+      prefixCls="mcore-icon"
+      size="md"
+      theme="default"
+      type="broadcast"
+      viewBox="0 0 32 32"
+    />
+  }
+  prefixCls="mcore-notice-bar"
+  scrollable={true}
+  speed={50}
+  theme="warning"
+>
+  <Message
+    closable={false}
+    delay={2000}
+    hasArrow={false}
+    icon={
+      <Icon
+        prefixCls="mcore-icon"
+        size="md"
+        theme="default"
+        type="broadcast"
+        viewBox="0 0 32 32"
+      />
+    }
+    prefixCls="mcore-message"
+    scrollable={true}
+    size="lg"
+    speed={50}
+    theme="warning"
+  >
+    <div
+      className="mcore-message mcore-message--warning mcore-message--lg"
+      onClick={[Function]}
+    >
+      <div
+        className="mcore-message__header"
+      >
+        <div
+          className="mcore-message__icon"
+        >
+          <Icon
+            prefixCls="mcore-icon"
+            size="md"
+            theme="default"
+            type="broadcast"
+            viewBox="0 0 32 32"
+          >
+            <Iconfont
+              className="mcore-icon mcore-icon--broadcast mcore-icon--default mcore-icon--md"
+              size="md"
+              theme="default"
+              type="broadcast"
+            >
+              <Icon
+                className="mcore-icon mcore-icon--broadcast mcore-icon--default mcore-icon--md"
+                prefixCls="mcore-icon"
+                size="md"
+                theme="default"
+                type="broadcast"
+                viewBox="0 0 32 32"
+              >
+                <i
+                  className="mcore-icon mcore-icon--broadcast mcore-icon--default mcore-icon--md"
+                  size="md"
+                  theme="default"
+                  type="broadcast"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    viewBox="0 0 32 32"
+                    width="1em"
+                  >
+                    <use
+                      xlinkHref="#broadcast"
+                    />
+                  </svg>
+                </i>
+              </Icon>
+            </Iconfont>
+          </Icon>
+        </div>
+      </div>
+      <div
+        className="mcore-message__body"
+      >
+        <div
+          className="mcore-notice-bar"
+        >
+          <div
+            className="mcore-notice-bar__body"
+          >
+            各位zarmer请注意，本组件使用了自动滚动功能，更多用法请参见使用文档。
+          </div>
+        </div>
+      </div>
+    </div>
+  </Message>
+</NoticeBar>
+`;
+
+exports[`NoticeBar theme 1`] = `
+<div
+  class="mcore-message mcore-message--danger mcore-message--lg"
+>
+  <div
+    class="mcore-message__header"
+  >
+    <div
+      class="mcore-message__icon"
+    >
+      <i
+        class="mcore-icon mcore-icon--broadcast mcore-icon--default mcore-icon--md"
+        theme="default"
+        type="broadcast"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          viewBox="0 0 32 32"
+          width="1em"
+        >
+          <use
+            href="#broadcast"
+          />
+        </svg>
+      </i>
+    </div>
+  </div>
+  <div
+    class="mcore-message__body"
+  >
+    <div
+      class="mcore-notice-bar"
+    >
+      <div
+        class="mcore-notice-bar__body"
+      >
+        foo
+      </div>
+    </div>
+  </div>
+</div>
+`;

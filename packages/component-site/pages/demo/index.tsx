@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './style.scss';
 
-const Test = () => 'okmsn1'
+const Test = () => 'okmsn21'
 
 const App = () => {
   return (

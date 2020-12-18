@@ -3,7 +3,7 @@ import path from 'path';
 import { sync } from 'mkdirp';
 import chalk from 'chalk';
 import signale from 'signale';
-import { getProjectPath } from '../conifg/utils';
+import { getProjectPath } from '../config/utils';
 import {
   AppTemplate,
   BootstrapTemplate,

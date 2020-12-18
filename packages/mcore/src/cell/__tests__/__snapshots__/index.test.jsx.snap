@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cell children 1`] = `
+<div
+  class="mcore-cell"
+>
+  <div
+    class="mcore-cell__inner"
+  >
+    <div
+      class="mcore-cell__header"
+    />
+    <div
+      class="mcore-cell__body"
+    >
+      <div
+        class="mcore-cell__content"
+      >
+        this is children!
+      </div>
+    </div>
+    <div
+      class="mcore-cell__footer"
+    />
+  </div>
+</div>
+`;
+
+exports[`Cell description 1`] = `
+<div
+  class="mcore-cell"
+>
+  <div
+    class="mcore-cell__inner"
+  >
+    <div
+      class="mcore-cell__header"
+    />
+    <div
+      class="mcore-cell__body"
+    >
+      <div
+        class="mcore-cell__title"
+      >
+        标题文字
+      </div>
+    </div>
+    <div
+      class="mcore-cell__footer"
+    >
+      描述文字
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cell help 1`] = `
+<div
+  class="mcore-cell"
+>
+  <div
+    class="mcore-cell__inner"
+  >
+    <div
+      class="mcore-cell__header"
+    />
+    <div
+      class="mcore-cell__body"
+    >
+      <div
+        class="mcore-cell__title"
+      >
+        标题文字
+      </div>
+    </div>
+    <div
+      class="mcore-cell__footer"
+    >
+      描述文字
+    </div>
+  </div>
+  <div
+    class="mcore-cell__help"
+  >
+    <span>
+      message
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Cell icon 1`] = `
+<div
+  class="mcore-cell"
+>
+  <div
+    class="mcore-cell__inner"
+  >
+    <div
+      class="mcore-cell__header"
+    >
+      <div
+        class="mcore-cell__icon"
+      >
+        <img
+          alt=""
+          src="\\\\\\\\static.zhongan.com/website/health/zarm/images/icons/state.png"
+        />
+      </div>
+    </div>
+    <div
+      class="mcore-cell__body"
+    >
+      <div
+        class="mcore-cell__title"
+      >
+        标题文字
+      </div>
+    </div>
+    <div
+      class="mcore-cell__footer"
+    >
+      描述文字
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Cell onClick 1`] = `
+<div
+  className="mcore-cell mcore-cell--link mcore-cell--arrow"
+  onClick={[MockFunction]}
+  onTouchStart={[Function]}
+>
+  <div
+    className="mcore-cell__inner"
+  >
+    <div
+      className="mcore-cell__header"
+    />
+    <div
+      className="mcore-cell__body"
+    >
+      <div
+        className="mcore-cell__title"
+      >
+        标题文字
+      </div>
+    </div>
+    <div
+      className="mcore-cell__footer"
+    >
+      描述文字
+    </div>
+    <div
+      className="mcore-cell__arrow"
+    />
+  </div>
+</div>
+`;
+
+exports[`Cell renders correctly 1`] = `
+<div
+  class="mcore-cell"
+>
+  <div
+    class="mcore-cell__inner"
+  >
+    <div
+      class="mcore-cell__header"
+    />
+    <div
+      class="mcore-cell__body"
+    >
+      <div
+        class="mcore-cell__title"
+      >
+        标题文字
+      </div>
+    </div>
+    <div
+      class="mcore-cell__footer"
+    />
+  </div>
+</div>
+`;

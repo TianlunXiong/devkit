@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge renders shape is dot correctly 1`] = `
+<span
+  class="mcore-badge mcore-badge--danger mcore-badge--dot"
+>
+  <sup
+    class="mcore-badge__content"
+  />
+</span>
+`;
+
+exports[`Badge sup 1`] = `
+<span
+  class="mcore-badge mcore-badge--danger mcore-badge--dot mcore-badge--sup"
+>
+  foo
+  <sup
+    class="mcore-badge__content"
+  />
+</span>
+`;
+
+exports[`Badge text 1`] = `
+<span
+  class="mcore-badge mcore-badge--danger mcore-badge--rect"
+>
+  <sup
+    class="mcore-badge__content"
+  >
+    99+
+  </sup>
+</span>
+`;
+
+exports[`Badge theme 1`] = `
+<span
+  class="mcore-badge mcore-badge--warning mcore-badge--dot"
+>
+  <sup
+    class="mcore-badge__content"
+  />
+</span>
+`;

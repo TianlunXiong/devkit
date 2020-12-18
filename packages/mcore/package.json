@@ -1,0 +1,20 @@
+{
+  "name": "mcore",
+  "version": "1.0.0",
+  "main": "./cjs/index.js",
+  "module": "./es/index.js",
+  "scripts": {
+    "build-cjs": "bake build -l cjs -d ./",
+    "build-es": "bake build -l es -d ./",
+    "build": "yarn build-cjs && yarn build-es",
+    "dev": "bake dev -p 3004"
+  },
+  "dependencies": {
+    "@vikit/bake": "file:../bake",
+    "classnames": "^2.2.6",
+    "normalize.css": "^8.0.1",
+    "react": "^17.0.1"
+  },
+  "browserslist": "last 2 versions",
+  "license": "MIT"
+}

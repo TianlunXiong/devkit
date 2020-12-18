@@ -3,8 +3,8 @@ import webpack from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import path from 'path';
-import { getProjectPath } from '../conifg/utils';
-import getWebpackConfig from '../conifg';
+import { getProjectPath } from '../config/utils';
+import getWebpackConfig from '../config';
 import { createConnectorConfig } from '../module/connector';
 
 export interface IDevelopmentConfig {

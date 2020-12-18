@@ -1,7 +1,7 @@
 import { program } from 'commander';
 
 import dev from './option/dev';
-import prod from './option/prod';
+import build from './option/build';
 import init from './option/init';
 
 program
@@ -16,12 +16,13 @@ program
   .option('-h, --host <host>', '站点主机地址', '0.0.0.0')
   .option('-p, --port <port>', '站点端口号', '3000')
   .action(dev);
-
-program
+  
+  program
   .command('build')
-  .description('打包静态资源')
+  .description('打包生产资源')
+  .option('-l, --lib <lib>', '模块类型')
   .option('-d, --out-dir <path>', '输出目录', 'dist')
   .option('-a, --analyzer', '是否启用分析器')
-  .action(prod);
+  .action(build);
 
 program.parse(process.argv);

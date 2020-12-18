@@ -8,7 +8,7 @@ const App = () => {
   }, [])
 
   return <div className="title">
-    Student
+    Student1
   </div>
 };
 

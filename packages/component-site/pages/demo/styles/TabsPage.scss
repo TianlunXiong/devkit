@@ -1,7 +1,7 @@
 @import "@site/styles/index";
 
 .tabs-page {
-  .za-tabs + .za-tabs {
+  .mcore-tabs + .mcore-tabs {
     margin-top: r(10);
   }
 
@@ -13,7 +13,7 @@
     height: r(150);
   }
 
-  .za-tabs--vertical {
+  .mcore-tabs--vertical {
     .content {
       height: 100%;
     }

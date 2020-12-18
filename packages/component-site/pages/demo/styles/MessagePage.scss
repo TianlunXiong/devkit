@@ -1,11 +1,11 @@
 @import "@site/styles/index";
 
 .message-page {
-  .za-panel__body {
+  .mcore-panel__body {
     padding: r(15);
   }
 
-  .za-message {
+  .mcore-message {
     margin-bottom: r(15);
 
     &:last-of-type {

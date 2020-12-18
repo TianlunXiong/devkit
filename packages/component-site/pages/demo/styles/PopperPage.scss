@@ -2,7 +2,7 @@
 
 .popper-page {
   .basic-demo {
-    .za-cell__content {
+    .mcore-cell__content {
       padding: r(60) 0;
       justify-content: center;
     }
@@ -20,7 +20,7 @@
 
     // 自定义箭头
     .custom-arrow-content {
-      .za-popper__arrow {
+      .mcore-popper__arrow {
         position: absolute;
         width: 0;
         height: 0;
@@ -31,7 +31,7 @@
       &[x-placement^=top] {
         margin-bottom: r(10);
 
-        .za-popper__arrow {
+        .mcore-popper__arrow {
           bottom: r(-4);
           border-width: r(4) r(4) 0;
           border-top-color: #ddd;
@@ -41,7 +41,7 @@
       &[x-placement^=right] {
         margin-left: r(10);
 
-        .za-popper__arrow {
+        .mcore-popper__arrow {
           left: r(-4);
           border-width: r(4) r(4) r(4) 0;
           border-right-color: #ddd;
@@ -51,7 +51,7 @@
       &[x-placement^=bottom] {
         margin-top: r(10);
 
-        .za-popper__arrow {
+        .mcore-popper__arrow {
           top: r(-4);
           border-width: 0 r(4) r(4) r(4);
           border-bottom-color: #ddd;
@@ -61,7 +61,7 @@
       &[x-placement^=left] {
         margin-right: r(10);
 
-        .za-popper__arrow {
+        .mcore-popper__arrow {
           right: r(-4);
           border-width: r(4) 0 r(4) r(4);
           border-left-color: #ddd;
@@ -72,13 +72,13 @@
 
   // 显示方向
   .direction-demo {
-    .za-button {
+    .mcore-button {
       width: r(60);
       margin-right: r(10);
       margin-bottom: r(10);
     }
 
-    .za-cell__content {
+    .mcore-cell__content {
       padding: r(15) 0;
       justify-content: center;
     }

@@ -1,0 +1,317 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tab canSwipe 1`] = `
+<div
+  class="mcore-tabs mcore-tabs--horizontal"
+>
+  <div
+    class="mcore-tabs__header"
+  >
+    <ul
+      class="mcore-tabs__tablist"
+      role="tablist"
+    >
+      <li
+        class="mcore-tabs__tab mcore-tabs__tab--active"
+        role="tab"
+      >
+        选项卡1
+      </li>
+      <li
+        class="mcore-tabs__tab"
+        role="tab"
+      >
+        选项卡2
+      </li>
+      <div
+        class="mcore-tabs__line"
+        style="transform:translate3d(0%, 0px, 0px);-webkit-transform:translate3d(0%, 0px, 0px);-moz-transform:translate3d(0%, 0px, 0px);width:50%"
+      />
+    </ul>
+  </div>
+  <div
+    class="mcore-tabs__body"
+  >
+    <div
+      class="mcore-carousel mcore-carousel--horizontal"
+    >
+      <div
+        class="mcore-carousel__items"
+      >
+        <div
+          class="mcore-carousel__item"
+        >
+          <div>
+            试试点我左滑
+          </div>
+        </div>
+        <div
+          class="mcore-carousel__item"
+        >
+          <div>
+            试试点我右滑
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tab lineWidth is auto 1`] = `
+<div
+  className="mcore-tabs mcore-tabs--horizontal"
+>
+  <div
+    className="mcore-tabs__header"
+  >
+    <ul
+      className="mcore-tabs__tablist"
+      role="tablist"
+    >
+      <li
+        className="mcore-tabs__tab mcore-tabs__tab--active"
+        key="0/.0"
+        onClick={[Function]}
+        role="tab"
+      >
+        选项卡1
+      </li>
+      <li
+        className="mcore-tabs__tab"
+        key="1/.1"
+        onClick={[Function]}
+        role="tab"
+      >
+        选项卡2
+      </li>
+      <div
+        className="mcore-tabs__line"
+        style={
+          Object {
+            "MozTransform": "translate3d(0%, 0px, 0px)",
+            "WebkitTransform": "translate3d(0%, 0px, 0px)",
+            "backgroundColor": "transparent",
+            "transform": "translate3d(0%, 0px, 0px)",
+            "width": "50%",
+          }
+        }
+      >
+        <span
+          className="mcore-tabs__line__inner"
+          style={
+            Object {
+              "width": "auto",
+            }
+          }
+        />
+      </div>
+    </ul>
+  </div>
+  <div
+    className="mcore-tabs__body"
+  >
+    <TabPanel
+      key=".0"
+      prefixCls="mcore-tabs"
+      selected={true}
+      title="选项卡1"
+    >
+      <div>
+        试试点我左滑
+      </div>
+    </TabPanel>
+    <TabPanel
+      key=".1"
+      prefixCls="mcore-tabs"
+      selected={false}
+      title="选项卡2"
+    >
+      <div>
+        试试点我右滑
+      </div>
+    </TabPanel>
+  </div>
+</div>
+`;
+
+exports[`Tab lineWidth is auto 2`] = `
+<div
+  className="mcore-tabs mcore-tabs--horizontal"
+>
+  <div
+    className="mcore-tabs__header"
+  >
+    <ul
+      className="mcore-tabs__tablist"
+      role="tablist"
+    >
+      <li
+        className="mcore-tabs__tab mcore-tabs__tab--active"
+        key="0/.0"
+        onClick={[Function]}
+        role="tab"
+      >
+        选项卡1
+      </li>
+      <li
+        className="mcore-tabs__tab"
+        key="1/.1"
+        onClick={[Function]}
+        role="tab"
+      >
+        选项卡2
+      </li>
+      <div
+        className="mcore-tabs__line"
+        style={
+          Object {
+            "MozTransform": "translate3d(0%, 0px, 0px)",
+            "WebkitTransform": "translate3d(0%, 0px, 0px)",
+            "backgroundColor": "transparent",
+            "transform": "translate3d(0%, 0px, 0px)",
+            "width": "50%",
+          }
+        }
+      >
+        <span
+          className="mcore-tabs__line__inner"
+          style={
+            Object {
+              "width": 30,
+            }
+          }
+        />
+      </div>
+    </ul>
+  </div>
+  <div
+    className="mcore-tabs__body"
+  >
+    <TabPanel
+      key=".0"
+      prefixCls="mcore-tabs"
+      selected={true}
+      title="选项卡1"
+    >
+      <div>
+        试试点我左滑
+      </div>
+    </TabPanel>
+    <TabPanel
+      key=".1"
+      prefixCls="mcore-tabs"
+      selected={false}
+      title="选项卡2"
+    >
+      <div>
+        试试点我右滑
+      </div>
+    </TabPanel>
+  </div>
+</div>
+`;
+
+exports[`Tab renders correctly 1`] = `
+<div
+  class="mcore-tabs mcore-tabs--horizontal"
+>
+  <div
+    class="mcore-tabs__header"
+  >
+    <ul
+      class="mcore-tabs__tablist"
+      role="tablist"
+    >
+      <li
+        class="mcore-tabs__tab mcore-tabs__tab--active"
+        role="tab"
+      >
+        选项卡1
+      </li>
+      <li
+        class="mcore-tabs__tab"
+        role="tab"
+      >
+        选项卡2
+      </li>
+      <div
+        class="mcore-tabs__line"
+        style="transform:translate3d(0%, 0px, 0px);-webkit-transform:translate3d(0%, 0px, 0px);-moz-transform:translate3d(0%, 0px, 0px);width:50%"
+      />
+    </ul>
+  </div>
+  <div
+    class="mcore-tabs__body"
+  >
+    <div
+      class="mcore-tabs__panel mcore-tabs__panel--active"
+      role="tabpanel"
+    >
+      <div>
+        试试点我左滑
+      </div>
+    </div>
+    <div
+      class="mcore-tabs__panel"
+      role="tabpanel"
+    >
+      <div>
+        试试点我右滑
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tab renders correctly vertical 1`] = `
+<div
+  class="mcore-tabs mcore-tabs--vertical"
+>
+  <div
+    class="mcore-tabs__header"
+  >
+    <ul
+      class="mcore-tabs__tablist"
+      role="tablist"
+    >
+      <li
+        class="mcore-tabs__tab mcore-tabs__tab--active"
+        role="tab"
+      >
+        选项卡1
+      </li>
+      <li
+        class="mcore-tabs__tab"
+        role="tab"
+      >
+        选项卡2
+      </li>
+      <div
+        class="mcore-tabs__line"
+        style="transform:translate3d(0px, 0%, 0px);-webkit-transform:translate3d(0px, 0%, 0px);-moz-transform:translate3d(0px, 0%, 0px);height:50%"
+      />
+    </ul>
+  </div>
+  <div
+    class="mcore-tabs__body"
+  >
+    <div
+      class="mcore-tabs__panel mcore-tabs__panel--active"
+      role="tabpanel"
+    >
+      <div>
+        试试点我左滑
+      </div>
+    </div>
+    <div
+      class="mcore-tabs__panel"
+      role="tabpanel"
+    >
+      <div>
+        试试点我右滑
+      </div>
+    </div>
+  </div>
+</div>
+`;

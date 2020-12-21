@@ -40,8 +40,12 @@ function baseConfig() {
           },
         ],
       },
-    ]
-  }
+      {
+        test: /\.md$/,
+        use: require.resolve('raw-loader'),
+      },
+    ],
+  };
   
   const config: Configuration = {
     module,

@@ -4,5 +4,5 @@ export interface IBuildConfig {
   app: App,
   outDir: string;
   analyzer: boolean;
-  lib: 'es' | 'cjs'
+  target: 'es' | 'lib'
 }

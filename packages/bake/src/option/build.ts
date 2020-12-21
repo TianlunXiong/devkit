@@ -16,6 +16,11 @@ export default async function(config: IBuildConfig) {
     buildPage(config);
   }
 
+  // 先和打包页面一样
+  if (app === 'cloud-component') {
+    buildPage(config);
+  }
+
   if (app === 'component') {
     buildComponent(config, customConfig);
   }

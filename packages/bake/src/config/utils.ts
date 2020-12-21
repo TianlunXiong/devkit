@@ -45,7 +45,7 @@ type PageConfig = {
   htmlFilename: string,
 } & PageDetail;
 
-export type App = 'spa' | 'mpa' | 'component';
+export type App = 'spa' | 'mpa' | 'component' | 'cloud-component';
 interface CustomConfig extends Configuration {
   app?: App,
   pages?: Page[];

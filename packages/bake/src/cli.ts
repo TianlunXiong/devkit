@@ -20,7 +20,8 @@ program
   program
   .command('build')
   .description('打包生产资源')
-  .option('-l, --lib <lib>', '模块类型')
+  .option('-p, --app <app>', '应用类型', 'spa')
+  .option('-t, --target <lib>', '输出模块类型')
   .option('-d, --out-dir <path>', '输出目录', 'dist')
   .option('-a, --analyzer', '是否启用分析器')
   .action(build);

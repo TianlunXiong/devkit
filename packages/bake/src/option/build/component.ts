@@ -5,13 +5,14 @@ import rimraf from 'rimraf';
 import fs from 'fs';
 import child_process from 'child_process';
 
-export default async function({ outDir = 'dist', lib = 'cjs' }: IBuildConfig, { components }: CustomConfig) {
+export default async function({ outDir = '', target = 'lib' }: IBuildConfig, { components }: CustomConfig) {
 
   if (!components) {
-    throw new Error('请输入组件目录')
+    console.error('请输入组件目录')
+    return;
   }
 
-  const realDir = `${outDir}/${lib}`;
+  const realDir = `${outDir}/${target}`;
 
   if (fs.existsSync(realDir)) rimraf.sync(realDir);
 
@@ -22,7 +23,7 @@ export default async function({ outDir = 'dist', lib = 'cjs' }: IBuildConfig, { 
     '--extensions',
     '.tsx',
     '--config-file',
-    require.resolve(`../../config/babel/${lib}`),
+    require.resolve(`../../config/babel/${target}`),
   ];
 
   args.push('--ignore', '**/*.md')

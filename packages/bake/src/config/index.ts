@@ -9,6 +9,7 @@ import {
 } from './utils';
 import { Configuration } from 'webpack';
 import webpackMerge from 'webpack-merge';
+import WebpackBar from 'webpackbar'
 import { StatsWriterPlugin } from 'webpack-stats-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import rimraf from 'rimraf';
@@ -133,6 +134,7 @@ function getWebpackConfig(type: WebpackConfigType): Configuration {
         entrypoints: true,
       },
     }),
+    new WebpackBar(),
     ...htmls,
   );
 

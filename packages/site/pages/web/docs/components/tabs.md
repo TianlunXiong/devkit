@@ -5,7 +5,7 @@
 ## 基本用法
 ```jsx
 import { useState } from 'react';
-import { Tabs } from 'zarm';
+import { Tabs } from 'mcore';
 
 const { Panel } = Tabs;
 
@@ -31,7 +31,7 @@ ReactDOM.render(<Demo />, mountNode);
 
 ## 可滑动
 ```jsx
-import { Tabs } from 'zarm';
+import { Tabs } from 'mcore';
 
 const { Panel } = Tabs;
 
@@ -51,7 +51,7 @@ ReactDOM.render(
 
 ## 指定默认选项
 ```jsx
-import { Tabs } from 'zarm';
+import { Tabs } from 'mcore';
 
 const { Panel } = Tabs;
 
@@ -76,7 +76,7 @@ ReactDOM.render(
 
 ```jsx
 import { useState } from 'react';
-import { Tabs } from 'zarm';
+import { Tabs } from 'mcore';
 
 const { Panel } = Tabs;
 
@@ -117,7 +117,7 @@ ReactDOM.render(<Demo />, mountNode);
 
 ## 指定线条宽度
 ```jsx
-import { Tabs } from 'zarm';
+import { Tabs } from 'mcore';
 
 const { Panel } = Tabs;
 
@@ -140,7 +140,7 @@ ReactDOM.render(
 
 ## 禁用指定选项
 ```jsx
-import { Tabs } from 'zarm';
+import { Tabs } from 'mcore';
 
 const { Panel } = Tabs;
 
@@ -164,7 +164,7 @@ ReactDOM.render(
 
 ## 垂直用法
 ```jsx
-import { Tabs } from 'zarm';
+import { Tabs } from 'mcore';
 import { useState } from 'react';
 
 const { Panel } = Tabs;
@@ -206,7 +206,7 @@ ReactDOM.render(<Demo />, mountNode);
 
 ## 垂直限高
 ```jsx
-import { Tabs } from 'zarm';
+import { Tabs } from 'mcore';
 import { useState } from 'react';
 
 const { Panel } = Tabs;

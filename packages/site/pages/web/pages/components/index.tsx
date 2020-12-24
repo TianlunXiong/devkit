@@ -1,48 +1,33 @@
 import React, { useState, useContext, useRef, useEffect } from 'react';
-import { Route, Switch, Redirect, useParams } from 'react-router-dom';
+import { Route, Switch, useParams } from 'react-router-dom';
 import classnames from 'classnames';
 import { FormattedMessage } from 'react-intl';
 import Icon from 'mcore/icon';
 import 'mcore/icon/style';
-// import { documents, components } from '@site/site.config';
 import LoadComponent from '@loadable/component';
 import Context from '../../../../utils/context';
 import Container from '../../components/Container';
-// import SideBar from '@site/web/components/SideBar';
+import SideBar from '../../components/SideBar';
 // import Footer from '@site/web/components/Footer';
+import DOCUMENT, { DocUnit } from '../../docs';
 import Markdown from '../../components/Markdown';
 
-import btndoc from '../../docs/components/button.md'
 import './style.scss';
 
-const Button = LoadComponent(() => {
-  import('mcore/button/style')
-  return import('mcore/button').then(({ default: Button }) => {
+const { general, form, feedback, view, navigation, other } = DOCUMENT.components;
+const documents = DOCUMENT.documents;
+
+const isComponentPage = (page) => ['introduce', 'quick-start'].indexOf(page) === -1;
+
+const LoadableMarkdown = (item: DocUnit) => {
+  const { key, module, name } = item;
+  return LoadComponent(() => module().then(({ default: docStr }) => {
     function Wrapper() {
-      return <Button>Hi</Button>
+      return <Markdown document={docStr} component={{ name, key }} />
     }
-    return Wrapper
-  })
-});
-
-
-const Doc = (
-  <Markdown document={btndoc} component={{ name: '按钮', key: '01' }} />
-);
-
-
-
-const isComponentPage = (page) => ['introduce', 'quick-start', 'change-log'].indexOf(page) === -1;
-
-// const LoadableComponent = (component) => {
-//   return Loadable({
-//     loader: component.module,
-//     render: (loaded, props) => {
-//       return <Markdown document={loaded.default} component={component} {...props} />;
-//     },
-//     loading: () => null,
-//   });
-// };
+    return Wrapper;
+  }))
+}
 
 const Icons = Icon.createFromIconfont('//at.alicdn.com/t/font_1340918_lpsswvb7yv.js');
 
@@ -75,7 +60,6 @@ const Simulator = () => {
 };
 
 const Page = () => {
-  // const { general, form, feedback, view, navigation, other } = components;
   const params = useParams();
 
   const containerCls = classnames('main-container', 'markdown', {
@@ -85,30 +69,41 @@ const Page = () => {
   return (
     <Container className="components-page">
       <main>
-        ok
-        <Button />
-        <div className={containerCls}>{Doc}</div>
-        {/* <SideBar /> */}
+        <SideBar />
         {/* {
           isComponentPage(params.component) && (
             <Simulator />
           )
         } */}
-        {/* <div className={containerCls}>
+        <div className={containerCls}>
           <Switch>
-            {
-              documents.map((doc, i) => (
-                <Route key={+i} path={`/components/${doc.key}`} component={LoadableComponent(doc)} />
-              ))
-            }
-            {
-              [...general, ...form, ...feedback, ...view, ...navigation, ...other].map((component, i) => (
-                <Route key={+i} path={`/components/${component.key}`} component={LoadableComponent(component)} />
-              ))
-            }
-            <Redirect to="/" />
+            {documents.map((doc, i) => {
+              console.log(`/components/${doc.key}`);
+              return (
+                <Route
+                  key={+i}
+                  path={`/components/${doc.key}`}
+                  component={LoadableMarkdown(doc)}
+                />
+              );
+            })}
+            {[
+              ...general,
+              ...form,
+              ...feedback,
+              ...view,
+              ...navigation,
+              ...other,
+            ].map((component, i) => (
+              <Route
+                key={+i}
+                path={`/components/${component.key}`}
+                component={LoadableMarkdown(component)}
+              />
+            ))}
+            {/* <Redirect to="/" /> */}
           </Switch>
-        </div> */}
+        </div>
       </main>
       {/* <Footer /> */}
     </Container>

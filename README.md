@@ -2,7 +2,7 @@
 
 ## 重新审视 Backend For Frontend (BFF)
 
-[BFF概念](https://mp.weixin.qq.com/s/IYddaaw2ps1wR2VT1dZWPg)
+[BFF概念](https://mp.weixin.qq.com/s/IYddaaw2ps1wR2VT1dmcorePg)
 已出现许久，使用的BFF层许多时候是被动的，被项目驱动着的，由于年久失修，整个框架存在着各种各样的问题，依附于大量的前端代码，导致迁移工作变得十分困难。
 
 在之前开发的项目中，出现以下问题：

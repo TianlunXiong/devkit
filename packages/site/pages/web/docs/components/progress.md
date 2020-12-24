@@ -5,7 +5,7 @@
 ## 基本用法
 ```jsx
 import { useState } from 'react';
-import { Progress, Cell, Select, Radio, Stepper } from 'zarm';
+import { Progress, Cell, Select, Radio, Stepper } from 'mcore';
 
 const Demo = () => {
   const [percent, setPercent] = useState(10);

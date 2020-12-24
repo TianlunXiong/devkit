@@ -14,7 +14,7 @@ export interface ToastProps extends PropsType {
 export default class Toast extends Component<ToastProps, any> {
   static hideHelper: () => void;
 
-  private static zarmToast: HTMLDivElement | null;
+  private static mcoreToast: HTMLDivElement | null;
 
   private static toastContainer: HTMLElement;
 
@@ -22,41 +22,41 @@ export default class Toast extends Component<ToastProps, any> {
     content: ReactNode | ToastProps,
   ) => {
     Toast.unmountNode();
-    if (!Toast.zarmToast) {
-      Toast.zarmToast = document.createElement('div');
-      Toast.zarmToast.classList.add('mcore-toast-container');
+    if (!Toast.mcoreToast) {
+      Toast.mcoreToast = document.createElement('div');
+      Toast.mcoreToast.classList.add('mcore-toast-container');
       if (contentIsToastProps(content) && content.className) {
-        Toast.zarmToast.classList.add(content.className);
+        Toast.mcoreToast.classList.add(content.className);
       }
       Toast.toastContainer = contentIsToastProps(content) ? getMountContainer(content.mountContainer) : getMountContainer();
-      Toast.toastContainer.appendChild(Toast.zarmToast);
+      Toast.toastContainer.appendChild(Toast.mcoreToast);
     }
-    if (Toast.zarmToast) {
+    if (Toast.mcoreToast) {
       const props = contentIsToastProps(content)
-        ? { ...Toast.defaultProps, ...content, ...{ visible: true, mountContainer: Toast.zarmToast } }
-        : { ...Toast.defaultProps, ...{ visible: true, mountContainer: Toast.zarmToast, content } };
+        ? { ...Toast.defaultProps, ...content, ...{ visible: true, mountContainer: Toast.mcoreToast } }
+        : { ...Toast.defaultProps, ...{ visible: true, mountContainer: Toast.mcoreToast, content } };
       ReactDOM.render(
         <Toast {...props} />,
-        Toast.zarmToast,
+        Toast.mcoreToast,
       );
     }
   };
 
   static hide = () => {
-    if (Toast.zarmToast) {
+    if (Toast.mcoreToast) {
       ReactDOM.render(
         <Toast visible={false} />,
-        Toast.zarmToast,
+        Toast.mcoreToast,
       );
     }
   };
 
   static unmountNode = () => {
-    const { zarmToast } = Toast;
-    if (zarmToast) {
-      ReactDOM.render(<></>, zarmToast);
-      Toast.toastContainer.removeChild(zarmToast);
-      Toast.zarmToast = null;
+    const { mcoreToast } = Toast;
+    if (mcoreToast) {
+      ReactDOM.render(<></>, mcoreToast);
+      Toast.toastContainer.removeChild(mcoreToast);
+      Toast.mcoreToast = null;
     }
   };
 
@@ -101,9 +101,9 @@ export default class Toast extends Component<ToastProps, any> {
 
   afterClose = () => {
     const { afterClose } = this.props;
-    if (Toast.zarmToast) {
-      Toast.toastContainer.removeChild(Toast.zarmToast);
-      Toast.zarmToast = null;
+    if (Toast.mcoreToast) {
+      Toast.toastContainer.removeChild(Toast.mcoreToast);
+      Toast.mcoreToast = null;
     }
 
     if (typeof afterClose === 'function') {

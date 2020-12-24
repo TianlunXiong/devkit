@@ -5,7 +5,7 @@
 ## 基本用法
 ```jsx
 import { useState } from 'react';
-import { ActionSheet, Cell, Button } from 'zarm';
+import { ActionSheet, Cell, Button } from 'mcore';
 
 const BUTTONS = [
   {

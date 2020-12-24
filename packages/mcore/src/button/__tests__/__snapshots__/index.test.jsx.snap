@@ -40,7 +40,7 @@ exports[`Button href and target 1`] = `
 <a
   aria-disabled="false"
   class="mcore-button mcore-button--default mcore-button--md mcore-button--radius mcore-button--link"
-  href="https://zarm.design"
+  href="https://mcore.design"
   target="_blank"
 >
   <span>
@@ -72,7 +72,7 @@ exports[`Button icon 1`] = `
   >
     <img
       alt=""
-      src="https://zarm.design/images/logo.ce68565d.svg"
+      src="https://mcore.design/images/logo.ce68565d.svg"
     />
     <span>
       foo

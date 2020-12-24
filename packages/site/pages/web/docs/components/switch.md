@@ -5,7 +5,7 @@
 ## 基本用法
 ```jsx
 import { useState } from 'react';
-import { Switch, Cell } from 'zarm';
+import { Switch, Cell } from 'mcore';
 
 const Demo = () => {
   const [checked, setChecked] = useState(false);

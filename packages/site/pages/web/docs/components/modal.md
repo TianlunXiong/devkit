@@ -5,7 +5,7 @@
 ## 基本用法
 ```jsx
 import { useState, useRef, useReducer } from 'react';
-import { Modal, Cell, Button, Select } from 'zarm';
+import { Modal, Cell, Button, Select } from 'mcore';
 
 const initState = {
   normal: {
@@ -212,7 +212,7 @@ ReactDOM.render(<Demo />, mountNode);
 
 ## 警告框 Alert
 ```jsx
-import { Cell, Button, Alert, Confirm, Modal  } from 'zarm';
+import { Cell, Button, Alert, Confirm, Modal  } from 'mcore';
 
 const Demo = () => {
   return (
@@ -271,7 +271,7 @@ ReactDOM.render(<Demo />, mountNode);
 
 ## 确认框 Confirm
 ```jsx
-import { Cell, Button, Confirm, Modal  } from 'zarm';
+import { Cell, Button, Confirm, Modal  } from 'mcore';
 
 const Demo = () => {
   return (

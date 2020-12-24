@@ -3,7 +3,7 @@
 ## 基本用法
 
 ```jsx
-import { Cell, ActivityIndicator } from 'zarm';
+import { Cell, ActivityIndicator } from 'mcore';
 
 ReactDOM.render(
   <>
@@ -20,7 +20,7 @@ ReactDOM.render(
 ## 传统菊花状
 
 ```jsx
-import { Cell, ActivityIndicator } from 'zarm';
+import { Cell, ActivityIndicator } from 'mcore';
 
 ReactDOM.render(
   <>

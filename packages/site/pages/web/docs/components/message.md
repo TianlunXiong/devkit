@@ -4,7 +4,7 @@
 
 ## 基本用法
 ```jsx
-import { Message, Icon } from 'zarm';
+import { Message, Icon } from 'mcore';
 
 ReactDOM.render(
   <>
@@ -19,7 +19,7 @@ ReactDOM.render(
 
 ## 可操作
 ```jsx
-import { Message } from 'zarm';
+import { Message } from 'mcore';
 
 ReactDOM.render(
   <>

@@ -28,11 +28,11 @@ export default class KeyboardPicker extends PureComponent<KeyboardPickerProps, K
   }
 
   // static show = (props) => {
-  //   ReactDOM.render(<KeyboardPicker {...props} visible />, window.zarmKeyboardPicker);
+  //   ReactDOM.render(<KeyboardPicker {...props} visible />, window.mcoreKeyboardPicker);
   // }
 
   // static hide = () => {
-  //   ReactDOM.render(<KeyboardPicker visible={false} />, window.zarmKeyboardPicker);
+  //   ReactDOM.render(<KeyboardPicker visible={false} />, window.mcoreKeyboardPicker);
   // }
 
   constructor(props: KeyboardPickerProps) {
@@ -72,10 +72,10 @@ export default class KeyboardPicker extends PureComponent<KeyboardPickerProps, K
 }
 
 // if (typeof window !== 'undefined') {
-//   if (!window.zarmKeyboardPicker) {
-//     window.zarmKeyboardPicker = document.createElement('div');
-//     document.body.appendChild(window.zarmKeyboardPicker);
+//   if (!window.mcoreKeyboardPicker) {
+//     window.mcoreKeyboardPicker = document.createElement('div');
+//     document.body.appendChild(window.mcoreKeyboardPicker);
 //   }
 
-//   ReactDOM.render(<KeyboardPicker visible={false} />, window.zarmKeyboardPicker);
+//   ReactDOM.render(<KeyboardPicker visible={false} />, window.mcoreKeyboardPicker);
 // }

@@ -35,7 +35,7 @@ describe('Button', () => {
   });
 
   it('icon', () => {
-    const wrapper = render(<Button icon={<img alt="" src="https://zarm.design/images/logo.ce68565d.svg" />}>foo</Button>);
+    const wrapper = render(<Button icon={<img alt="" src="https://mcore.design/images/logo.ce68565d.svg" />}>foo</Button>);
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
@@ -74,12 +74,12 @@ describe('Button', () => {
   });
 
   it('onTouchStart in AnchorButton', () => {
-    const wrapper = shallow(<Button href="https://zarm.design">foo</Button>);
+    const wrapper = shallow(<Button href="https://mcore.design">foo</Button>);
     wrapper.simulate('touchstart');
   });
 
   it('href and target', () => {
-    const wrapper = render(<Button href="https://zarm.design" target="_blank">foo</Button>);
+    const wrapper = render(<Button href="https://mcore.design" target="_blank">foo</Button>);
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 });

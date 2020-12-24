@@ -4,7 +4,7 @@
 
 ```jsx
 import { useState } from 'react';
-import { StackPicker, Cell, Button } from 'zarm';
+import { StackPicker, Cell, Button } from 'mcore';
 
 const Demo = () => {
   const [visible, setVisible] = useState(false);

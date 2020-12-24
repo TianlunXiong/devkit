@@ -4,7 +4,7 @@
 
 ## 基本用法
 ```jsx
-import { Badge, Cell } from 'zarm';
+import { Badge, Cell } from 'mcore';
 
 ReactDOM.render(
   <>
@@ -22,7 +22,7 @@ ReactDOM.render(
 
 ## 多主题
 ```jsx
-import { Badge } from 'zarm';
+import { Badge } from 'mcore';
 
 ReactDOM.render(
   <div className="custom-panel">
@@ -58,7 +58,7 @@ ReactDOM.render(
 
 ## 上标位置
 ```jsx
-import { Badge } from 'zarm';
+import { Badge } from 'mcore';
 
 ReactDOM.render(
   <div className="custom-panel">
@@ -88,7 +88,7 @@ ReactDOM.render(
 
 ## 文本示例
 ```jsx
-import { Badge } from 'zarm';
+import { Badge } from 'mcore';
 
 ReactDOM.render(
   <div className="text-panel">

@@ -4,7 +4,7 @@
 
 ## 左侧渲染
 ```jsx
-import { NavBar, Icon } from 'zarm';
+import { NavBar, Icon } from 'mcore';
 
 ReactDOM.render(
   <NavBar
@@ -24,7 +24,7 @@ ReactDOM.render(
 
 ## 右侧渲染
 ```jsx
-import { NavBar, Icon } from 'zarm';
+import { NavBar, Icon } from 'mcore';
 
 ReactDOM.render(
   <NavBar
@@ -44,7 +44,7 @@ ReactDOM.render(
 
 ## 复数渲染
 ```jsx
-import { NavBar, Icon } from 'zarm';
+import { NavBar, Icon } from 'mcore';
 
 ReactDOM.render(
   <NavBar

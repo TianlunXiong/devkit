@@ -4,7 +4,7 @@
 
 ## 基本用法
 ```jsx
-import { Panel } from 'zarm';
+import { Panel } from 'mcore';
 
 ReactDOM.render(
   <Panel

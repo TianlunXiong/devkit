@@ -4,7 +4,7 @@
 
 ## 基本用法
 ```jsx
-import { Loading, Cell, Button, ActivityIndicator } from 'zarm';
+import { Loading, Cell, Button, ActivityIndicator } from 'mcore';
 
 const Demo = () => (
   <>

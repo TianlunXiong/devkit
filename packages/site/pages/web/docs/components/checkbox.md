@@ -4,7 +4,7 @@
 
 ## 基本用法
 ```jsx
-import { Cell, Checkbox } from 'zarm';
+import { Cell, Checkbox } from 'mcore';
 
 ReactDOM.render(
   <>
@@ -27,7 +27,7 @@ ReactDOM.render(
 ## 受控使用
 ```jsx
 import { useState } from 'react';
-import { Cell, Checkbox, Modal } from 'zarm';
+import { Cell, Checkbox, Modal } from 'mcore';
 
 const Demo = () => {
   const [checked, setChecked] = useState(false);
@@ -60,7 +60,7 @@ ReactDOM.render(<Demo />, mountNode);
 ## 组合使用
 ```jsx
 import { useState } from 'react';
-import { Cell, Checkbox } from 'zarm';
+import { Cell, Checkbox } from 'mcore';
 
 const Demo = () => {
   const [value, setValue] = useState([]);
@@ -99,7 +99,7 @@ ReactDOM.render(<Demo />, mountNode);
 ## 按钮样式
 ```jsx
 import { useState } from 'react';
-import { Cell, Checkbox } from 'zarm';
+import { Cell, Checkbox } from 'mcore';
 
 const Demo = () => {
   const [value, setValue] = useState([]);
@@ -194,7 +194,7 @@ ReactDOM.render(<Demo />, mountNode);
 
 ## 块级样式
 ```jsx
-import { Cell, Checkbox } from 'zarm';
+import { Cell, Checkbox } from 'mcore';
 
 ReactDOM.render(
   <Cell>
@@ -211,7 +211,7 @@ ReactDOM.render(
 
 ## 列表样式
 ```jsx
-import { Checkbox } from 'zarm';
+import { Checkbox } from 'mcore';
 
 ReactDOM.render(
   <Checkbox.Group type="cell">
@@ -226,7 +226,7 @@ ReactDOM.render(
 
 ## 列表样式禁用状态
 ```jsx
-import { Checkbox } from 'zarm';
+import { Checkbox } from 'mcore';
 
 ReactDOM.render(
   <Checkbox.Group disabled type="cell">

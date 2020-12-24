@@ -4,7 +4,7 @@
 
 ## 基本用法
 ```jsx
-import { Marquee, Cell } from 'zarm';
+import { Marquee, Cell } from 'mcore';
 
 ReactDOM.render(
   <>

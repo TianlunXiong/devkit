@@ -16,7 +16,7 @@ export default class Loading extends PureComponent<LoadingProps, {}> {
     mask: true,
   };
 
-  static zarmLoading: HTMLElement | null;
+  static mcoreLoading: HTMLElement | null;
 
   private static loadingContainer: HTMLElement;
 
@@ -24,39 +24,39 @@ export default class Loading extends PureComponent<LoadingProps, {}> {
 
   static show = (content: LoadingProps) => {
     Loading.unmountNode();
-    if (!Loading.zarmLoading) {
-      Loading.zarmLoading = document.createElement('div');
-      Loading.zarmLoading.classList.add('mcore-loading-container');
+    if (!Loading.mcoreLoading) {
+      Loading.mcoreLoading = document.createElement('div');
+      Loading.mcoreLoading.classList.add('mcore-loading-container');
       if (content && content.className) {
-        Loading.zarmLoading.classList.add(content.className);
+        Loading.mcoreLoading.classList.add(content.className);
       }
       Loading.loadingContainer = content ? getMountContainer(content.mountContainer) : getMountContainer();
-      Loading.loadingContainer.appendChild(Loading.zarmLoading);
+      Loading.loadingContainer.appendChild(Loading.mcoreLoading);
     }
-    if (Loading.zarmLoading) {
-      const props = { ...Loading.defaultProps, ...content as LoadingProps, ...{ visible: true, mountContainer: Loading.zarmLoading } };
+    if (Loading.mcoreLoading) {
+      const props = { ...Loading.defaultProps, ...content as LoadingProps, ...{ visible: true, mountContainer: Loading.mcoreLoading } };
       ReactDOM.render(
         <Loading {...props} />,
-        Loading.zarmLoading,
+        Loading.mcoreLoading,
       );
     }
   };
 
   static hide = () => {
-    if (Loading.zarmLoading) {
+    if (Loading.mcoreLoading) {
       ReactDOM.render(
         <Loading visible={false} />,
-        Loading.zarmLoading,
+        Loading.mcoreLoading,
       );
     }
   };
 
   static unmountNode = () => {
-    const { zarmLoading } = Loading;
-    if (zarmLoading) {
-      ReactDOM.render(<></>, zarmLoading);
-      Loading.loadingContainer.removeChild(zarmLoading);
-      Loading.zarmLoading = null;
+    const { mcoreLoading } = Loading;
+    if (mcoreLoading) {
+      ReactDOM.render(<></>, mcoreLoading);
+      Loading.loadingContainer.removeChild(mcoreLoading);
+      Loading.mcoreLoading = null;
     }
   };
 
@@ -93,9 +93,9 @@ export default class Loading extends PureComponent<LoadingProps, {}> {
 
   afterClose = () => {
     const { afterClose } = this.props;
-    if (Loading.zarmLoading) {
-      Loading.loadingContainer.removeChild(Loading.zarmLoading);
-      Loading.zarmLoading = null;
+    if (Loading.mcoreLoading) {
+      Loading.loadingContainer.removeChild(Loading.mcoreLoading);
+      Loading.mcoreLoading = null;
     }
 
     if (typeof afterClose === 'function') {

@@ -2,17 +2,18 @@
 
 
 :root {
-  --theme-default: #E93B3D;
-  --theme-primary: #E93B3D;
-  --theme-success: #0C8;
-  --theme-warning: #FFD400;
-  --theme-danger: #F53;
 
-  @include defineColorHSL(--theme-default, 0, 0%, 90%);
-  @include defineColorHSL(--theme-primary, 156, 100%, 36.9%);
-  @include defineColorHSL(--theme-success, 156, 100%, 36.9%);
-  @include defineColorHSL(--theme-warning, 31, 83.1%, 55.9%);
-  @include defineColorHSL(--theme-danger, 0, 100%, 65.7%);
+  --theme-default: #3c6ff0;
+  --theme-primary: #3c6ff0;
+  --theme-success: #69BF13;
+  --theme-warning: #FF9E00;
+  --theme-danger: #F1303D;
+
+  @include defineColorHSL(--theme-default, 223, 85.7%, 58.8%);
+  @include defineColorHSL(--theme-primary, 223, 85.7%, 58.8%);
+  @include defineColorHSL(--theme-success, 90, 81.9%, 41.2%);
+  @include defineColorHSL(--theme-warning, 37, 100.0%, 50.0%);
+  @include defineColorHSL(--theme-danger, 340, 80.5%, 55.7%);
 
   // 文字色
   --color-text: #333;                    // 基本

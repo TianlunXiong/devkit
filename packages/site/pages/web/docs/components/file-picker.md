@@ -5,7 +5,7 @@
 ## 基本用法
 ```jsx
 import { useState } from 'react';
-import { Cell, FilePicker, Icon } from 'zarm';
+import { Cell, FilePicker, Icon } from 'mcore';
 
 const Demo = () => {
   const [files, setFiles] = useState([]);
@@ -39,7 +39,7 @@ ReactDOM.render(<Demo />, mountNode);
 ## 多选模式
 ```jsx
 import { useState } from 'react';
-import { Cell, FilePicker, Icon, Toast, Badge } from 'zarm';
+import { Cell, FilePicker, Icon, Toast, Badge } from 'mcore';
 
 const MAX_FILES_COUNT = 5;
 
@@ -117,7 +117,7 @@ ReactDOM.render(<Demo />, mountNode);
 
 ## 禁用状态
 ```jsx
-import { FilePicker, Icon } from 'zarm';
+import { FilePicker, Icon } from 'mcore';
 
 ReactDOM.render(
   <div className="file-picker-wrapper">

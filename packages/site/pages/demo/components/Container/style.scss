@@ -1,4 +1,4 @@
-@import "@site/styles/index";
+@import "@/styles/index";
 
 .app-container {
   position: relative;
@@ -8,6 +8,7 @@
     display: flex;
     align-items: center;
     position: absolute;
+    z-index: 1;
     right: r(10);
     top: r(10);
 

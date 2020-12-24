@@ -5,7 +5,7 @@
 ## 基本用法
 ```jsx
 import { useRef, useReducer } from 'react';
-import { Cell, Button, DatePicker, Toast } from 'zarm';
+import { Cell, Button, DatePicker, Toast } from 'mcore';
 
 const initState = {
   date: {
@@ -171,7 +171,7 @@ ReactDOM.render(<Demo />, mountNode);
 ## DateSelect 表单日期选择器
 ```jsx
 import { useState } from 'react';
-import { Cell, DateSelect, Icon } from 'zarm';
+import { Cell, DateSelect, Icon } from 'mcore';
 
 const Demo = () => {
   const [value, setValue] = useState('');
@@ -203,7 +203,7 @@ ReactDOM.render(<Demo />, mountNode);
 ## DatePickerView 平铺选择器
 ```jsx
 import { useState } from 'react';
-import { DatePickerView } from 'zarm';
+import { DatePickerView } from 'mcore';
 
 const Demo = () => {
   const [value, setValue] = useState('');

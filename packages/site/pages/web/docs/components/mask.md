@@ -5,7 +5,7 @@
 ## 基本用法
 ```jsx
 import { useState } from 'react';
-import { Cell, Button, Mask } from 'zarm';
+import { Cell, Button, Mask } from 'mcore';
 
 const Demo = () => {
   const [visible, setVisible] = useState(false);

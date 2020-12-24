@@ -5,7 +5,7 @@
 ## 基本用法
 ```jsx
 import { useEffect, useRef, useReducer } from 'react';
-import { Cell, Button, Picker, Toast } from 'zarm';
+import { Cell, Button, Picker, Toast } from 'mcore';
 
 const SINGLE_DATA = [
   { value: '1', label: '选项一' },
@@ -292,7 +292,7 @@ ReactDOM.render(<Demo />, mountNode);
 
 ## Select 表单选择器
 ```jsx
-import { Select, Cell, Icon } from 'zarm';
+import { Select, Cell, Icon } from 'mcore';
 
 // 级联数据
 const CASCADE_DATA = [
@@ -356,7 +356,7 @@ ReactDOM.render(<Demo />, mountNode);
 
 ## PickerView 平铺选择器
 ```jsx
-import { PickerView } from 'zarm';
+import { PickerView } from 'mcore';
 
 // 级联数据
 const CASCADE_DATA = [];

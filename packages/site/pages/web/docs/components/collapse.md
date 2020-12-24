@@ -5,7 +5,7 @@
 ## 基本用法
 ```jsx
 import { useState } from 'react';
-import { Cell, Switch, Collapse, Checkbox } from 'zarm';
+import { Cell, Switch, Collapse, Checkbox } from 'mcore';
 
 const Demo = () => {
   const [animated, setAnimated] = useState(false);
@@ -66,7 +66,7 @@ ReactDOM.render(<Demo />, mountNode);
 
 ## 默认展开项
 ```jsx
-import { Collapse } from 'zarm';
+import { Collapse } from 'mcore';
 
 ReactDOM.render(
   <Collapse multiple defaultActiveKey={['0', '1']}>
@@ -87,7 +87,7 @@ ReactDOM.render(
 
 ## 禁用子项
 ```jsx
-import { Collapse } from 'zarm';
+import { Collapse } from 'mcore';
 
 ReactDOM.render(
   <Collapse multiple defaultActiveKey={['test2']}>

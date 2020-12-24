@@ -5,7 +5,7 @@
 ## 基本用法
 ```jsx
 import { useState } from 'react';
-import { Cell, Stepper } from 'zarm';
+import { Cell, Stepper } from 'mcore';
 
 const Demo = () => {
   const [value, setValue] = useState(1);
@@ -63,7 +63,7 @@ ReactDOM.render(<Demo />, mountNode);
 
 ## 多形状
 ```jsx
-import { Cell, Stepper } from 'zarm';
+import { Cell, Stepper } from 'mcore';
 
 ReactDOM.render(
   <>
@@ -88,7 +88,7 @@ ReactDOM.render(
 
 ## 多尺寸
 ```jsx
-import { Cell, Stepper } from 'zarm';
+import { Cell, Stepper } from 'mcore';
 
 ReactDOM.render(
   <Cell

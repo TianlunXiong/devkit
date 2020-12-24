@@ -1,0 +1,391 @@
+@import "../core/index";
+
+:root {
+  
+  // @include defineColorHSL(--theme-default, 0, 0%, 90%);
+  // @include defineColorHSL(--theme-primary, 0, 80%, 90%);
+  // @include defineColorHSL(--theme-success, 156, 100%, 36.9%);
+  // @include defineColorHSL(--theme-warning, 31, 83.1%, 55.9%);
+  // @include defineColorHSL(--theme-danger, 0, 100%, 65.7%);
+
+  // 文字色
+  --color-text: #343434;                    // 基本
+  --color-text-inverse: #fff;               // 反色
+  --color-text-placeholder: #a9a9a9;        // 文本框提示
+  --color-text-disabled: #bcbcbc;           // 失效
+  --color-text-caption: #909090;            // 辅助描述
+  --color-link: var(--theme-primary);         // 链接
+  --color-shadow: rgba(56, 56, 56, 0.15);   // 阴影色
+
+  // 背景色
+  --background-active: #e6e6e6;
+  --background-disabled: #f2f2f2;
+
+  // 边框色
+  --border-color: #dcdcdc;
+  --border-disabled: #e6e6e6;
+
+  // 圆角
+  --radius-xs: 2px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-xl: 8px;
+  --radius-round: 1000px;
+  --radius-circle: 50%;
+
+  // 水平间距
+  --padding-h-xs: 4px;
+  --padding-h-sm: 8px;
+  --padding-h-md: 16px;
+  --padding-h-lg: 20px;
+  --padding-h-xl: 24px;
+
+  // 垂直间距
+  --padding-v-xs: 4px;
+  --padding-v-sm: 6px;
+  --padding-v-md: 12px;
+  --padding-v-lg: 16px;
+  --padding-v-xl: 18px;
+
+  // 字体大小
+  --font-size-xs: 10px;
+  --font-size-sm: 12px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 18px;
+
+  // 堆叠顺序
+  --zindex-mask: 1000;
+  --zindex-popup: 1100;
+  --zindex-dropdown: 1200;
+  --zindex-popover: 1200;
+  --zindex-message: 1600;
+  --zindex-notification: 1600;
+  --zindex-tooltip: 1700;
+
+  // 透明度
+  --opacity-disabled: 0.5;
+  --opacity-mask: 0.5;
+  --opacity-toast: 0.8;
+  --opacity-tooltip: 0.8;
+
+  //阴影
+  --box-shadow-light: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+  --box-shadow-dark: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+  // activity-indicator
+  --activity-indicator-size-md: 16px;
+  --activity-indicator-size-lg: 32px;
+  --activity-indicator-path-color: #e6e6e6;
+
+  // Avatar
+  --avatar-border-radius: 50%;
+  --avatar-font-size: 14px;
+  --avatar-width-md: 40px;
+  --avatar-height-md: 40px;
+  --avatar-width-xl: 72px;
+  --avatar-height-xl: 72px;
+  --avatar-width-lg: 48px;
+  --avatar-height-lg: 48px;
+  --avatar-width-sm: 32px;
+  --avatar-height-sm: 32px;
+  --avatar-width-xs: 24px;
+  --avatar-height-xs: 24px;
+  --avatar-default-color: #fff;
+  --avatar-default-bg-color: #ccc;
+
+  // Badge
+  --badge-height: 14px;
+  --badge-font-size: var(--font-size-xs);
+  --badge-padding-h: 4px;
+  --badge-dot-diameter: 8px;
+  --badge-border-radius-rect: var(--radius-sm);
+  --badge-border-radius-round: var(--radius-round);
+  --badge-sup-top: -4px;
+  --badge-text-color: #fff;
+
+  // Breadcrumb
+  --breadcrumb-default-font-size: 14px;
+  --breadcrumb-default-color: var(--color-text-caption);
+  --breadcrumb-color: var(--color-text);
+  --breadcrumb-hover-color: var(--theme-primary);
+  --breadcrumb-separator-color: rgba(0, 0, 0, 0.45);
+
+  // Button
+  --button-ghost-disabled-border: var(--border-color);
+  --button-ghost-disabled-color: var(--color-text-inverse);
+  --button-padding-h-lg: var(--padding-h-lg);
+  --button-padding-h-md: var(--padding-h-md);
+  --button-padding-h-sm: var(--padding-h-sm);
+  --button-height-lg: 40px;
+  --button-height-md: 32px;
+  --button-height-sm: 24px;
+  --button-font-size-lg: 16px;
+  --button-font-size-md: 14px;
+  --button-font-size-sm: 12px;
+  --button-icon-size-lg: 20px;
+  --button-icon-size-md: 16px;
+  --button-icon-size-sm: 14px;
+  --button-disabled-opacity: var(--opacity-disabled);
+  --button-disabled-color-ghost: var(--border-disabled);
+  --button-default-background: var(--color-text-inverse);
+  --button-default-border: var(--border-color);
+  --button-default-color: var(--color-text);
+  --button-default-hover-background: var(--color-text-inverse);
+  --button-default-hover-border: var(--theme-primary);
+  --button-default-hover-color: var(--theme-primary);
+  --button-default-active-background: var(--color-text-inverse);
+  --button-default-active-border: var(--theme-primary-dark);
+  --button-default-active-color: var(--theme-primary-dark);
+  --button-default-ghost-border: var(--color-text-inverse);
+  --button-default-ghost-color: var(--color-text-inverse);
+  --button-default-ghost-hover-border: var(--theme-primary-light);
+  --button-default-ghost-hover-color: var(--theme-primary-light);
+  --button-default-ghost-active-border: var(--theme-primary-dark);
+  --button-default-ghost-active-color: var(--theme-primary-dark);
+  --button-primary-background: var(--theme-primary);
+  --button-primary-border: var(--theme-primary);
+  --button-primary-color: var(--color-text-inverse);
+  --button-primary-hover-background: var(--theme-primary-light);
+  --button-primary-hover-border: var(--theme-primary-light);
+  --button-primary-hover-color: var(--color-text-inverse);
+  --button-primary-active-background: var(--theme-primary-dark);
+  --button-primary-active-border: var(--theme-primary-dark);
+  --button-primary-active-color: var(--color-text-inverse);
+  --button-primary-ghost-border: var(--theme-primary);
+  --button-primary-ghost-color: var(--theme-primary);
+  --button-primary-ghost-hover-border: var(--theme-primary-light);
+  --button-primary-ghost-hover-color: var(--theme-primary-light);
+  --button-primary-ghost-active-border: var(--theme-primary-dark);
+  --button-primary-ghost-active-color: var(--theme-primary-dark);
+  --button-primary-gap-color: hsla(0, 0%, 100%, 0.3);
+  --button-danger-background: var(--theme-danger);
+  --button-danger-border: var(--theme-danger);
+  --button-danger-color: var(--color-text-inverse);
+  --button-danger-hover-background: var(--theme-danger-light);
+  --button-danger-hover-border: var(--theme-danger-light);
+  --button-danger-hover-color: var(--color-text-inverse);
+  --button-danger-active-background: var(--theme-danger-dark);
+  --button-danger-active-border: var(--theme-danger-dark);
+  --button-danger-active-color: var(--color-text-inverse);
+  --button-danger-ghost-border: var(--theme-danger);
+  --button-danger-ghost-color: var(--theme-danger);
+  --button-danger-ghost-hover-border: var(--theme-danger-light);
+  --button-danger-ghost-hover-color: var(--theme-danger-light);
+  --button-danger-ghost-active-border: var(--theme-danger-dark);
+  --button-danger-ghost-active-color: var(--theme-danger-dark);
+
+  // Checkbox
+  --checkbox-size: 14px;
+  --checkbox-radius: var(--radius-sm);
+  --checkbox-border-color: var(--border-color);
+  --checkbox-disabled-color: #bcbcbc;
+  --checkbox-color: #616161;
+
+  // Loading
+  --loading-height-sm: 12px;
+  --loading-height-md: 24px;
+  --loading-height-lg: 36px;
+  --loading-spacing-sm: var(--padding-v-sm);
+  --loading-spacing-md: var(--padding-v-md);
+  --loading-spacing-lg: var(--padding-v-lg);
+  --loading-font-size-sm: var(--font-size-sm);
+  --loading-font-size-md: var(--font-size-md);
+  --loading-font-size-lg: var(--font-size-lg);
+
+  // Icon
+  --icon-font-size-sm: 16px;
+  --icon-font-size-md: 24px;
+  --icon-font-size-lg: 32px;
+  --icon-theme-default: var(--color-text);
+
+  // Radio
+  --radio-size: 14px;
+  --radio-radius: var(--radius-circle);
+  --radio-border-color: var(--border-color);
+  --radio-disabled-color: #bcbcbc;
+  --radio-color: #616161;
+
+  // Menu
+  --menu-default-bg-color: var(--color-text-inverse);
+  --menu-dark-bg-color: #363642;
+  --menu-collapsed-width: 56px;
+  --submenu-light-bg-color: #fff;
+  --submenu-collapsed-padding-vertical: 4px;
+  --submenu-min-width: 150px;
+  --menuitem-dark-color: hsla(0, 0%, 100%, 0.65);
+  --menuitem-dark-active-color: var(--color-text-inverse);
+  --menuitem-default-color: #616161;
+  --menuitem-active-color: var(--theme-primary);
+  --menuitem-active-bg-color: var(--theme-primary-active);
+  --menuitem-disabled-color: rgba(0, 0, 0, 0.25);
+  --menuitem-divider-bg-color: #e6e6e6;
+  --menuitem-horizontal-padding: 20px;
+  --menuitem-height: 32px;
+  --menuitem-first-level-height: 32px;
+  --menuitem-group-color: var(--color-text-caption);
+  --menuitem-group-title-height: 36px;
+  --menuitem-group-font-size: 13px;
+  --menuitem-icon-margin-right: 12px;
+  --menuitem-icon-min-width: 14px;
+  --menuitem-icon-font-size: 16px;
+
+  // Steps
+  --steps-title-color: var(--color-text);
+  --steps-desc-color: var(--color-text-caption);
+  --steps-title-font-size: var(--font-size-md);
+  --steps-desc-font-size: var(--font-size-md);
+  --steps-border-color: var(--border-color);
+  --steps-status-wait: #bcbcbc;
+  --steps-status-process: var(--theme-primary);
+  --steps-status-error: var(--theme-danger);
+  --steps-icon-size: 28px;
+  --steps-content-width: 140px;
+
+  // Switch
+  --switch-width-md: 48px;
+  --switch-width-sm: 32px;
+  --switch-height-md: 20px;
+  --switch-height-sm: 16px;
+  --switch-font-size-md: var(--font-size-sm);
+  --switch-font-size-sm: var(--font-size-xs);
+  --switch-background: #bcbcbc;
+
+  // Tabs
+  --tabs-font-size-sm: 14px;
+  --tabs-font-size-md: 16px;
+  --tabs-font-size-lg: 18px;
+  --tabs-header-icon-sm: 12px;
+  --tabs-header-icon-md: 14px;
+  --tabs-header-icon-lg: 16px;
+  --tabs-header-card-height-sm: 34px;
+  --tabs-header-card-height-md: 40px;
+  --tabs-header-card-height-lg: 46px;
+  --tabs-header-line-height-sm: 38px;
+  --tabs-header-line-height-md: 48px;
+  --tabs-header-line-height-lg: 58px;
+  --tabs-header-vertical-height-sm: 30px;
+  --tabs-header-vertical-height-md: 36px;
+  --tabs-header-vertical-height-lg: 42px;
+  --tabs-header-line-padding-sm: 12px;
+  --tabs-header-line-padding-md: 16px;
+  --tabs-header-line-padding-lg: 20px;
+  --tabs-header-card-padding-sm: 10px;
+  --tabs-header-card-padding-md: 12px;
+  --tabs-header-card-padding-lg: 14px;
+  --tabs-header-vertical-padding-sm: 16px;
+  --tabs-header-vertical-padding-md: 20px;
+  --tabs-header-vertical-padding-lg: 24px;
+  --tabs-default-color: #616161;
+  --tabs-default-hover-color: #33c98d;
+  --tabs-default-disabled-color: var(--color-text-disabled);
+  --tabs-default-icon-color: #bcbcbc;
+  --tabs-default-icon-disabled-color: var(--border-disabled);
+  --tabs-default-icon-hover-color: var(--color-text);
+  --tabs-default-active-background: var(--color-text-inverse);
+  --tabs-default-line-color: #00bc70;
+  --tabs-default-active-color: #00bc70;
+  --tabs-default-background-color: var(--color-text-inverse);
+  --tabs-default-card-background: #fafafa;
+  --tabs-default-noborder-background: #f2f2f2;
+
+  // Tag
+  --tag-height-lg: 32px;
+  --tag-height-md: 28px;
+  --tag-height-sm: 24px;
+  --tag-height-xs: 20px;
+  --tag-padding-h-lg: 16px;
+  --tag-padding-h: 12px;
+  --tag-font-size: 12px;
+  --tag-icon-size-lg: 14px;
+  --tag-icon-size: 12px;
+  --tag-icon-size-xs: 10px;
+  --tag-color-disabled: var(--color-text-disabled);
+  --tag-disabled-opacity: var(--opacity-disabled);
+  --tag-default-background: #f9f9f9;
+  --tag-default-color: #616161;
+  --tag-default-border: var(--border-color);
+  --tag-primary-color: var(--theme-primary);
+  --tag-success-color: var(--theme-success);
+  --tag-warning-color: var(--theme-warning);
+  --tag-danger-color: var(--theme-danger);
+  --tag-primary-hover-background: var(--theme-primary-light);
+  --tag-primary-active-background: var(--theme-primary-dark);
+  --tag-color-green: 0, 188, 112;
+  --tag-color-blue: 84, 192, 232;
+  --tag-color-orange: 236, 145, 49;
+  --tag-color-red: 255, 80, 80;
+
+  // Tooltip
+  --tooltip-font-size: 12px;
+  --tooltip-color: var(--color-text-inverse);
+  --tooltip-arrow-size: 4px;
+  --tooltip-padding-v: var(--padding-v-sm);
+  --tooltip-padding-h: var(--padding-h-sm);
+
+  // Input
+  --input-focus-shadow: 0 0 0 2px rgba(0, 188, 113, 0.2);
+  --input-default-border: 1px solid var(--input-default-border-color);
+  --input-default-border-color: #dcdcdc;
+  --input-default-color: #343434;
+  --input-height-lg: 40px;
+  --input-height-md: 32px;
+  --input-height-sm: 24px;
+  --input-padding-lg: 6px 12px;
+  --input-padding-md: 4px 12px;
+  --input-padding-sm: 1px 8px;
+  --input-font-size-lg: 16px;
+  --input-font-size-md: 14px;
+  --input-font-size-sm: 12px;
+  --input-disabled-background-color: rgb(250, 250, 250);
+  --input-disabled-color: rgb(144, 144, 144);
+  --input-length-count-color: #bcbcbc;
+  --input-length-max-count-color: #616161;
+  --input-addon-background-color: #f2f2f2;
+  --input-addon-border-color: #d9d9d9;
+  --input-placeholder-color: #bcbcbc;
+
+  // Progress 进度条
+  --progress-background: #f2f2f2;
+  // 进度条宽度
+  // --progress-width-#{size} 仅针对shape: 'line'
+  --progress-width-lg: 100%;
+  --progress-width-md: 100%;
+  --progress-width-sm: 140px;
+  // 进度条大小
+  // --progress-size-#{size} 同时针对shape: 'semi-circle' | 'circle'
+  --progress-size-lg: 200px;
+  --progress-size-md: 150px;
+  --progress-size-sm: 80px;
+  // --progress-weight-#{weight} 已调整为通过js设置
+  //--progress-weight-lg: 10px;
+  //--progress-weight-md: 8px;
+  //--progress-weight-sm: 4px;
+  // 同时针对shape: 'circle' 和 'semi-circle'
+  --progress-font-size-circle-lg: 30px;
+  --progress-font-size-circle-md: 24px;
+  --progress-font-size-circle-sm: 18px;
+
+  // message
+  --message-color: #616161;
+  --message-font-size: 14px;
+  --message-line-height: 18px;
+
+  // notification
+  --notification-width: 336px;
+  --notification-title-color: #343434;
+  --notification-title-font-size: 14px;
+  --notification-title-line-height: 22px;
+  --notification-title-font-weight: 400;
+  --notification-title-padding: 0 0 2px;
+  --notification-color: #616161;
+  --notification-font-size: 12px;
+  --notification-line-height: 18px;
+  --notification-body-padding: 2px 0 0;
+  --notification-footer-padding: 20px 0 0;
+
+  // popconfirm
+  --popconfirm-arrow-size: 4px;
+  --opacity-popconfirm: 0.8;
+}

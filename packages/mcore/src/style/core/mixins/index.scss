@@ -6,6 +6,7 @@
   #{$color}-s: #{$saturation};
   #{$color}-l: #{$lightness};
   #{$color}-light: unquote("hsl(#{$hue}, #{$saturation}, #{$lightness + 4})");
+  #{$color}-active: unquote("hsla(#{$hue}, #{$saturation}, #{$lightness + 4}, 0.06)");
   #{$color}-light-h: #{$hue};
   #{$color}-light-s: #{$saturation};
   #{$color}-light-l: #{$lightness + 4};

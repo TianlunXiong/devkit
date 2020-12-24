@@ -88,7 +88,7 @@ exports[`Cell help 1`] = `
       <react-native-mock>
         <img
           alt=""
-          src="\\\\\\\\static.zhongan.com/website/health/zarm/images/icons/state.png"
+          src="\\\\\\\\static.zhongan.com/website/health/mcore/images/icons/state.png"
         />
       </react-native-mock>
       <react-native-mock>
@@ -123,7 +123,7 @@ exports[`Cell icon 1`] = `
       <react-native-mock>
         <img
           alt=""
-          src="\\\\\\\\static.zhongan.com/website/health/zarm/images/icons/state.png"
+          src="\\\\\\\\static.zhongan.com/website/health/mcore/images/icons/state.png"
         />
       </react-native-mock>
       <react-native-mock>

@@ -6,7 +6,7 @@
 
 ```jsx
 import { useState } from 'react';
-import { Input, Cell } from 'zarm';
+import { Input, Cell } from 'mcore';
 
 const Demo = () => {
   const [title, setTitle] = useState('');
@@ -51,7 +51,7 @@ ReactDOM.render(<Demo />, mountNode);
 
 ```jsx
 import { useState, useRef } from 'react';
-import { Input, Cell, Button } from 'zarm';
+import { Input, Cell, Button } from 'mcore';
 
 const Demo = () => {
   const focusInput = useRef();
@@ -92,7 +92,7 @@ ReactDOM.render(<Demo />, mountNode);
 ## 只读 / 禁用状态
 
 ```jsx
-import { Input, Cell } from 'zarm';
+import { Input, Cell } from 'mcore';
 
 ReactDOM.render(
   <>
@@ -116,7 +116,7 @@ ReactDOM.render(
 
 ## 无标签栏
 ```jsx
-import { Input, Cell } from 'zarm';
+import { Input, Cell } from 'mcore';
 
 ReactDOM.render(
   <>
@@ -132,7 +132,7 @@ ReactDOM.render(
 
 ```jsx
 import { useState } from 'react';
-import { Input, Cell } from 'zarm';
+import { Input, Cell } from 'mcore';
 
 const Demo = () => {
   const [value, setValue] = useState('');
@@ -159,7 +159,7 @@ ReactDOM.render(<Demo />, mountNode);
 ## 显示输入字数
 ```jsx
 import { useState } from 'react';
-import { Input, Cell } from 'zarm';
+import { Input, Cell } from 'mcore';
 
 const Demo = () => {
   const [value, setValue] = useState('');

@@ -50,3 +50,4 @@ export { default as ImagePreview } from './image-preview';
 export { default as LocaleProvider } from './locale-provider';
 export { default as LocaleReceiver } from './locale-receiver';
 export { default as StackPicker } from './stack-picker';
+export { default as Menu } from './menu';

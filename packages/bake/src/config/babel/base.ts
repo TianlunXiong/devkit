@@ -4,6 +4,9 @@ export function babelBaseConfig() {
       [require.resolve('@babel/preset-env'), {
         useBuiltIns: "usage", // 按需引入 polyfill
         corejs: 3,
+        "targets": {
+          "chrome": "83",
+        },
       }],
       require.resolve('@babel/preset-react'),
       require.resolve('@babel/preset-typescript'),

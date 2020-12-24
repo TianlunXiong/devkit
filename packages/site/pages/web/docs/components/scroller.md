@@ -6,7 +6,7 @@
 ## 基本用法
 ```jsx
 import { useRef, useState } from 'react';
-import { Scroller, Cell, Icon, Message } from 'zarm';
+import { Scroller, Cell, Icon, Message } from 'mcore';
 
 const Demo = () => {
   const list = [];

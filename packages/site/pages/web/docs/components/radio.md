@@ -4,7 +4,7 @@
 
 ## 基本用法
 ```jsx
-import { Radio, Cell } from 'zarm';
+import { Radio, Cell } from 'mcore';
 
 ReactDOM.render(
   <>
@@ -20,7 +20,7 @@ ReactDOM.render(
 
 ## 组合使用
 ```jsx
-import { Cell, Radio } from 'zarm';
+import { Cell, Radio } from 'mcore';
 
 ReactDOM.render(
   <Cell>
@@ -38,7 +38,7 @@ ReactDOM.render(
 ## 按钮样式
 ```jsx
 import { useState } from 'react';
-import { Radio, Cell } from 'zarm';
+import { Radio, Cell } from 'mcore';
 
 const Demo = () => {
   const [value, setValue] = useState('0');
@@ -146,7 +146,7 @@ ReactDOM.render(<Demo />, mountNode);
 
 ## 块级样式
 ```jsx
-import { Cell, Radio } from 'zarm';
+import { Cell, Radio } from 'mcore';
 
 ReactDOM.render(
   <Cell>
@@ -163,7 +163,7 @@ ReactDOM.render(
 
 ## 列表样式
 ```jsx
-import { Radio } from 'zarm';
+import { Radio } from 'mcore';
 
 ReactDOM.render(
   <Radio.Group type="cell">
@@ -178,7 +178,7 @@ ReactDOM.render(
 
 ## 列表样式禁用状态
 ```jsx
-import { Radio } from 'zarm';
+import { Radio } from 'mcore';
 
 ReactDOM.render(
   <Radio.Group disabled type="cell">

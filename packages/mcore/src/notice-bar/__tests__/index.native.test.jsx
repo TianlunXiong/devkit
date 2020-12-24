@@ -16,7 +16,7 @@ describe('NoticeBar', () => {
   });
 
   it('scroll', () => {
-    const wrapper = render(<NoticeBar scrollable>各位zarmer请注意，本组件使用了自动滚动功能，更多用法请参见使用文档。</NoticeBar>);
+    const wrapper = render(<NoticeBar scrollable>各位mcoreer请注意，本组件使用了自动滚动功能，更多用法请参见使用文档。</NoticeBar>);
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 

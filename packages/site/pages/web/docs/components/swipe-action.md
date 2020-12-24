@@ -4,7 +4,7 @@
 
 ## 基本用法
 ```jsx
-import { SwipeAction, Button, Cell } from 'zarm';
+import { SwipeAction, Button, Cell } from 'mcore';
 
 ReactDOM.render(
   <>

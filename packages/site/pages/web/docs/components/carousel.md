@@ -4,12 +4,12 @@
 
 ## 基本用法
 ```jsx
-import { Carousel } from 'zarm';
+import { Carousel } from 'mcore';
 
 const ITEMS = [
-  'https://static.zhongan.com/website/health/zarm/images/banners/1.png',
-  'https://static.zhongan.com/website/health/zarm/images/banners/2.png',
-  'https://static.zhongan.com/website/health/zarm/images/banners/3.png',
+  'https://static.zhongan.com/website/health/mcore/images/banners/1.png',
+  'https://static.zhongan.com/website/health/mcore/images/banners/2.png',
+  'https://static.zhongan.com/website/health/mcore/images/banners/3.png',
 ];
 
 const contentRender = () => {
@@ -37,12 +37,12 @@ ReactDOM.render(
 
 ## 纵向
 ```jsx
-import { Carousel } from 'zarm';
+import { Carousel } from 'mcore';
 
 const ITEMS = [
-  'https://static.zhongan.com/website/health/zarm/images/banners/1.png',
-  'https://static.zhongan.com/website/health/zarm/images/banners/2.png',
-  'https://static.zhongan.com/website/health/zarm/images/banners/3.png',
+  'https://static.zhongan.com/website/health/mcore/images/banners/1.png',
+  'https://static.zhongan.com/website/health/mcore/images/banners/2.png',
+  'https://static.zhongan.com/website/health/mcore/images/banners/3.png',
 ];
 
 const contentRender = () => {
@@ -65,12 +65,12 @@ ReactDOM.render(
 ## 循环轮播
 ```jsx
 import { useRef } from 'react';
-import { Carousel, Button } from 'zarm';
+import { Carousel, Button } from 'mcore';
 
 const ITEMS = [
-  'https://static.zhongan.com/website/health/zarm/images/banners/1.png',
-  'https://static.zhongan.com/website/health/zarm/images/banners/2.png',
-  'https://static.zhongan.com/website/health/zarm/images/banners/3.png',
+  'https://static.zhongan.com/website/health/mcore/images/banners/1.png',
+  'https://static.zhongan.com/website/health/mcore/images/banners/2.png',
+  'https://static.zhongan.com/website/health/mcore/images/banners/3.png',
 ];
 
 const contentRender = () => {
@@ -130,12 +130,12 @@ ReactDOM.render(<Demo />, mountNode);
 
 ## 自动循环轮播
 ```jsx
-import { Carousel } from 'zarm';
+import { Carousel } from 'mcore';
 
 const ITEMS = [
-  'https://static.zhongan.com/website/health/zarm/images/banners/1.png',
-  'https://static.zhongan.com/website/health/zarm/images/banners/2.png',
-  'https://static.zhongan.com/website/health/zarm/images/banners/3.png',
+  'https://static.zhongan.com/website/health/mcore/images/banners/1.png',
+  'https://static.zhongan.com/website/health/mcore/images/banners/2.png',
+  'https://static.zhongan.com/website/health/mcore/images/banners/3.png',
 ];
 
 const contentRender = () => {

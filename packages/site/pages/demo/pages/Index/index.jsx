@@ -1,15 +1,18 @@
 import React, { useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { IntlProvider, FormattedMessage } from 'react-intl';
-import { Panel, Cell } from 'zarm';
-import { components } from '@site/site.config';
+import Panel from 'mcore/panel';
+import Cell from 'mcore/cell';
+import DOCUMENT from '../../../web/docs';
 import { pascalCase } from 'change-case';
-import Container from '@site/demo/components/Container';
-import Footer from '@site/demo/components/Footer';
-import Context from '@site/utils/context';
-import Events from '@site/utils/events';
-import Locale from '@site/locale';
+import Container from '../../components/Container';
+// import Footer from '@site/demo/components/Footer';
+import Context from '@/utils/context';
+import Events from '@/utils/events';
+import Locale from '@/pages/web/locale';
 import './style.scss';
+
+const { components } = DOCUMENT;
 
 const Child = () => {
   const history = useHistory();
@@ -53,8 +56,12 @@ const Child = () => {
     <IntlProvider locale="zh-CN" messages={Locale[lang]}>
       <header>
         <section className="brand">
-          <div className="brand-title">Zarm</div>
-          <div className="brand-description"><FormattedMessage id="app.title" /></div>
+          <div className="brand-title">
+            <span>vikit-ui</span>
+          </div>
+          <div className="brand-description">
+            <FormattedMessage id="app.home.index.introduce" />
+          </div>
         </section>
       </header>
       <main>
@@ -65,7 +72,7 @@ const Child = () => {
         {getMenus('navigation')}
         {getMenus('other')}
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </IntlProvider>
   );
 };

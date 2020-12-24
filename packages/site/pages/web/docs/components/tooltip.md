@@ -2,7 +2,7 @@
 
 ## 基本用法
 ```jsx
-import { Tooltip, Button, Message, Icon } from 'zarm';
+import { Tooltip, Button, Message, Icon } from 'mcore';
 
 const Demo = () => (
   <div className="direction-demo">

@@ -4,14 +4,14 @@
 
 ## 基本用法
 ```jsx
-import { NoticeBar, Icon } from 'zarm';
+import { NoticeBar, Icon } from 'mcore';
 
 ReactDOM.render(
   <>
     <NoticeBar>普通</NoticeBar>
     <NoticeBar theme="danger">自定义主题</NoticeBar>
     <NoticeBar icon={<Icon type="wrong-round" />}>自定义图标</NoticeBar>
-    <NoticeBar>各位zarmer请注意，当前文本超出了屏幕宽度，组件会自动开启滚动功能，前后停留时间和滚动速度可以自定义设置，更多用法请参见使用文档。</NoticeBar>
+    <NoticeBar>各位mcoreer请注意，当前文本超出了屏幕宽度，组件会自动开启滚动功能，前后停留时间和滚动速度可以自定义设置，更多用法请参见使用文档。</NoticeBar>
   </>
 , mountNode);
 ```
@@ -20,7 +20,7 @@ ReactDOM.render(
 
 ## 特定场景
 ```jsx
-import { NoticeBar  } from 'zarm';
+import { NoticeBar  } from 'mcore';
 
 ReactDOM.render(
   <>

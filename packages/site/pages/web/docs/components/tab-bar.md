@@ -5,7 +5,7 @@
 ## 基本用法
 ```jsx
 import { useState } from 'react';
-import { Icon, TabBar, Cell, Button } from 'zarm';
+import { Icon, TabBar, Cell, Button } from 'mcore';
 
 const TabIcon = Icon.createFromIconfont('//at.alicdn.com/t/font_1340918_lpsswvb7yv.js');
 

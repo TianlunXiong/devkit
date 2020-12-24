@@ -2,7 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import Icon from 'mcore/icon';
 import 'mcore/icon/style';
-// import { Icon, BackToTop } from 'mcore/back-to-top';
+import BackToTop from 'mcore/back-to-top';
 import Header from '../Header';
 import './style.scss';
 
@@ -12,11 +12,11 @@ const Container = ({ className, children, ...others }) => {
   return (
     <div className={cls} {...others}>
       <Header>{children}</Header>
-      {/* <BackToTop>
+      <BackToTop>
         <div className="scroll-to-top">
-          <Icon type="github" size="sm" />
+          <Icon type="arrow-top" size="sm" />
         </div>
-      </BackToTop> */}
+      </BackToTop>
     </div>
   );
 };

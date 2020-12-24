@@ -5,25 +5,25 @@
 ## 基本用法
 ```jsx
 import { useState } from 'react';
-import { Cell, Button, ImagePreview, NoticeBar } from 'zarm';
+import { Cell, Button, ImagePreview, NoticeBar } from 'mcore';
 
 const commonImages = [
-  'https://cdn-health.zhongan.com/zarm/imagePreview/1-small.jpg',
-  'https://cdn-health.zhongan.com/zarm/imagePreview/2-small.jpg',
-  'https://cdn-health.zhongan.com/zarm/imagePreview/3-small.jpg',
+  'https://cdn-health.zhongan.com/mcore/imagePreview/1-small.jpg',
+  'https://cdn-health.zhongan.com/mcore/imagePreview/2-small.jpg',
+  'https://cdn-health.zhongan.com/mcore/imagePreview/3-small.jpg',
 ];
 
 const originImages = [
   {
-    url: 'https://cdn-health.zhongan.com/zarm/imagePreview/1-small.jpg',
-    originUrl: 'https://cdn-health.zhongan.com/zarm/imagePreview/1.jpg'
+    url: 'https://cdn-health.zhongan.com/mcore/imagePreview/1-small.jpg',
+    originUrl: 'https://cdn-health.zhongan.com/mcore/imagePreview/1.jpg'
   },
   {
-    url: 'https://cdn-health.zhongan.com/zarm/imagePreview/2-small.jpg',
-    originUrl:'https://cdn-health.zhongan.com/zarm/imagePreview/2.jpg',
+    url: 'https://cdn-health.zhongan.com/mcore/imagePreview/2-small.jpg',
+    originUrl:'https://cdn-health.zhongan.com/mcore/imagePreview/2.jpg',
   }, {
-    url: 'https://cdn-health.zhongan.com/zarm/imagePreview/3-small.jpg',
-    originUrl: 'https://cdn-health.zhongan.com/zarm/imagePreview/3.jpg',
+    url: 'https://cdn-health.zhongan.com/mcore/imagePreview/3-small.jpg',
+    originUrl: 'https://cdn-health.zhongan.com/mcore/imagePreview/3.jpg',
   }
 ];
 
@@ -76,12 +76,12 @@ ReactDOM.render(<Demo />, mountNode);
 ## 预览指定图片
 ```jsx
 import { useState } from 'react';
-import { ImagePreview, Cell } from 'zarm';
+import { ImagePreview, Cell } from 'mcore';
 
 const commonImages = [
-  'https://cdn-health.zhongan.com/zarm/imagePreview/1-small.jpg',
-  'https://cdn-health.zhongan.com/zarm/imagePreview/2-small.jpg',
-  'https://cdn-health.zhongan.com/zarm/imagePreview/3-small.jpg',
+  'https://cdn-health.zhongan.com/mcore/imagePreview/1-small.jpg',
+  'https://cdn-health.zhongan.com/mcore/imagePreview/2-small.jpg',
+  'https://cdn-health.zhongan.com/mcore/imagePreview/3-small.jpg',
 ];
 
 const Demo = () => {

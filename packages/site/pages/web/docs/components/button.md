@@ -4,7 +4,7 @@
 
 ## 基本用法
 ```jsx
-import Button from 'mcore/button';
+import { Button } from 'mcore';
 
 ReactDOM.render(
   <>
@@ -18,7 +18,7 @@ ReactDOM.render(
 
 ## 块级按钮
 ```jsx
-import Button from 'mcore/button';
+import { Button } from 'mcore';
 
 ReactDOM.render(
   <>
@@ -34,7 +34,7 @@ ReactDOM.render(
 
 ## 按钮主题
 ```jsx
-import Button from 'mcore/button';
+import { Button } from 'mcore';
 
 ReactDOM.render(
   <>
@@ -49,7 +49,7 @@ ReactDOM.render(
 
 ## 按钮尺寸
 ```jsx
-import Button from 'mcore/button';
+import { Button } from 'mcore';
 
 ReactDOM.render(
   <>
@@ -65,8 +65,7 @@ ReactDOM.render(
 
 ## 按钮形状
 ```jsx
-import Button from 'mcore/button';
-import Icon from 'mcore/icon';
+import { Button, Icon } from 'mcore';
 
 ReactDOM.render(
   <>
@@ -83,7 +82,7 @@ ReactDOM.render(
 
 ## 带阴影
 ```jsx
-import Button from 'mcore/button';
+import { Button } from 'mcore';
 
 ReactDOM.render(
   <>
@@ -98,8 +97,7 @@ ReactDOM.render(
 
 ## 图标按钮
 ```jsx
-import Button from 'mcore/button';
-import Icon from 'mcore/icon';
+import { Button, Icon } from 'mcore';
 
 ReactDOM.render(
   <>
@@ -114,14 +112,14 @@ ReactDOM.render(
 
 ## 链接按钮
 ```jsx
-import Button from 'mcore/button';
+import { Button } from 'mcore';
 
 ReactDOM.render(
   <>
-    <Button href="https://zarm.design">default</Button>
-    <Button theme="primary" href="https://zarm.design">primary</Button>
-    <Button theme="danger" href="https://zarm.design">danger</Button>
-    <Button disabled theme="primary" href="https://zarm.design">disabled</Button>
+    <Button href="https://mcore.design">default</Button>
+    <Button theme="primary" href="https://mcore.design">primary</Button>
+    <Button theme="danger" href="https://mcore.design">danger</Button>
+    <Button disabled theme="primary" href="https://mcore.design">disabled</Button>
   </>
 , mountNode);
 ```
@@ -130,7 +128,7 @@ ReactDOM.render(
 
 ## 幽灵按钮
 ```jsx
-import Button from 'mcore/button';
+import { Button } from 'mcore';
 
 ReactDOM.render(
   <>

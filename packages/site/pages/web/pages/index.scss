@@ -7,7 +7,7 @@
   bottom: 0;
   left: 0;
   background-color: #fff;
-  background-image: url(@/assets/images/logo_maoyan.svg);
+  // background-image: url(@/assets/images/platform.svg);
   background-repeat: no-repeat;
   background-size: 50%;
   background-position: center right;
@@ -52,7 +52,7 @@
       line-height: 1;
 
       span {
-        color: #E93B3D;
+        color: var(--theme-primary);
       }
     }
 
@@ -73,7 +73,7 @@
         justify-content: center;
         align-items: center;
         min-height: 50px;
-        background-color: #E93B3D;
+        background-color: var(--theme-primary);
         border: 0;
         color: #fff;
         font-size: 18px;
@@ -87,17 +87,17 @@
         }
 
         &:hover {
-          background: #E93B3D;
+          background: var(--theme-primary);
         }
 
         &.ghost {
-          border: 1px solid #E93B3D;
-          color: #E93B3D;
+          border: 1px solid var(--theme-primary);
+          color: var(--theme-primary);
           background-color: #fff;
 
           &:hover {
-            border-color: #E93B3D;
-            color: #E93B3D;
+            border-color: var(--theme-primary);
+            color: var(--theme-primary);
           }
         }
       }

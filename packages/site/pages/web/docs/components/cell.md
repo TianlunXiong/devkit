@@ -4,7 +4,7 @@
 
 ## 基本用法
 ```jsx
-import { Cell } from 'zarm';
+import { Cell } from 'mcore';
 
 ReactDOM.render(<Cell title="标题文字" />, mountNode);
 ```
@@ -13,7 +13,7 @@ ReactDOM.render(<Cell title="标题文字" />, mountNode);
 
 ## 带描述
 ```jsx
-import { Cell, Icon } from 'zarm';
+import { Cell, Icon } from 'mcore';
 
 ReactDOM.render(
   <>
@@ -27,9 +27,9 @@ ReactDOM.render(
 
 ## 带图标、标题
 ```jsx
-import { Cell, Icon } from 'zarm';
+import { Cell, Icon } from 'mcore';
 
-const img = 'https://static.zhongan.com/website/health/zarm/images/icons/state.png';
+const img = 'https://static.zhongan.com/website/health/mcore/images/icons/state.png';
 
 ReactDOM.render(
   <>
@@ -43,7 +43,7 @@ ReactDOM.render(
 
 ## 带跳转
 ```jsx
-import { Cell } from 'zarm';
+import { Cell } from 'mcore';
 
 ReactDOM.render(
   <>
@@ -56,7 +56,7 @@ ReactDOM.render(
 
 ## 带描述、箭头、跳转
 ```jsx
-import { Cell } from 'zarm';
+import { Cell } from 'mcore';
 
 ReactDOM.render(
   <>
@@ -70,9 +70,9 @@ ReactDOM.render(
 
 ## 带图标、描述、箭头、跳转
 ```jsx
-import { Cell, Icon } from 'zarm';
+import { Cell, Icon } from 'mcore';
 
-const img = 'https://static.zhongan.com/website/health/zarm/images/icons/state.png';
+const img = 'https://static.zhongan.com/website/health/mcore/images/icons/state.png';
 
 ReactDOM.render(
   <>
@@ -114,7 +114,7 @@ ReactDOM.render(
 
 ## 提示信息
 ```jsx
-import { Cell, Message, Icon, Input } from 'zarm';
+import { Cell, Message, Icon, Input } from 'mcore';
 
 ReactDOM.render(
   <Cell

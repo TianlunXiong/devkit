@@ -4,7 +4,7 @@
 
 ```jsx
 import { useState } from 'react';
-import { Button, Select, DateSelect, Icon, Input, Cell, Calendar } from 'zarm';
+import { Button, Select, DateSelect, Icon, Input, Cell, Calendar } from 'mcore';
 
 const Demo = () => {
   const [visible, setVisible] = useState(false);

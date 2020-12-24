@@ -4,7 +4,7 @@
 
 ## 基本用法
 ```jsx
-import { SearchBar } from 'zarm';
+import { SearchBar } from 'mcore';
 
 ReactDOM.render(
   <SearchBar
@@ -35,7 +35,7 @@ ReactDOM.render(
 ## 始终展示取消按钮
 ```jsx
 import { useState } from 'react';
-import { SearchBar } from 'zarm';
+import { SearchBar } from 'mcore';
 
 const Demo = () => {
   const [value, setValue] = useState('');
@@ -59,7 +59,7 @@ ReactDOM.render(<Demo />, mountNode);
 
 ## 多形状
 ```jsx
-import { SearchBar } from 'zarm';
+import { SearchBar } from 'mcore';
 
 ReactDOM.render(
   <>
@@ -73,7 +73,7 @@ ReactDOM.render(
 
 ## 手动获取焦点
 ```jsx
-import { SearchBar, Button } from 'zarm';
+import { SearchBar, Button } from 'mcore';
 
 class Demo extends React.Component {
   render() {

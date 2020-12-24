@@ -5,7 +5,7 @@
 ## Keyboard 平铺键盘
 ```jsx
 import { useState } from 'react';
-import { Cell, Radio, Keyboard } from 'zarm';
+import { Cell, Radio, Keyboard } from 'mcore';
 
 const Demo = () => {
   const [type, setType] = useState('number');
@@ -40,7 +40,7 @@ ReactDOM.render(<Demo />, mountNode);
 ## KeyboardPicker 键盘触发器
 ```jsx
 import { useState } from 'react';
-import { Cell, Button, KeyboardPicker, Input } from 'zarm';
+import { Cell, Button, KeyboardPicker, Input } from 'mcore';
 
 const Demo = () => {
   const [visible, setVisible] = useState(false);

@@ -9,8 +9,8 @@ class Footer extends Component {
         <div className="group">
           <h2><FormattedMessage id="app.home.footer.resources" /></h2>
           <ul>
-            <li><a href="https://ZhongAnTech.github.io/zarm-vue/#/documents/quick-start" rel="noopener noreferrer" target="_blank">Zarm Vue</a> - Zarm of Vue</li>
-            <li><a href="https://jeromelin.github.io/zarm-web" rel="noopener noreferrer" target="_blank">Zarm Web</a></li>
+            <li><a href="https://ZhongAnTech.github.io/mcore-vue/#/documents/quick-start" rel="noopener noreferrer" target="_blank">mcore Vue</a> - mcore of Vue</li>
+            <li><a href="https://jeromelin.github.io/mcore-web" rel="noopener noreferrer" target="_blank">mcore Web</a></li>
             <li>
               <a href="/#/design/download">
                 <FormattedMessage id="app.home.resources" />
@@ -36,24 +36,24 @@ class Footer extends Component {
         <div className="group">
           <h2><FormattedMessage id="app.home.footer.help" /></h2>
           <ul>
-            <li><a href="https://github.com/ZhongAnTech/zarm" rel="noopener noreferrer" target="_blank">Github</a></li>
+            <li><a href="https://github.com/ZhongAnTech/mcore" rel="noopener noreferrer" target="_blank">Github</a></li>
             <li>
               <a href="/#/components/change-log">
                 <FormattedMessage id="app.home.footer.help.changelog" />
               </a>
             </li>
             <li>
-              <a href="https://github.com/ZhongAnTech/zarm/issues/new" rel="noopener noreferrer" target="_blank">
+              <a href="https://github.com/ZhongAnTech/mcore/issues/new" rel="noopener noreferrer" target="_blank">
                 <FormattedMessage id="app.home.footer.help.bug-report" />
               </a>
             </li>
             <li>
-              <a href="https://github.com/ZhongAnTech/zarm/issues" rel="noopener noreferrer" target="_blank">
+              <a href="https://github.com/ZhongAnTech/mcore/issues" rel="noopener noreferrer" target="_blank">
                 <FormattedMessage id="app.home.footer.help.bug-list" />
               </a>
             </li>
             <li>
-              <a href="https://gitter.im/ZhonganTech/zarm" rel="noopener noreferrer" target="_blank">
+              <a href="https://gitter.im/ZhonganTech/mcore" rel="noopener noreferrer" target="_blank">
                 <FormattedMessage id="app.home.footer.help.chat" />
               </a>
             </li>

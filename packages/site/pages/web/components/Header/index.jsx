@@ -4,7 +4,7 @@ import { IntlProvider, FormattedMessage } from 'react-intl';
 import Icon from 'mcore/icon';
 import Popup from 'mcore/popup';
 import Radio from 'mcore/radio';
-// import { Dropdown, Menu } from 'zarm-web';
+// import { Dropdown, Menu } from 'mcore-web';
 import classnames from 'classnames';
 import 'mcore/icon/style'
 import 'mcore/popup/style'
@@ -14,23 +14,20 @@ import 'mcore/radio/style'
 import Events from '../../../../utils/events';
 import Context from '../../../../utils/context';
 import Locale from '../../locale';
-// import { version } from 'package.json';
+import { version } from '@/package.json';
 // import 'docsearch.js/dist/cdn/docsearch.min.css';
-// import '@/components/style/entry';
-import LOGO from '@/assets/images/logo_maoyan.svg'
+
+import LOGO from '@/assets/images/logo.svg'
 import './style.scss';
 
 // const initDocSearch = () => {
 //   docsearch({
 //     apiKey: '44e980b50447a3a5fac9dc2a4808c439',
-//     indexName: 'zarm',
+//     indexName: 'mcore',
 //     inputSelector: '.search input',
 //     debug: false,
 //   });
 // };
-
-const Icons = Icon.createFromIconfont('//at.alicdn.com/t/font_1340918_lpsswvb7yv.js');
-
 
 const Header = ({ children }) => {
   const searchInput = useRef();
@@ -54,13 +51,7 @@ const Header = ({ children }) => {
 
   const NAV_ITEMS = [
     { key: 'components', link: '#/components/quick-start', title: <FormattedMessage id="app.home.nav.components" /> },
-    { key: 'design', link: '#/design/download', title: <FormattedMessage id="app.home.nav.resources" /> },
-    { key: 'gitee', link: 'https://zarm.gitee.io', title: '国内镜像' },
   ];
-
-  if (document.location.host.indexOf('gitee') > -1 || lang === 'enUS') {
-    NAV_ITEMS.pop();
-  }
 
   // useEffect(() => {
   //   Events.on(document, 'keyup', keyupEvent);
@@ -79,8 +70,8 @@ const Header = ({ children }) => {
             <div className="logo">
               <a href="#/">
                 <img alt="logo" src={LOGO} />
-                M5
-                {/* <sup className="logo-version">v{version}</sup> */}
+                vikit-ui
+                <sup className="logo-version">v{version}</sup>
               </a>
             </div>
             <nav>
@@ -109,9 +100,6 @@ const Header = ({ children }) => {
                   <Radio value="enUS">EN</Radio>
                 </Radio.Group>
               </div>
-              {/* <a className="github" href="https://github.com/ZhongAnTech/zarm" target="_blank" rel="noopener noreferrer">
-                <Icons type="github" />
-              </a> */}
             </nav>
           </div>
         </header>

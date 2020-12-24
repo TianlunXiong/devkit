@@ -5,7 +5,7 @@
 ## 基本用法
 ```jsx
 import { useState, useEffect, useRef } from 'react';
-import { Pull, Cell, Message, Icon, Button, ActivityIndicator, BackToTop } from 'zarm';
+import { Pull, Cell, Message, Icon, Button, ActivityIndicator, BackToTop } from 'mcore';
 
 const REFRESH_STATE = {
   normal: 0,  // 普通

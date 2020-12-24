@@ -6,7 +6,7 @@
 
 ```jsx
 import { useEffect, useState, useRef } from 'react';
-import { Drag, Button } from 'zarm';
+import { Drag, Button } from 'mcore';
 
 let currentPoint = [0, 0];
 

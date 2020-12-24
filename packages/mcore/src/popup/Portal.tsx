@@ -65,7 +65,7 @@ export default class Portal extends PureComponent<PortalProps, any> {
     }
 
     clearTimeout(this.enterTimer);
-    if (this._container) {
+    if (this._container && this.mountNode.contains(this._container)) {
       this.mountNode.removeChild(this._container);
     }
   }
@@ -228,7 +228,7 @@ export default class Portal extends PureComponent<PortalProps, any> {
     }
   };
 
-  renderPortal = (): ReactPortal | null => {
+  renderPortal = (): JSX.Element | null => {
     if (!canUseDOM) {
       return null;
     }
@@ -240,7 +240,8 @@ export default class Portal extends PureComponent<PortalProps, any> {
       );
       return null;
     }
-    return ReactDOM.createPortal(this.getComponent(), this._container);
+    const cpm = this.getComponent();
+    return cpm;
   };
 
   createContainer = () => {

@@ -88,7 +88,7 @@ header {
       }
 
       .algolia-docsearch-suggestion--highlight {
-        color: #E93B3D;
+        color: #3c6ff0;
       }
     }
   }
@@ -123,7 +123,7 @@ header {
 
           &.active,
           &:hover {
-            color: #E93B3D;
+            color: var(--theme-primary);
           }
         }
       }
@@ -132,8 +132,8 @@ header {
     .lang,
     .github {
       margin-left: 30px;
-      --button-primary-background: #E93B3D;
-      --button-primary-border: #E93B3D; 
+      --button-primary-background: #3c6ff0;
+      --button-primary-border: #3c6ff0; 
     }
   }
 

@@ -28,7 +28,7 @@ class Tooltip extends React.Component<TooltipProps, any> {
   render() {
     const { children, content, ...others } = this.props;
 
-    return !content
+    return content
       ? (
         <Popper
           content={content}

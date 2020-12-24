@@ -7,6 +7,6 @@ export default interface PropsType {
 
 // declare global {
 //   interface Window {
-//     zarmKeyboardPicker?: any;
+//     mcoreKeyboardPicker?: any;
 //   }
 // }

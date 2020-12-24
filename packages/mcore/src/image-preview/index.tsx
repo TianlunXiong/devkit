@@ -198,13 +198,14 @@ class ImagePreview extends Component<ImagePreviewProps, ImagePreviewState> {
     return images.map((item, i) => {
       return (
         <div className={`${prefixCls}__item`} key={+i}>
-          <PinchZoom
+          {/* <PinchZoom
             className={`${prefixCls}__item__img`}
             minScale={minScale}
             maxScale={maxScale}
           >
             <img src={item.url} alt="" draggable={false} />
-          </PinchZoom>
+          </PinchZoom> */}
+            <img src={item.url} alt="" draggable={false} />
         </div>
       );
     });

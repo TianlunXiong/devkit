@@ -3,9 +3,10 @@ import { useHistory, Switch, Route } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import Container from '../components/Container';
 import './index.scss'
-// import { Dropdown } from 'zarm-web';
+// import { Dropdown } from 'mcore-web';
 // import QRious from 'qrious';
-// import Meta from '@site/web/components/Meta';
+import Banner from '@/assets/images/platform.svg';
+import Meta from '../components/Meta';
 
 const IndexPage = () => {
   const qrcode = useRef();
@@ -23,24 +24,24 @@ const IndexPage = () => {
     //   size: 132,
     // });
     setMounted(true);
+
   }, [demoURL, dropdown, mounted]);
 
   return (
     <Container className="index-page">
-      {/* <FormattedMessage id="app.title">
+      <FormattedMessage id="app.title">
         {(txt) => (
-          <Meta title={`Zarm Design - ${txt}`} />
+          <Meta title={`${txt}`} />
         )}
-      </FormattedMessage> */}
+      </FormattedMessage>
       <main>
         <div className="banner">
-          {/* <img src={require('./images/banner@2x.png')} alt="" /> */}
+          <img src={Banner} alt="" />
         </div>
         <div className="introduce">
           <div className="title">
-            <span>M5</span>
+            <span>vikit-ui</span>
           </div>
-          <div className="description">移动端组件库</div>
           <div className="description">
             <FormattedMessage id="app.home.index.introduce" />
           </div>

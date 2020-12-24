@@ -4,7 +4,7 @@
 ## 基本用法
 ```jsx
 import { useState } from 'react';
-import { Cell, Button, Popper, Select } from 'zarm';
+import { Cell, Button, Popper, Select } from 'mcore';
 
 const Demo = () => {
   const [visible, setVisible] = useState(false);
@@ -100,7 +100,7 @@ ReactDOM.render(<Demo />, mountNode);
 ## 自定义箭头
 ```jsx
 import { useState } from 'react';
-import { Cell, Button, Popper, Radio, Message, Icon } from 'zarm';
+import { Cell, Button, Popper, Radio, Message, Icon } from 'mcore';
 
 const Demo = () => {
   const [arrowPointAtCenter, setArrowPointAtCenter] = useState(false);

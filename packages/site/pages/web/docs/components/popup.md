@@ -5,7 +5,7 @@
 ## 基本用法
 ```jsx
 import { useState, useReducer, useRef } from 'react';
-import { Popup, Cell, Button, Picker, Toast, Modal, Loading } from 'zarm';
+import { Popup, Cell, Button, Picker, Toast, Modal, Loading } from 'mcore';
 
 const SINGLE_DATA = [
   { value: '1', label: '选项一' },

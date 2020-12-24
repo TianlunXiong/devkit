@@ -5,7 +5,7 @@
 ## 基本用法
 ```jsx
 import { useState } from 'react';
-import { Cell, Slider } from 'zarm';
+import { Cell, Slider } from 'mcore';
 
 const Demo = () => {
   const [value, setValue] = useState(0);
@@ -36,7 +36,7 @@ ReactDOM.render(<Demo />, mountNode);
 
 ## 刻度与标记
 ```jsx
-import { Cell, Slider } from 'zarm';
+import { Cell, Slider } from 'mcore';
 
 const MARKS = {
   0: '0°C',
@@ -70,7 +70,7 @@ ReactDOM.render(
 
 ## 方向
 ```jsx
-import { Cell, Slider } from 'zarm';
+import { Cell, Slider } from 'mcore';
 
 const MARKS = {
   0: '0°C',

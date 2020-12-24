@@ -3,7 +3,7 @@
 
 ## 基本用法
 ```jsx
-import { Toast, Cell, Button, Icon } from 'zarm';
+import { Toast, Cell, Button, Icon } from 'mcore';
 
 const Demo = () => (
   <>

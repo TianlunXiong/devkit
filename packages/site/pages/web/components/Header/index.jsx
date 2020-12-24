@@ -6,19 +6,18 @@ import Popup from 'mcore/popup';
 import Radio from 'mcore/radio';
 // import { Dropdown, Menu } from 'mcore-web';
 import classnames from 'classnames';
-import 'mcore/icon/style'
-import 'mcore/popup/style'
-import 'mcore/radio/style'
-// import docsearch from 'docsearch.js';
-// import MenuComponent from '@site/web/components/Menu';
+import MenuComponent from '../Menu';
 import Events from '../../../../utils/events';
 import Context from '../../../../utils/context';
 import Locale from '../../locale';
-import { version } from '@/package.json';
+import pkg from '@/package.json';
+// import docsearch from 'docsearch.js';
 // import 'docsearch.js/dist/cdn/docsearch.min.css';
 
 import LOGO from '@/assets/images/logo.svg'
 import './style.scss';
+
+const { version } = pkg;
 
 // const initDocSearch = () => {
 //   docsearch({
@@ -28,6 +27,8 @@ import './style.scss';
 //     debug: false,
 //   });
 // };
+
+const Icons = Icon.createFromIconfont('//at.alicdn.com/t/font_1340918_lpsswvb7yv.js');
 
 const Header = ({ children }) => {
   const searchInput = useRef();
@@ -49,6 +50,28 @@ const Header = ({ children }) => {
     });
   };
 
+  const menuRender = (
+    <div className="header-icon header-icon-menu">
+      {
+        currentPageKey === 'components' && (
+          <>
+            <Icons type="list" onClick={() => toggleMenu(!menu)} />
+            <Popup
+              visible={menu}
+              direction="left"
+              onMaskClick={() => toggleMenu(!menu)}
+            >
+              <div className="header-menu">
+                <div className="header-menu__close"><Icon type="close" /></div>
+                <MenuComponent />
+              </div>
+            </Popup>
+          </>
+        )
+      }
+    </div>
+  );
+
   const NAV_ITEMS = [
     { key: 'components', link: '#/components/quick-start', title: <FormattedMessage id="app.home.nav.components" /> },
   ];
@@ -67,6 +90,7 @@ const Header = ({ children }) => {
       <Context.Provider value={{ lang }}>
         <header>
           <div className="header-container">
+            {menuRender}
             <div className="logo">
               <a href="#/">
                 <img alt="logo" src={LOGO} />

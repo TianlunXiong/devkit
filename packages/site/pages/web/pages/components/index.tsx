@@ -54,7 +54,7 @@ const Simulator = () => {
           </div>
         )}
       </FormattedMessage>
-      <iframe ref={simulatorRef} src={`${window.location.protocol}//${window.location.host}/demo.html#/${params.component}`} title="simulator" frameBorder="0" />
+      <iframe ref={simulatorRef} src={`${window.location.protocol}//${window.location.host}/demo#/${params.component}`} title="simulator" frameBorder="0" />
     </div>
   );
 };
@@ -70,11 +70,11 @@ const Page = () => {
     <Container className="components-page">
       <main>
         <SideBar />
-        {/* {
+        {
           isComponentPage(params.component) && (
             <Simulator />
           )
-        } */}
+        }
         <div className={containerCls}>
           <Switch>
             {documents.map((doc, i) => {

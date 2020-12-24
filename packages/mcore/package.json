@@ -20,13 +20,16 @@
     "raf": "^3.4.1",
     "react-popper": "^2.2.4"
   },
-  "browserslist": "last 2 versions",
   "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0"
+  },
   "devDependencies": {
     "@types/react": "^17.0.0",
     "@vikit/bake": "file:../bake",
-    "prop-types": "^15.7.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "prop-types": "^15.7.2"
   }
 }

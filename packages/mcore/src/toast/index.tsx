@@ -35,8 +35,9 @@ export default class Toast extends Component<ToastProps, any> {
       const props = contentIsToastProps(content)
         ? { ...Toast.defaultProps, ...content, ...{ visible: true, mountContainer: Toast.mcoreToast } }
         : { ...Toast.defaultProps, ...{ visible: true, mountContainer: Toast.mcoreToast, content } };
+      const a = <Toast {...props} />
       ReactDOM.render(
-        <Toast {...props} />,
+        a,
         Toast.mcoreToast,
       );
     }

@@ -240,8 +240,8 @@ export default class Portal extends PureComponent<PortalProps, any> {
       );
       return null;
     }
-    const cpm = this.getComponent();
-    return cpm;
+
+    return ReactDOM.createPortal(this.getComponent(), this._container);
   };
 
   createContainer = () => {

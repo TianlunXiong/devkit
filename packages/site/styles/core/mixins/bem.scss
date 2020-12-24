@@ -1,6 +1,6 @@
 @import '../functions/string';
 
-$--namespace: 'za';
+$--namespace: 'mcore';
 $--block-separator: '-';
 $--element-separator: '__';
 $--modifier-separator: '--';
@@ -54,12 +54,12 @@ $--keyframes-separator: '_';
  *
  *    @include b(button) { ... }
  *    =>
- *    .za-button { ... }
+ *    .mcore-button { ... }
  *
  *
  *    @include b(checkbox-group) { ... }
  *    =>
- *    .za-checkbox-group { ... }
+ *    .mcore-checkbox-group { ... }
  */
 @mixin b($block) {
   $block: selector-append($--namespace, $--block-separator + $block);
@@ -78,14 +78,14 @@ $--keyframes-separator: '_';
  *      @include e(icon) { ... }
  *    }
  *    =>
- *    .za-button__icon { ... }
+ *    .mcore-button__icon { ... }
  *
  *
  *    @include b(dialog) {
  *      @include e(header, footer) { ... }
  *    }
  *    =>
- *    .za-dialog__header, .za-dialog__footer { ... }
+ *    .mcore-dialog__header, .mcore-dialog__footer { ... }
  */
 @mixin e($elements...) {
   $elements: get-elements($elements);
@@ -106,7 +106,7 @@ $--keyframes-separator: '_';
  *      @include m(danger) { ... }
  *    }
  *    =>
- *    .za-button--danger { ... }
+ *    .mcore-button--danger { ... }
  *
  *
  *    @include b(button) {
@@ -115,7 +115,7 @@ $--keyframes-separator: '_';
  *      }
  *    }
  *    =>
- *    .za-button--danger .za-button__content { ... }
+ *    .mcore-button--danger .mcore-button__content { ... }
  *
  *
  *    @include b(button) {
@@ -124,7 +124,7 @@ $--keyframes-separator: '_';
  *      }
  *    }
  *    =>
- *    ..za-button__content--danger { ... }
+ *    ..mcore-button__content--danger { ... }
  */
 @mixin m($modifier) {
   $parent: if(contains-modifier(&), & + get-block(&), &);

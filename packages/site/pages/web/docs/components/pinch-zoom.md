@@ -9,7 +9,7 @@ import { PinchZoom } from 'mcore';
 ReactDOM.render(
   <>
     <PinchZoom>
-      <img src="https://static.zhongan.com/website/health/mcore/images/banners/1.png" />
+      <img src="https://static.vikit.com/website/health/mcore/images/banners/1.png" />
     </PinchZoom>
   </>
 , mountNode);

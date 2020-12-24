@@ -7,9 +7,9 @@
 import { Carousel } from 'mcore';
 
 const ITEMS = [
-  'https://static.zhongan.com/website/health/mcore/images/banners/1.png',
-  'https://static.zhongan.com/website/health/mcore/images/banners/2.png',
-  'https://static.zhongan.com/website/health/mcore/images/banners/3.png',
+  'https://static.vikit.com/website/health/mcore/images/banners/1.png',
+  'https://static.vikit.com/website/health/mcore/images/banners/2.png',
+  'https://static.vikit.com/website/health/mcore/images/banners/3.png',
 ];
 
 const contentRender = () => {
@@ -40,9 +40,9 @@ ReactDOM.render(
 import { Carousel } from 'mcore';
 
 const ITEMS = [
-  'https://static.zhongan.com/website/health/mcore/images/banners/1.png',
-  'https://static.zhongan.com/website/health/mcore/images/banners/2.png',
-  'https://static.zhongan.com/website/health/mcore/images/banners/3.png',
+  'https://static.vikit.com/website/health/mcore/images/banners/1.png',
+  'https://static.vikit.com/website/health/mcore/images/banners/2.png',
+  'https://static.vikit.com/website/health/mcore/images/banners/3.png',
 ];
 
 const contentRender = () => {
@@ -68,9 +68,9 @@ import { useRef } from 'react';
 import { Carousel, Button } from 'mcore';
 
 const ITEMS = [
-  'https://static.zhongan.com/website/health/mcore/images/banners/1.png',
-  'https://static.zhongan.com/website/health/mcore/images/banners/2.png',
-  'https://static.zhongan.com/website/health/mcore/images/banners/3.png',
+  'https://static.vikit.com/website/health/mcore/images/banners/1.png',
+  'https://static.vikit.com/website/health/mcore/images/banners/2.png',
+  'https://static.vikit.com/website/health/mcore/images/banners/3.png',
 ];
 
 const contentRender = () => {
@@ -133,9 +133,9 @@ ReactDOM.render(<Demo />, mountNode);
 import { Carousel } from 'mcore';
 
 const ITEMS = [
-  'https://static.zhongan.com/website/health/mcore/images/banners/1.png',
-  'https://static.zhongan.com/website/health/mcore/images/banners/2.png',
-  'https://static.zhongan.com/website/health/mcore/images/banners/3.png',
+  'https://static.vikit.com/website/health/mcore/images/banners/1.png',
+  'https://static.vikit.com/website/health/mcore/images/banners/2.png',
+  'https://static.vikit.com/website/health/mcore/images/banners/3.png',
 ];
 
 const contentRender = () => {

@@ -8,22 +8,22 @@ import { useState } from 'react';
 import { Cell, Button, ImagePreview, NoticeBar } from 'mcore';
 
 const commonImages = [
-  'https://cdn-health.zhongan.com/mcore/imagePreview/1-small.jpg',
-  'https://cdn-health.zhongan.com/mcore/imagePreview/2-small.jpg',
-  'https://cdn-health.zhongan.com/mcore/imagePreview/3-small.jpg',
+  'https://cdn-health.vikit.com/mcore/imagePreview/1-small.jpg',
+  'https://cdn-health.vikit.com/mcore/imagePreview/2-small.jpg',
+  'https://cdn-health.vikit.com/mcore/imagePreview/3-small.jpg',
 ];
 
 const originImages = [
   {
-    url: 'https://cdn-health.zhongan.com/mcore/imagePreview/1-small.jpg',
-    originUrl: 'https://cdn-health.zhongan.com/mcore/imagePreview/1.jpg'
+    url: 'https://cdn-health.vikit.com/mcore/imagePreview/1-small.jpg',
+    originUrl: 'https://cdn-health.vikit.com/mcore/imagePreview/1.jpg'
   },
   {
-    url: 'https://cdn-health.zhongan.com/mcore/imagePreview/2-small.jpg',
-    originUrl:'https://cdn-health.zhongan.com/mcore/imagePreview/2.jpg',
+    url: 'https://cdn-health.vikit.com/mcore/imagePreview/2-small.jpg',
+    originUrl:'https://cdn-health.vikit.com/mcore/imagePreview/2.jpg',
   }, {
-    url: 'https://cdn-health.zhongan.com/mcore/imagePreview/3-small.jpg',
-    originUrl: 'https://cdn-health.zhongan.com/mcore/imagePreview/3.jpg',
+    url: 'https://cdn-health.vikit.com/mcore/imagePreview/3-small.jpg',
+    originUrl: 'https://cdn-health.vikit.com/mcore/imagePreview/3.jpg',
   }
 ];
 
@@ -79,9 +79,9 @@ import { useState } from 'react';
 import { ImagePreview, Cell } from 'mcore';
 
 const commonImages = [
-  'https://cdn-health.zhongan.com/mcore/imagePreview/1-small.jpg',
-  'https://cdn-health.zhongan.com/mcore/imagePreview/2-small.jpg',
-  'https://cdn-health.zhongan.com/mcore/imagePreview/3-small.jpg',
+  'https://cdn-health.vikit.com/mcore/imagePreview/1-small.jpg',
+  'https://cdn-health.vikit.com/mcore/imagePreview/2-small.jpg',
+  'https://cdn-health.vikit.com/mcore/imagePreview/3-small.jpg',
 ];
 
 const Demo = () => {

@@ -29,7 +29,7 @@ ReactDOM.render(
 ```jsx
 import { Cell, Icon } from 'mcore';
 
-const img = 'https://static.zhongan.com/website/health/mcore/images/icons/state.png';
+const img = 'https://static.vikit.com/website/health/mcore/images/icons/state.png';
 
 ReactDOM.render(
   <>
@@ -72,7 +72,7 @@ ReactDOM.render(
 ```jsx
 import { Cell, Icon } from 'mcore';
 
-const img = 'https://static.zhongan.com/website/health/mcore/images/icons/state.png';
+const img = 'https://static.vikit.com/website/health/mcore/images/icons/state.png';
 
 ReactDOM.render(
   <>

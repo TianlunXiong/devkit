@@ -78,7 +78,6 @@ const Page = () => {
         <div className={containerCls}>
           <Switch>
             {documents.map((doc, i) => {
-              console.log(`/components/${doc.key}`);
               return (
                 <Route
                   key={+i}

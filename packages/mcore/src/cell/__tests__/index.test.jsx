@@ -15,7 +15,7 @@ describe('Cell', () => {
   });
 
   it('icon', () => {
-    const wrapper = render(<Cell title="标题文字" description="描述文字" icon={<img alt="" src="\\static.zhongan.com/website/health/mcore/images/icons/state.png" />} />);
+    const wrapper = render(<Cell title="标题文字" description="描述文字" icon={<img alt="" src="\\static.vikit.com/website/health/mcore/images/icons/state.png" />} />);
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 

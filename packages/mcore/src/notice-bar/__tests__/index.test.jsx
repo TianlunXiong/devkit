@@ -18,7 +18,7 @@ describe('NoticeBar', () => {
   });
 
   it('icon', () => {
-    const wrapper = render(<NoticeBar icon={<img alt="" src="\\static.zhongan.com/website/health/mcore/images/icons/state.png" />}>foo</NoticeBar>);
+    const wrapper = render(<NoticeBar icon={<img alt="" src="\\static.vikit.com/website/health/mcore/images/icons/state.png" />}>foo</NoticeBar>);
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 

@@ -6,9 +6,10 @@
   ],
   "private": true,
   "scripts": {
-    "install": "lerna bootstrap"
+    "clean": "lerna clean"
   },
   "devDependencies": {
-    "lerna": "^3.22.1"
+    "lerna": "^3.22.1",
+    "yarn": "^1.22.10"
   }
 }

@@ -3,16 +3,18 @@
 const WebpackTemplate = () => 
 `// const { ModuleFederationPlugin } = require("webpack").container;
 module.exports = {
-  entries: {
-    index: {
-      entry: ['./src/bootstrap'],
-      template: './src/index.html',
-    },
-  },
+  app: 'mpa',
+  boot: 'pages/boot',
   output: {
-    filename: '[id].entry.js',
-    chunkFilename: '[id].chunk.js',
+    publicPath: '/',
   },
+  pages: [
+    {
+      pathname: '/',
+      src: 'pages/index.tsx',
+      exact: true,
+    }
+  ],
   plugins: [
     // /**
     //  * Webpack 5's new feature.
@@ -27,15 +29,31 @@ module.exports = {
 };
 `;
 
-const BootstrapTemplate = () => `import('./app');`;
-const AppTemplate = () => 
+const BootstrapTemplate = () => `
+import React from 'react';
+import { render } from 'react-dom';
+// import loadable from '@loadable/component'
+// import {
+//   BrowserRouter,
+//   HashRouter,
+//   Switch,
+//   Route,
+// } from "react-router-dom";
+
+export default (P) => {
+  const App = <P />;
+  render(App, document.getElementById('app'))
+};
+`;
+
+const PageTemplate = () => 
 `import React from 'react';
-import ReactDOM from 'react-dom';
-import './app.scss';
+import './index.scss';
 
-const App = () => <div className="title">Hello, World!</div>;
+const Page = () => <div className="title">Hello, World!</div>;
 
-ReactDOM.render(<App />, document.getElementById('app'));
+export default Page;
+
 `
 
 const HtmlTemplate = () => 
@@ -64,7 +82,7 @@ const ScssTemplate = () =>
 `
 
 export {
-  AppTemplate,
+  PageTemplate,
   BootstrapTemplate,
   WebpackTemplate,
   HtmlTemplate,

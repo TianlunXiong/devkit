@@ -3,9 +3,10 @@ import path from 'path';
 import { sync } from 'mkdirp';
 import chalk from 'chalk';
 import signale from 'signale';
-import { getProjectPath } from '../config/utils';
+import { exec } from 'child_process';
+import { getProjectPath, CONFIG_NAME } from '../config/utils';
 import {
-  AppTemplate,
+  PageTemplate,
   BootstrapTemplate,
   HtmlTemplate,
   WebpackTemplate,
@@ -21,17 +22,17 @@ export default async function () {
   const pwd = getProjectPath();
 
   const folders = {
-    src: [
+    'pages/index': [
       {
-        name: 'bootstrap.tsx',
+        name: 'boot.tsx',
         code: BootstrapTemplate,
       },
       {
-        name: 'app.tsx',
-        code: AppTemplate,
+        name: 'index.tsx',
+        code: PageTemplate,
       },
       {
-        name: 'app.scss',
+        name: 'index.scss',
         code: ScssTemplate,
       },
       {
@@ -41,17 +42,28 @@ export default async function () {
     ],
   };
 
+  // 生产 xcloud.config.js
+  wirte(path.resolve(pwd, CONFIG_NAME), WebpackTemplate());
 
-  const configFileName = 'packcil.config.js';
-  wirte(path.resolve(pwd, configFileName), WebpackTemplate());
-
+  // 创建 pages 文件夹，并写入页面
   Object.keys(folders).forEach((key) => {
     sync(key);
     folders[key].forEach((file) => {
-      wirte(path.resolve(pwd, key, file.name), file.code());
+      wirte(path.join(pwd, key, file.name), file.code());
       console.info(`   ${chalk.green('create')} ${key}/${file.name}`);
     });
   });
 
   signale.success('模版初始化成功');
+
+  signale.pending('安装 react react-dom react-router-dom\n');
+  exec('yarn add react react-dom react-router-dom', (err) => {
+    if (err) {
+      signale.error(err);
+      return;
+    }
+    signale.success('React安装完成')
+  }).stdout.on('data', (d) => {
+    console.log(d)
+  })
 }

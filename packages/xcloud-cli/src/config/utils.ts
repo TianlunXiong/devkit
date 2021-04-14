@@ -3,7 +3,7 @@ import fs from 'fs';
 import { Configuration } from 'webpack';
 import rimraf from 'rimraf';
 
-export const PKG_NAME = '@myfe/ui-cloud-cli';
+export const PKG_NAME = '@vikit/xcloud-cli';
 
 export const CONFIG_NAME = 'xcloud.config.js';
 
@@ -47,9 +47,9 @@ type PageConfig = {
   htmlFilename: string,
 } & PageDetail;
 
-export type App = 'spa' | 'mpa' | 'component';
+export type Type = 'spa' | 'mpa' | 'component';
 interface CustomConfig extends Configuration {
-  app?: App,
+  type?: Type,
   pages?: Page[];
   boot?: string,
   html?: string,
@@ -115,7 +115,7 @@ function createSPAEntryProxy(config: CustomConfig): PageConfig[] {
     `../tmp`,
   );
   if (!fs.existsSync(tmpP)) {
-    fs.mkdirSync(tmpP)
+    fs.mkdirSync(tmpP, { recursive: true })
   }
 
   const tmpPath = path.join(tmpP, `./${pkgName}`);
@@ -219,14 +219,14 @@ function createMPAEntryProxy(config: CustomConfig): PageConfig[] {
 
   const tmpP = path.join(path.dirname(require.resolve(PKG_NAME)), `../tmp`);
   if (!fs.existsSync(tmpP)) {
-    fs.mkdirSync(tmpP);
+    fs.mkdirSync(tmpP, { recursive: true });
   }
 
   const tmpPath = path.join(tmpP, `./${pkgName}`);
 
   const bakePath = path.join(path.dirname(require.resolve(PKG_NAME)), './');
   if (fs.existsSync(tmpPath)) rimraf.sync(tmpPath);
-  fs.mkdirSync(tmpPath);
+  fs.mkdirSync(tmpPath, { recursive: true });
 
   let globalBootPath;
   if (boot) {
@@ -343,6 +343,8 @@ function createMPAEntryProxy(config: CustomConfig): PageConfig[] {
           pureName = `./${preDir ? `${preDir}/` : ''}${name}/index`;
         }
       }
+
+      console.log(pureName)
 
       pagesConfig.push({
         entry: entryProxyLoc,

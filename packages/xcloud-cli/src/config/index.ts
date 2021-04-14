@@ -16,6 +16,7 @@ import webpackMerge from 'webpack-merge';
 import { StatsWriterPlugin } from 'webpack-stats-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
+import rimraf from 'rimraf';
 import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { ICliConfig } from '../interface/cli';
 
@@ -27,9 +28,7 @@ const MANIFEST_NAME = 'manifest.js';
 
 const NODE_ENV = process.env.NODE_ENV;
 
-const CDN = `https://obj.pipi.cn/festatic/${NODE_ENV !== `production` ? 'ui-cloud_staging' : 'ui-cloud'}`;
-
-const { name: pkgName, dependencies  } = getPackageConfig();
+const { name: pkgName, dependencies } = getPackageConfig();
 
 type WebpackConfigType = 'dev' | 'prod';
 

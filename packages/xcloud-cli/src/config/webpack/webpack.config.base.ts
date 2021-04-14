@@ -11,11 +11,7 @@ function baseConfig() {
     rules: [
       {
         test: /\.(js|jsx|ts|tsx)$/,
-        exclude: function(content){
-          const isNodeModules = /node_modules/.test(content);
-          const rsl = isNodeModules;
-          return rsl
-        },
+        exclude: /node_modules/,
         use: [
           {
             loader: require.resolve('babel-loader'),

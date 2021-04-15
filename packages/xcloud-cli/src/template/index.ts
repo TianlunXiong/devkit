@@ -1,47 +1,22 @@
-
-
 const WebpackTemplate = () => 
-`// const { ModuleFederationPlugin } = require("webpack").container;
+`
 module.exports = {
-  app: 'mpa',
-  boot: 'pages/boot',
-  output: {
-    publicPath: '/',
+  boot: 'pages/index/boot',
+  src: {
+    'home': 'pages/index/index.tsx',
   },
-  pages: [
-    {
-      pathname: '/',
-      src: 'pages/index.tsx',
-      exact: true,
-    }
-  ],
-  plugins: [
-    // /**
-    //  * Webpack 5's new feature.
-    //  */
-    // new ModuleFederationPlugin({
-    //   name: 'app',
-    //   library: { type: 'var', name: 'app' },
-    //   filename: 'remoteEntry.js',
-    //   shared: { react: { singleton: true }, 'react-dom': { singleton: true } },
-    // }),
-  ]
+  pages: {
+    '/': 'home'
+  },
 };
 `;
 
 const BootstrapTemplate = () => `
 import React from 'react';
 import { render } from 'react-dom';
-// import loadable from '@loadable/component'
-// import {
-//   BrowserRouter,
-//   HashRouter,
-//   Switch,
-//   Route,
-// } from "react-router-dom";
 
-export default (P) => {
-  const App = <P />;
+export default (Page) => {
+  const App = <Page />;
   render(App, document.getElementById('app'))
 };
 `;
@@ -64,7 +39,7 @@ const HtmlTemplate = () =>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
   <meta name="format-detection" content="telephone=no, email=no">
-  <title>wp5</title>
+  <title>xcloud-react</title>
 </head>
 
 <body>

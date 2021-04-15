@@ -1,22 +1,38 @@
-import { ICliConfig } from '../interface/cli';
-import { getCustomConfig } from '../config/utils';
-import buildPage from './build/page';
-import buildComponent from './build/component';
+import { Cli } from '../interface';
+import webpack, { Configuration } from 'webpack';
+import signale from 'signale';
+import rimraf from 'rimraf';
+import getWebpackConfig from '../config';
 
-export default async function(config: ICliConfig) {
-  const { app: argAppType } = config;
-  const customConfig = getCustomConfig();
-  const { app: configFileAppType } = customConfig;
+export default async function(cliConfig: Cli) {
+  const config = getWebpackConfig('prod', cliConfig);
+  await webpackBuilding(config);
+}
 
-  const app = argAppType || configFileAppType;
+async function webpackBuilding(config: Configuration): Promise<ResponseBody> {
+  signale.pending('正在打包应用...');
+  rimraf.sync(config?.output?.path);
+  const rsl = await new Promise<ResponseBody>((resolve, reject) => {
+    webpack(config).run(e => {
+      if (e) {
+        console.error(e);
+        reject({
+          success: false,
+          message: e.message,
+        });
+        return;
+      }
+      signale.success('应用打包完成!');
+      resolve({
+        success: true,
+      });
+    });
+  });
 
-  if (!app) throw new Error('请设置 app');
+  return rsl;
+}
 
-  if (app === 'spa' || app === 'mpa') {
-    buildPage(config);
-  }
-
-  if (app === 'component') {
-    buildComponent(config, customConfig);
-  }
+interface ResponseBody {
+  success: boolean;
+  message?: string;
 }

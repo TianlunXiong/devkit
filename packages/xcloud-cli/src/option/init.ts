@@ -8,7 +8,6 @@ import { getProjectPath, CONFIG_NAME } from '../config/utils';
 import {
   PageTemplate,
   BootstrapTemplate,
-  HtmlTemplate,
   WebpackTemplate,
   ScssTemplate,
 } from '../template';
@@ -35,10 +34,6 @@ export default async function () {
         name: 'index.scss',
         code: ScssTemplate,
       },
-      {
-        name: 'index.html',
-        code: HtmlTemplate,
-      },
     ],
   };
 
@@ -53,11 +48,9 @@ export default async function () {
       console.info(`   ${chalk.green('create')} ${key}/${file.name}`);
     });
   });
-
   signale.success('模版初始化成功');
-
-  signale.pending('安装 react react-dom react-router-dom\n');
-  exec('yarn add react react-dom react-router-dom', (err) => {
+  signale.pending('安装 react react-dom react-router-dom @loadable/component\n');
+  exec('yarn add react react-dom react-router-dom @loadable/component', (err) => {
     if (err) {
       signale.error(err);
       return;

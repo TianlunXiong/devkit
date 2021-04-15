@@ -5,17 +5,20 @@ import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import { getProjectPath } from '../config/utils';
 import getWebpackConfig from '../config';
 import { createConnectorConfig } from '../module/connector';
-import { ICliConfig } from '../interface/cli'
+import { Cli } from '../interface';
 
-export default async function({ host, port }: ICliConfig) {
-  const { config, customConfig } = getWebpackConfig('dev');
+const PORT = 3000;
+const HOST = '0.0.0.0';
+const HOT = true;
+
+export default async function(cliConfig: Cli) {
+  const { port = PORT, host = HOST } = cliConfig;
+  const config = getWebpackConfig('dev', cliConfig);
   if (fs.existsSync(getProjectPath('tsconfig.json'))) {
     config?.plugins?.push(new ForkTsCheckerWebpackPlugin());
   }
 
-  const { hot } = customConfig;
-
-  if (hot) {
+  if (HOT) {
     config?.plugins?.push(new webpack.HotModuleReplacementPlugin());
   }
 
@@ -28,8 +31,8 @@ export default async function({ host, port }: ICliConfig) {
     host,
     sockPort: port,
     inline: true,
-    hot: hot,
-    liveReload: !hot,
+    hot: HOT,
+    liveReload: !HOT,
     writeToDisk: true,
     disableHostCheck: true,
     historyApiFallback: true,

@@ -16,7 +16,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 import rimraf from 'rimraf';
 import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin';
-import { Cli, PageConfig, XCloudConfig } from '../interface';
+import { Cli, PageConfig, XCloudConfig } from '../type';
 
 const DIST_NAME = 'dist';
 const CSS = 'style';

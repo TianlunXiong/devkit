@@ -1,4 +1,4 @@
-import { Cli } from '../interface';
+import { Cli } from '../type';
 import webpack, { Configuration } from 'webpack';
 import signale from 'signale';
 import rimraf from 'rimraf';

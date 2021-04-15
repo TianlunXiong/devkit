@@ -5,7 +5,7 @@ import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import { getProjectPath } from '../config/utils';
 import getWebpackConfig from '../config';
 import { createConnectorConfig } from '../module/connector';
-import { Cli } from '../interface';
+import { Cli } from '../type';
 
 const PORT = 3000;
 const HOST = '0.0.0.0';

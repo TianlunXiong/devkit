@@ -1,0 +1,69 @@
+{
+  "name": "vikit__example-fe",
+  "version": "5.11.0",
+  "time": null,
+  "filteredModules": 207,
+  "entrypoints": {
+    "index": {
+      "name": "index",
+      "assets": [
+        {
+          "name": "index.2678241169bb23b5ecb7.js"
+        },
+        {
+          "name": "index.07ee83f72743059faf22.hot-update.js"
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": null,
+      "filteredAuxiliaryAssets": 2,
+      "auxiliaryAssetsSize": null
+    }
+  },
+  "errors": [],
+  "errorsCount": 0,
+  "warnings": [],
+  "warningsCount": 0,
+  "logging": {
+    "webpack.FileSystemInfo": {
+      "entries": [],
+      "filteredEntries": 1,
+      "debug": false
+    },
+    "webpack.Compiler": {
+      "entries": [],
+      "filteredEntries": 3,
+      "debug": false
+    },
+    "webpack.ResolverCachePlugin": {
+      "entries": [],
+      "filteredEntries": 1,
+      "debug": false
+    },
+    "webpack.FlagDependencyExportsPlugin": {
+      "entries": [],
+      "filteredEntries": 4,
+      "debug": false
+    },
+    "webpack.Compilation": {
+      "entries": [],
+      "filteredEntries": 20,
+      "debug": false
+    },
+    "webpack.SideEffectsFlagPlugin": {
+      "entries": [],
+      "filteredEntries": 1,
+      "debug": false
+    },
+    "webpack.buildChunkGraph": {
+      "entries": [],
+      "filteredEntries": 13,
+      "debug": false
+    },
+    "webpack.SplitChunksPlugin": {
+      "entries": [],
+      "filteredEntries": 4,
+      "debug": false
+    }
+  }
+}

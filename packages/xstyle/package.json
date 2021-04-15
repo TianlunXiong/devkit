@@ -1,0 +1,26 @@
+{
+  "name": "@vikit/xstyle",
+  "description": "a Design-System library based on JS And Styled-Components",
+  "version": "0.0.1-alpha.2",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "lib",
+    "es",
+    "types"
+  ],
+  "scripts": {
+    "prepublish": "xcloud lib && xcloud lib -t es -o es",
+    "types": "rimraf types && tsc --project tsconfig.json"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@types/styled-components": "^5.1.9",
+    "@vikit/xcloud-cli": "^0.1.0-alpha.2",
+    "styled-components": "^5.2.3"
+  }
+}

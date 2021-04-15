@@ -3,8 +3,7 @@
 
 node_modules
 
-public
-dist
+lib
 
 .idea
 yarn-error.log

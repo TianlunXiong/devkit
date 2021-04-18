@@ -1,6 +1,6 @@
 {
   "name": "@vikit/xnestjs",
-  "version": "0.1.0-beta.2",
+  "version": "0.1.0-alpha.1",
   "description": "A Dependency-Inject Framework based on Koa.",
   "main": "./dist/index.js",
   "files": [
@@ -12,7 +12,8 @@
     "dev": "tsnd ./test/index.ts",
     "build": "rimraf dist && babel src --extensions .ts --out-dir dist --copy-files && npm run types",
     "build:deploy": "rimraf dist && babel src --extensions .ts --out-dir dist --copy-files && npm run types",
-    "types": "rimraf types && tsc --project tsconfig.json"
+    "types": "rimraf types && tsc --project tsconfig.json",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "bff",
@@ -20,16 +21,6 @@
   ],
   "author": "xiongtianlun <xiongtianlun@maoyan.com>",
   "license": "MIT",
-  "devDependencies": {
-    "@babel/cli": "^7.11.6",
-    "@babel/core": "^7.11.6",
-    "@babel/plugin-proposal-class-properties": "^7.10.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
-    "@babel/plugin-transform-runtime": "^7.11.5",
-    "@babel/preset-env": "^7.11.5",
-    "@babel/preset-typescript": "^7.10.4",
-    "rimraf": "^3.0.2"
-  },
   "dependencies": {
     "@types/koa": "^2.11.4",
     "@types/koa-router": "^7.4.1",
@@ -40,6 +31,14 @@
     "reflect-metadata": "^0.1.13",
     "winston": "^3.3.3",
     "ts-node-dev": "^1.0.0-pre.63",
-    "typescript": "^4.0.3"
+    "typescript": "^4.0.3",
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-typescript": "^7.10.4",
+    "rimraf": "^3.0.2"
   }
 }

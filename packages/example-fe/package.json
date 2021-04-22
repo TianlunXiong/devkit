@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "xcloud dev"
+    "dev": "xcloud dev",
+    "build": "xcloud build -o dist"
   },
   "dependencies": {
     "@loadable/component": "^5.14.1",

@@ -82,7 +82,7 @@ function getWebpackConfig(type: 'dev' | 'prod', argsConfig: Cli): Configuration 
   const htmls: HtmlWebpackPlugin[] = [];
 
   config.entry = {};
-  if (pages) {
+  if (pages && argsConfig.cloud !== true) {
     const pagesConfig =
       argsConfig.type === 'mpa'
       ? createMPAEntryProxy(customConfig): createSPAEntryProxy(customConfig);
@@ -108,11 +108,11 @@ function getWebpackConfig(type: 'dev' | 'prod', argsConfig: Cli): Configuration 
     );
   }
 
-  const DIST_PATH = projectRelative(DIST_NAME);
-  rimraf.sync(DIST_PATH);
+  const distPath = projectRelative(argsConfig.out || DIST_NAME);
+  rimraf.sync(distPath);
 
   config.output = {
-    path: DIST_PATH,
+    path: distPath,
     filename: '[id].[contenthash].js',
     chunkFilename: (pathData) => {
       return `js/[id].[contenthash].js`;
@@ -144,11 +144,10 @@ function getWebpackConfig(type: 'dev' | 'prod', argsConfig: Cli): Configuration 
       dependenciesCount: 10000,
       percentBy: null
     }),
-    ...htmls,
   );
 
-  if (customConfig.components) {
-    if (customConfig.components.export || customConfig.components.import) {
+  if (customConfig.cloud) {
+    if (customConfig.cloud.export || customConfig.cloud.import) {
       const shared = {};
       for (let depName in dependencies) {
         shared[depName] = {
@@ -159,11 +158,11 @@ function getWebpackConfig(type: 'dev' | 'prod', argsConfig: Cli): Configuration 
       let remotes = {};
       let exposes = {};
   
-      const comp_export = customConfig.components.export;
+      const comp_export = customConfig.cloud.export;
   
       if (comp_export instanceof Array) {
         comp_export.forEach((name) => {
-          if (customConfig.src[name]) exposes[`./${path.join('./', name)}`] = customConfig.src[name];
+          if (customConfig.src[name]) exposes[`./${path.join('./', name)}`] = `./${path.join('./', customConfig.src[name])}`;
         })
       } else if (comp_export instanceof Object) {
         Object.keys(comp_export).forEach((name) => {
@@ -171,20 +170,25 @@ function getWebpackConfig(type: 'dev' | 'prod', argsConfig: Cli): Configuration 
           if (t) exposes[`./${path.join('./', name)}`] = t;
         })
       }
-  
+
+      const m = {
+        name,
+        library: { type: "var", name },
+        filename: MANIFEST_NAME,
+        shared,
+        remotes,
+        exposes,
+      }
+
       config.plugins.push(
-        new container.ModuleFederationPlugin({
-          name,
-          filename: MANIFEST_NAME,
-          shared,
-          remotes,
-          exposes,
-        })
+        new container.ModuleFederationPlugin(m)
       );
     }
   }
 
-  return config;
+  config.plugins.push(...htmls);
+
+  return webpackMerge(config, {});
 }
 
 function createMPAEntryProxy(config: XCloudConfig): PageConfig[] {

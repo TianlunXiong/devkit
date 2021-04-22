@@ -14,7 +14,7 @@ function Index() {
         justifyContent="center"
         alignItems="center"
         borderColor="pink"
-        borderWidth="2px"
+        borderWidth="3px"
         borderStyle="solid"
         borderRadius="20px"
       >

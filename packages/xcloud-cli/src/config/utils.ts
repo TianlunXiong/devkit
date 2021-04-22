@@ -51,7 +51,7 @@ const getPackageConfig = (() => {
 const projectRelative = (filename) => path.join(process.cwd(), filename);
 
 function pkgNameToNormalPkgName(pkgName: string) {
-  return pkgName.replace(/^@/, '').replace(/\//, '__')
+  return pkgName.replace(/^@/, '').replace(/\//, '__').replace(/-/, '_')
 }
 
 

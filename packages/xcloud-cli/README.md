@@ -251,7 +251,7 @@ module.exports = {
     '/': 'home',
     '/user': 'user'
   },
-  components: {
+  cloud: {
     export: ['home', 'user'],
     import: {
       'component-a': 'https://xcloud.com/component-a'
@@ -259,7 +259,7 @@ module.exports = {
   }
 };
 ```
-然后运行命令行, export字段中的组件就会存入云端
+然后运行下面命令行, export字段中的组件就会存入云端
 ```
-xcloud upload
+xcloud build && xcloud push
 ```

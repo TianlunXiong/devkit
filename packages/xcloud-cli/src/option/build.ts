@@ -11,7 +11,6 @@ export default async function(cliConfig: Cli) {
 
 async function webpackBuilding(config: Configuration): Promise<ResponseBody> {
   signale.pending('正在打包应用...');
-  rimraf.sync(config?.output?.path);
   const rsl = await new Promise<ResponseBody>((resolve, reject) => {
     webpack(config).run(e => {
       if (e) {

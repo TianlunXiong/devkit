@@ -28,7 +28,7 @@ interface LibOption {
   target: string,
 }
 
-type Cli = Partial<DevOption & BuildOption & LibOption>;
+type Cli = Partial<DevOption & BuildOption & LibOption & { cloud: boolean }>;
 
 interface XCloudConfig {
   boot?: string,
@@ -39,7 +39,7 @@ interface XCloudConfig {
   pages: {
     [pathname: string]: PageItem
   },
-  components?: {
+  cloud?: {
     export?: string[] | {
       [name: string]: string
     },

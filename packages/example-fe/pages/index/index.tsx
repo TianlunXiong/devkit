@@ -4,7 +4,7 @@ import { Box } from "../components/xstyle";
 function Index() {
   return (
     <div>
-      Hello
+      Hello1
       <Box
         color="pink"
         textAlign="center"
@@ -16,7 +16,7 @@ function Index() {
         borderColor="pink"
         borderWidth="3px"
         borderStyle="solid"
-        borderRadius="20px"
+        borderRadius="30px"
       >
         World
       </Box>

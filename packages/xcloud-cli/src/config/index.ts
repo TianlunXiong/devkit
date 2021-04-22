@@ -31,6 +31,7 @@ function getWebpackConfig(type: 'dev' | 'prod', argsConfig: Cli): Configuration 
   const {
     pages,
     html,
+    src: srcMapping,
   } = customConfig;
   let config: Configuration = {};
   const name = pkgNameToNormalPkgName(pkgName);
@@ -74,7 +75,7 @@ function getWebpackConfig(type: 'dev' | 'prod', argsConfig: Cli): Configuration 
 
   let htmlPath;
   if (html) {
-    htmlPath = projectRelative(html);
+    htmlPath = projectRelative(srcMapping[html] || html);
   } else {
     htmlPath = path.join(path.dirname(require.resolve(PKG_NAME)), './template/index.html')
   }
@@ -99,7 +100,7 @@ function getWebpackConfig(type: 'dev' | 'prod', argsConfig: Cli): Configuration 
               chunks: [entryName],
             };
             if (htmlPath) htmlConfig.template = htmlPath;
-            if (argsConfig.type === 'mpa' && subHtml) htmlConfig.template = projectRelative(subHtml);
+            if (argsConfig.type === 'mpa' && subHtml) htmlConfig.template = projectRelative(srcMapping[subHtml] || subHtml);
             htmlConfig.title = subName || name || pkgName;
             htmls.push(new HtmlWebpackPlugin(htmlConfig));
           }
@@ -213,7 +214,7 @@ function createMPAEntryProxy(config: XCloudConfig): PageConfig[] {
 
   let globalBootPath;
   if (boot) {
-    globalBootPath = projectRelative(boot);
+    globalBootPath = projectRelative(srcMapping[boot] || boot);
   }
 
   const pagesConfig: PageConfig[] = [];
@@ -222,9 +223,9 @@ function createMPAEntryProxy(config: XCloudConfig): PageConfig[] {
     let src: string, pageBoot: string, html: string;
     const item = pages[pageName];
     if (typeof item === 'object') {
-      src = item.src;
-      pageBoot= item.boot;
-      html = item.html;
+      src = srcMapping[item.src] || item.src;
+      pageBoot= srcMapping[item.boot] || item.boot ;
+      html = srcMapping[item.html] || item.html ;
     } else  {
       src = srcMapping[item];
     }
@@ -302,7 +303,7 @@ function createSPAEntryProxy(config: XCloudConfig): PageConfig[] {
 
   let globalBootPath;
   if (boot) {
-    globalBootPath = projectRelative(boot);
+    globalBootPath = projectRelative(srcMapping[boot] || boot);
   }
 
   const uniqueName = `${pkgName}_spa`;
@@ -317,7 +318,7 @@ function createSPAEntryProxy(config: XCloudConfig): PageConfig[] {
     const item = pages[pathName];
     let src: string;
     if (typeof item === 'object') {
-      src = item.src;
+      src = srcMapping[item.src] || item.src;
     } else {
       src = srcMapping[item];
     }

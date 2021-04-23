@@ -1,1 +1,1 @@
-export * from '../../../../xstyle/src'
+export * from '../../../../style-system/src'

@@ -75,7 +75,7 @@ function getWebpackConfig(type: 'dev' | 'prod', argsConfig: Cli): Configuration 
 
   let htmlPath;
   if (html) {
-    htmlPath = projectRelative(srcMapping[html] || html);
+    htmlPath = projectRelative(html);
   } else {
     htmlPath = path.join(path.dirname(require.resolve(PKG_NAME)), './template/index.html')
   }
@@ -108,12 +108,13 @@ function getWebpackConfig(type: 'dev' | 'prod', argsConfig: Cli): Configuration 
       },
     );
   }
+  config.plugins.push(...htmls);
 
   const distPath = projectRelative(argsConfig.out || DIST_NAME);
   rimraf.sync(distPath);
 
   config.output = {
-    path: distPath,
+    path: path.resolve(process.cwd(), DIST_NAME),
     filename: '[id].[contenthash].js',
     chunkFilename: (pathData) => {
       return `js/[id].[contenthash].js`;
@@ -187,9 +188,7 @@ function getWebpackConfig(type: 'dev' | 'prod', argsConfig: Cli): Configuration 
     }
   }
 
-  config.plugins.push(...htmls);
-
-  return webpackMerge(config, {});
+  return config;
 }
 
 function createMPAEntryProxy(config: XCloudConfig): PageConfig[] {

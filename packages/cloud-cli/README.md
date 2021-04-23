@@ -1,34 +1,37 @@
-# **xcloud-cli**
-一个无负担的前端开发脚手架
+# **cloud-cli**
+一个无负担的前端云开发脚手架
+
+
+目前云组件的实现基于 Webpack 5 的 module-federation
 ## **1. 安装(install)**
 ```
-npm install -D xcloud-cli
+npm install -D cloud-cli
 ```
 or
 ```
-yarn add -D xcloud-cli
+yarn add cloud-cli -D
 ```
 
 ## **2. 命令行(cli):**
 
 ### 2.1 新建模版
 ```
-xcloud init
+cloud init
 ```
 
 ### 2.2 开发
 ```
-xcloud dev
+cloud dev
 ```
 
 ### 2.3 构建
 ```
-xcloud build
+cloud build
 ```
 
 
-## **3. 配置文件(xcloud.config.js)：**
-查看目录下xcloud.config.js文件
+## **3. 配置文件(cloud.config.js)：**
+查看目录下cloud.config.js文件
 
 新版热替换  https://segmentfault.com/a/1190000023534941
 ### **3.1. 多页应用**
@@ -42,7 +45,7 @@ xcloud build
 │       ├── index.tsx
 │       ├── boot.tsx
 │       └── index.html
-└── xcloud.config.js
+└── cloud.config.js
 ```
 
 **index.tsx**
@@ -74,7 +77,7 @@ export default (Page) => {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
   <meta name="format-detection" content="telephone=no, email=no">
-  <title>xcloud</title>
+  <title>cloud</title>
 </head>
 
 <body>
@@ -84,7 +87,7 @@ export default (Page) => {
 </html>
 ```
 
-**xcloud.config.js**
+**cloud.config.js**
 ```js
 module.exports = {
   pages: {
@@ -105,7 +108,7 @@ http://localhost:3000
 
 配置文件也可以写成这样: 
 
-**xcloud.config.js**
+**cloud.config.js**
 ```js
 module.exports = {
   src: {
@@ -156,7 +159,7 @@ module.exports = {
 │   │   └── index.tsx
 │   └── user
 │       └── index.tsx
-└── xcloud.config.js
+└── cloud.config.js
 ```
 
 你可能注意到，user 页面使用了 index 中的 boot 和 html 文件，很自然的，配置可以简化为：
@@ -233,7 +236,7 @@ export default (pages) => {
 ```
 然后运行命令行:
 ```
-xcloud --type spa dev 
+cloud --type spa dev 
 ```
 
 ### **3.3. 云组件**
@@ -254,12 +257,12 @@ module.exports = {
   cloud: {
     export: ['home', 'user'],
     import: {
-      'component-a': 'https://xcloud.com/component-a'
+      'component-a': 'https://cloud.com/component-a'
     }
   }
 };
 ```
 然后运行下面命令行, export字段中的组件就会存入云端
 ```
-xcloud build && xcloud push
+cloud build && cloud push
 ```

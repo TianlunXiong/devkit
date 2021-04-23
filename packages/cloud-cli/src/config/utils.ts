@@ -1,10 +1,9 @@
 import path from 'path';
 import fs from 'fs';
-import rimraf from 'rimraf';
 import { XCloudConfig, PkgConfig } from '../type'
 
-export const PKG_NAME = '@vikit/xcloud-cli';
-export const CONFIG_NAME = 'xcloud.config.js';
+export const PKG_NAME = '@vikit/cloud-cli';
+export const CONFIG_NAME = 'cloud.config.js';
 export interface FileInfo {
   filePath?: string;
   type?: string;

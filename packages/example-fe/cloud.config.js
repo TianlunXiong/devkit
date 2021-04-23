@@ -4,9 +4,11 @@ module.exports = {
     'home': './pages/index/index.tsx',
     'user': './pages/index/index.tsx',
     'user2': './pages/index/index.tsx',
-    // 'mpa':'pages/index/boot'
+    'mpa':'pages/index/boot',
+    'h1': './index.html'
   },
-  boot: './pages/index/boot.tsx',
+  boot: 'mpa',
+  html: 'h1',
   pages: {
     '/': 'home',
     '/user': 'user',

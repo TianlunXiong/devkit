@@ -4,7 +4,7 @@ import init from "./option/init";
 import dev from "./option/dev";
 import build from "./option/build";
 import lib from "./option/lib";
-// import commit from './option/commit';
+import push from './option/push';
 
 program.command("init").description("初始模版").action(init);
 
@@ -33,9 +33,10 @@ program
   .option("-o, --out [out]", "输出目录", "lib")
   .option("-t, --target [target]", "输出模块类型", "cjs")
   .action(lib);
-
-program
+  
+  program
   .command('push')
   .description("上传云组件")
+  .action(push);
 
 program.parse(process.argv);

@@ -75,7 +75,7 @@ function getWebpackConfig(type: 'dev' | 'prod', argsConfig: Cli): Configuration 
 
   let htmlPath;
   if (html) {
-    htmlPath = projectRelative(html);
+    htmlPath = projectRelative(srcMapping[html] || html);
   } else {
     htmlPath = path.join(path.dirname(require.resolve(PKG_NAME)), './template/index.html')
   }
@@ -114,10 +114,10 @@ function getWebpackConfig(type: 'dev' | 'prod', argsConfig: Cli): Configuration 
   rimraf.sync(distPath);
 
   config.output = {
-    path: path.resolve(process.cwd(), DIST_NAME),
-    filename: '[id].[contenthash].js',
+    path: path.resolve(process.cwd(), distPath),
+    filename: '[id].[contenthash:8].js',
     chunkFilename: (pathData) => {
-      return `js/[id].[contenthash].js`;
+      return `js/[id].[contenthash:8].js`;
     },
     publicPath: argsConfig.publicPath || 'auto',
   };
@@ -175,7 +175,6 @@ function getWebpackConfig(type: 'dev' | 'prod', argsConfig: Cli): Configuration 
 
       const m = {
         name,
-        library: { type: "var", name },
         filename: MANIFEST_NAME,
         shared,
         remotes,

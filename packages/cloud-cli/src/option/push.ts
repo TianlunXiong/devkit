@@ -3,7 +3,6 @@ import tar from "tar";
 import signale from "signale";
 import superagent from "superagent";
 import path from "path";
-import rimraf from "rimraf";
 import {
   getPackageConfig,
   pkgNameToNormalPkgName,
@@ -22,14 +21,12 @@ interface ProcessResponse {
 
 const DEFAULT_CLI_CONFIG: Cli = {
   publicPath: "https://tainlx-1254430332.cos.ap-guangzhou.myqcloud.com",
-  out: "cloud",
+  out: "dist",
   cloud: true,
 };
 
 export default async function (cliConfig: Cli) {
-  signale.pending("构建应用中");
   await build(DEFAULT_CLI_CONFIG).catch((err) => console.log(err))
-  signale.success("构建完成");
   const { name: pkgName, version, path: pkgPath } = getPackageConfig();
   const validPkgName = pkgNameToNormalPkgName(pkgName);
   const outputPath = DEFAULT_CLI_CONFIG.out;
@@ -41,7 +38,7 @@ export default async function (cliConfig: Cli) {
   const customConfig = getCustomConfig();
 
   const { cloud = {} } = customConfig;
-
+ 
   const tasks = [];
   if (cloud?.export) {
     tasks.push(

@@ -115,7 +115,7 @@ export default async function (cliConfig: Cli) {
       pkgName
     )}/${version}/${commit_id}`;
     const zipDeepestDir = path.resolve(tmpDir.name, bucketPath);
-    DEFAULT_CLI_CONFIG.publicPath = `${BUCKET_URL}/${bucketPath}/`;
+    DEFAULT_CLI_CONFIG.publicPath = `${UNZIP_BUCKET_URL}/${bucketPath}/`;
     await build(DEFAULT_CLI_CONFIG).catch((err) => console.log(err));
     await fsExtra.ensureDir(path.join(tmpDir.name, zipDeepestDir));
     await fsExtra.copy(`${path.resolve(outputPath)}`, zipDeepestDir);

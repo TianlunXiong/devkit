@@ -28,7 +28,7 @@ interface LibOption {
   target: string,
 }
 
-type Cli = Partial<DevOption & BuildOption & LibOption & { cloud: boolean }>;
+type Cli = Partial<DevOption & BuildOption & LibOption & { cloud: boolean, id: string }>;
 
 interface XCloudConfig {
   boot?: string,

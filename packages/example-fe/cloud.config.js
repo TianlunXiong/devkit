@@ -1,4 +1,3 @@
-
 module.exports = {
   src: {
     'home': './pages/index/index.tsx',

@@ -304,7 +304,7 @@ function createSPAEntryProxy(config: XCloudConfig): PageConfig[] {
     globalBootPath = projectRelative(srcMapping[boot] || boot);
   }
 
-  const uniqueName = `${pkgName}_spa`;
+  const uniqueName = `${pkgNameToNormalPkgName(pkgName)}_spa`;
   const ext = '.tsx';
   const entryProxyLoc = `${tmpPath}/${uniqueName}.entry.proxy${ext}`;
   const pageproxyloc = `${tmpPath}/${uniqueName}.page.proxy${ext}`;

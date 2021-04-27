@@ -33,10 +33,11 @@ program
   .option("-o, --out [out]", "输出目录", "lib")
   .option("-t, --target [target]", "输出模块类型", "cjs")
   .action(lib);
-  
-  program
+
+program
   .command('push')
   .description("上传云组件")
+  .option("-i, --id [id]", "云端组件库id", "")
   .action(push);
 
 program.parse(process.argv);

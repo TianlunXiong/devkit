@@ -22,20 +22,14 @@ const BUCKET_URL =
   `https://${BUCKET_NAME}.cos.${REGION}.myqcloud.com/${SUBDIR}`;
 const UNZIP_BUCKET_URL =
   `https://${UNZIP_BUCKET_NAME}.cos.${REGION}.myqcloud.com/${SUBDIR}`;
-// const CLOUD_API = "http://api.tainlx.site/api/v1/cloud_object";
-const CLOUD_API = "http://localhost:8080/api/v1";
+const CLOUD_API = "http://api.tainlx.site/api/v1";
+// const CLOUD_API = "http://localhost:8080/api/v1";
 
 const CLOUD_OBJECT_QUERY_API = `${CLOUD_API}/cloud_object/query`;
 const CLOUD_OBJECT_COMMIT_API = `${CLOUD_API}/cloud_object/commit`;
 const CLOUD_OBJECT_COMMIT_UPDATE_API = `${CLOUD_API}/cloud_object/update_commit`;
 const CLOUD_UPLOAD_KEY_API = `${CLOUD_API}/cos/key`;
 const USER = "tainlx";
-interface ProcessResponse {
-  success: boolean;
-  data?: any;
-  message?: string;
-}
-
 const DEFAULT_CLI_CONFIG: Cli = {
   out: "dist",
   type: "mpa",

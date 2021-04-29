@@ -1,55 +1,38 @@
-# Slim NestJS
+# **@vikit/nestjs**
 
-## Introduction
+## **简介(Introduction)**
 
-A Dependency-Inject Framework Based On Koa. A Reduced Version Of The Well-Known Framework NestJS.
+基于Koa的依赖注入Web框架，可以看作轻量版的NestJS，可以作为学习利用Typescript实现依赖注入的案例，也可以作为魔改定制的基础Web框架。
 
-## ToDo
+A Dependency-Inject Framework Based On Koa. A Light Version Of The Well-Known Framework NestJS.
+
+## **ToDo**
 - [x] 控制器的基本修饰器（Controller、Get、Post等）
 - [x] 控制器的依赖注入
-- [ ] 中间件的依赖注入（待测试）
+- [x] 中间件的依赖注入
 - [x] 请求/响应循环基本节点
+- [ ] 请求/响应循环可视化监控系统
 - [ ] 日志系统
-- [ ] 可视化监控系统
 - [ ] 测试用例
 - [ ] 集成前端Webpack开发环境
 - [ ] 集成ORM数据库管理系统
 
-## install
+## **Install**
 
 ```
-yarn add slim-nestjs
+yarn add @vikit/nestjs
 ```
 
-## usage
+## **Usage**
 
 The App is actually equivalent to Koa as well known. The related  APIs can be found in https://koajs.com or https://www.koajs.com.cn
 
-### 1. run server
-
-```ts
-// index.ts
-
-import App from 'slim-nestjs';
-
-const app = new App(); // as new Koa()
-const PORT = 9001;
-
-app.use(async (ctx, next) => {
-  await next();
-  ctx.body = 'Hello World!'
-})
-app.routes(); // resolve controllers and middlewares 
-app.listen(PORT, () => console.log(`the server run on ${PORT}`));
-
-```
-
-### 2. add controller
+### **1. Write a controller class**
 
 ```ts
 // controller.hello.ts
 
-import { Context, Next, Controller, Get } from 'slim-nestjs';
+import { Context, Next, Controller, Get } from '@vikit/nestjs';
 
 @Controller('prefix')
 class Hello {
@@ -70,5 +53,29 @@ class Hello {
 export { LikeMiddleWare, Xiaobai };
 
 ```
+### 2. **Import the controller and run the server**
 
-then 
+```ts
+// index.ts
+
+import App from '@vikit/nestjs';
+import 'controller.hello.ts';
+
+const app = new App(); // same as new Koa()
+const PORT = 9001;
+
+app.routes(); // resolve controllers and middlewares 
+app.listen(PORT, () => console.log(`the server run on ${PORT}`));
+
+```
+然后运行开发环境：
+```bash
+npx tsnd index.ts
+```
+
+### 3. **To get http://localhost:9001 and http://localhost:9001/api/123**
+
+```bash
+HTTP 200 OK / "hello, world"
+HTTP 200 OK /api/123 "api, 123"
+```

@@ -15,7 +15,7 @@ A Dependency-Inject Framework Based On Koa. A Light Version Of The Well-Known Fr
 - [ ] 日志系统
 - [ ] 测试用例
 - [ ] 集成前端Webpack开发环境
-- [ ] 集成ORM数据库管理系统
+- [ ] 实现Type到ORM数据库的一体化开发
 
 ## **Install**
 

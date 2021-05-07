@@ -1,0 +1,30 @@
+@keyframes mcore-rotate-enter {
+  from {
+    transform-origin: center;
+    transform: rotate3d(0, 0, 1, -180deg) scale3d(.3, .3, .3);
+  }
+
+  to {
+    transform-origin: center;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.mcore-rotate-enter {
+  animation: mcore-rotate-enter both;
+}
+
+@keyframes mcore-rotate-leave {
+  from {
+    transform-origin: center;
+  }
+
+  to {
+    transform-origin: center;
+    transform: rotate3d(0, 0, 1, 180deg) scale3d(.3, .3, .3);
+  }
+}
+
+.mcore-rotate-leave {
+  animation: mcore-rotate-leave both;
+}

@@ -5,6 +5,7 @@ import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import { getProjectPath } from '../config/utils';
 import getWebpackConfig from '../config';
 import { createConnectorConfig } from '../module/connector';
+import wsp from '../module/wsp';
 import { Cli } from '../type';
 
 const PORT = 3000;
@@ -12,7 +13,7 @@ const HOST = '0.0.0.0';
 const HOT = true;
 
 export default async function(cliConfig: Cli) {
-  const { port = PORT, host = HOST } = cliConfig;
+  const { port = PORT, host = HOST, exposed } = cliConfig;
   const config = getWebpackConfig('dev', cliConfig);
   if (fs.existsSync(getProjectPath('tsconfig.json'))) {
     config?.plugins?.push(new ForkTsCheckerWebpackPlugin());
@@ -56,7 +57,10 @@ export default async function(cliConfig: Cli) {
     if (err) {
       return console.error(err);
     }
-    console.warn(`http://${host}:${port}\n`);
+    console.log(`http://${host}:${port}\n`);
+    if (exposed) {
+      wsp()
+    }
   });
 
   ['SIGINT', 'SIGTERM'].forEach((sig: any) => {

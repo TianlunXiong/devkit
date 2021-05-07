@@ -1,0 +1,253 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ActionSheet renders correctly 1`] = `
+<ForwardRef(forwardRef)
+  actions={
+    Array [
+      Object {
+        "onClick": [MockFunction],
+        "text": "操作一",
+      },
+      Object {
+        "onClick": [MockFunction],
+        "text": "操作二",
+      },
+      Object {
+        "onClick": [MockFunction],
+        "text": "操作三",
+        "theme": "danger",
+      },
+    ]
+  }
+  onCancel={[MockFunction]}
+  onMaskClick={[MockFunction]}
+  visible={true}
+>
+  <LocaleReceiver
+    actions={
+      Array [
+        Object {
+          "onClick": [MockFunction],
+          "text": "操作一",
+        },
+        Object {
+          "onClick": [MockFunction],
+          "text": "操作二",
+        },
+        Object {
+          "onClick": [MockFunction],
+          "text": "操作三",
+          "theme": "danger",
+        },
+      ]
+    }
+    forwardedRef={null}
+    onCancel={[MockFunction]}
+    onMaskClick={[MockFunction]}
+    visible={true}
+  >
+    <ActionSheet
+      actions={
+        Array [
+          Object {
+            "onClick": [MockFunction],
+            "text": "操作一",
+          },
+          Object {
+            "onClick": [MockFunction],
+            "text": "操作二",
+          },
+          Object {
+            "onClick": [MockFunction],
+            "text": "操作三",
+            "theme": "danger",
+          },
+        ]
+      }
+      destroy={true}
+      locale={
+        Object {
+          "cancelText": "取消",
+        }
+      }
+      localeCode="zh-CN"
+      onCancel={[MockFunction]}
+      onMaskClick={[MockFunction]}
+      prefixCls="mcore-action-sheet"
+      spacing={false}
+      visible={true}
+    >
+      <ForwardRef(ForwardedRefComp)
+        destroy={true}
+        onMaskClick={[MockFunction]}
+        visible={true}
+      >
+        <WarnIfDeprecatedComp
+          destroy={true}
+          forwardedRef={null}
+          onMaskClick={[MockFunction]}
+          visible={true}
+        >
+          <Popup
+            destroy={true}
+            onMaskClick={[MockFunction]}
+            prefixCls="mcore-popup"
+            visible={true}
+          >
+            <Portal
+              animationDuration={200}
+              animationType="fade"
+              destroy={true}
+              direction="bottom"
+              handlePortalUnmount={[Function]}
+              mask={true}
+              maskType="normal"
+              onMaskClick={[MockFunction]}
+              prefixCls="mcore-popup"
+              visible={true}
+            >
+              <Portal
+                containerInfo={
+                  <div
+                    class="mcore-popup-container"
+                  >
+                    <div
+                      class="mcore-mask mcore-fade-enter mcore-mask--normal"
+                      style="animation-duration: 200ms;"
+                    />
+                    <div
+                      class="mcore-popup__wrapper"
+                      role="dialog"
+                    >
+                      <div
+                        class="mcore-popup mcore-popup--bottom mcore-popup--show"
+                        role="document"
+                        style="transition-duration: 200ms; transition-property: transform;"
+                      >
+                        <div
+                          class="mcore-action-sheet"
+                        >
+                          <div
+                            class="mcore-action-sheet__actions"
+                          >
+                            <div
+                              class="mcore-action-sheet__item"
+                            >
+                              操作一
+                            </div>
+                            <div
+                              class="mcore-action-sheet__item"
+                            >
+                              操作二
+                            </div>
+                            <div
+                              class="mcore-action-sheet__item mcore-action-sheet__item--danger"
+                            >
+                              操作三
+                            </div>
+                          </div>
+                          <div
+                            class="mcore-action-sheet__cancel"
+                          >
+                            <div
+                              class="mcore-action-sheet__item"
+                            >
+                              取消
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                }
+              >
+                <Mask
+                  className="mcore-fade-enter"
+                  prefixCls="mcore-mask"
+                  style={
+                    Object {
+                      "WebkitAnimationDuration": "200ms",
+                      "animationDuration": "200ms",
+                    }
+                  }
+                  type="normal"
+                  visible={true}
+                >
+                  <div
+                    className="mcore-mask mcore-fade-enter mcore-mask--normal"
+                    style={
+                      Object {
+                        "WebkitAnimationDuration": "200ms",
+                        "animationDuration": "200ms",
+                      }
+                    }
+                  />
+                </Mask>
+                <div
+                  className="mcore-popup__wrapper"
+                  onClick={[Function]}
+                  role="dialog"
+                  style={Object {}}
+                >
+                  <div
+                    className="mcore-popup mcore-popup--bottom"
+                    role="document"
+                    style={
+                      Object {
+                        "WebkitTransitionDuration": "200ms",
+                        "WebkitTransitionProperty": "transform",
+                        "transitionDuration": "200ms",
+                        "transitionProperty": "transform",
+                      }
+                    }
+                  >
+                    <div
+                      className="mcore-action-sheet"
+                    >
+                      <div
+                        className="mcore-action-sheet__actions"
+                      >
+                        <div
+                          className="mcore-action-sheet__item"
+                          key="0"
+                          onClick={[MockFunction]}
+                        >
+                          操作一
+                        </div>
+                        <div
+                          className="mcore-action-sheet__item"
+                          key="1"
+                          onClick={[MockFunction]}
+                        >
+                          操作二
+                        </div>
+                        <div
+                          className="mcore-action-sheet__item mcore-action-sheet__item--danger"
+                          key="2"
+                          onClick={[MockFunction]}
+                        >
+                          操作三
+                        </div>
+                      </div>
+                      <div
+                        className="mcore-action-sheet__cancel"
+                      >
+                        <div
+                          className="mcore-action-sheet__item"
+                          onClick={[MockFunction]}
+                        >
+                          取消
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Portal>
+            </Portal>
+          </Popup>
+        </WarnIfDeprecatedComp>
+      </ForwardRef(ForwardedRefComp)>
+    </ActionSheet>
+  </LocaleReceiver>
+</ForwardRef(forwardRef)>
+`;

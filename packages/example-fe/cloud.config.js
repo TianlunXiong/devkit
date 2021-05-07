@@ -15,6 +15,10 @@ module.exports = {
     '/main/user': 'user'
   },
   cloud: {
+    import: {
+      // vikit__ui: 'vikit__ui@http://localhost:3001/manifest.js'
+      vikit__ui: 'vikit__ui@http://localhost:8080/api/v1/cloud_dev/connection/tainlx/manifest.js'
+    },
     export: ['home']
   }
 };

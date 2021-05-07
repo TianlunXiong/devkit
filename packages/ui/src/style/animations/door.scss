@@ -1,0 +1,31 @@
+@keyframes mcore-door-enter {
+  from {
+    transform: scale3d(0, 1, 1);
+  }
+
+  to {
+    transform: scale3d(1, 1, .1);
+  }
+}
+
+.mcore-door-enter {
+  animation: mcore-door-enter both cubic-bezier(0.4, 0, 0, 0);
+}
+
+@keyframes mcore-door-leave {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  60% {
+    transform: scale3d(.01, 1, 1);
+  }
+
+  to {
+    transform: scale3d(0, 1, .1);
+  }
+}
+
+.mcore-door-leave {
+  animation: mcore-door-leave both;
+}

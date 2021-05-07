@@ -161,6 +161,7 @@ function getWebpackConfig(type: 'dev' | 'prod', argsConfig: Cli): Configuration 
       let exposes = {};
   
       const comp_export = customConfig.cloud.export;
+      const comp_import = customConfig.cloud.import;
   
       if (comp_export instanceof Array) {
         comp_export.forEach((name) => {
@@ -172,6 +173,15 @@ function getWebpackConfig(type: 'dev' | 'prod', argsConfig: Cli): Configuration 
           if (t) exposes[`./${path.join('./', name)}`] = t;
         })
       }
+
+      if (comp_import instanceof Object) {
+        Object.keys(comp_import).forEach((name) => {
+          if (name) remotes[name] = comp_import[name];
+        })
+      }
+
+      console.log(exposes)
+      console.log(remotes)
 
       const m = {
         name,

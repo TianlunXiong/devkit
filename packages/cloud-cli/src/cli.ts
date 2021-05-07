@@ -16,6 +16,7 @@ program
   .option("-p, --port [port]", "webpack.devServer.port", "3000")
   .option("-o, --path [path]", "输出目录", "dist")
   .option("-u, --publicPath [publicPath]", "webpack.publicPath", "auto")
+  .option("-e, --exposed [exposed]", "开启云开发", false)
   .action(dev);
 
 program

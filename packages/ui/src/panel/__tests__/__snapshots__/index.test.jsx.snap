@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Panel renders correctly 1`] = `
+<div
+  class="mcore-panel"
+>
+  <div
+    class="mcore-panel__header"
+  >
+    <div
+      class="mcore-panel__header__title"
+    >
+      title
+    </div>
+    <div
+      class="mcore-panel__header__more"
+    >
+      more
+    </div>
+  </div>
+  <div
+    class="mcore-panel__body"
+  >
+    body
+  </div>
+</div>
+`;

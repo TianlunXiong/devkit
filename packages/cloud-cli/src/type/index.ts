@@ -20,6 +20,7 @@ interface DevOption {
   publicPath: string,
   port: string,
   host: string,
+  exposed: boolean
 }
 
 interface LibOption {

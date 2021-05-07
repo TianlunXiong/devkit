@@ -1,0 +1,480 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Picker Picker render visible 1`] = `
+<ForwardRef(forwardRef)
+  dataSource={
+    Array [
+      Object {
+        "label": "选项一",
+        "value": "1",
+      },
+      Object {
+        "label": "选项二",
+        "value": "2",
+      },
+    ]
+  }
+  prefixCls="mcore-picker"
+  visible={true}
+>
+  <LocaleReceiver
+    dataSource={
+      Array [
+        Object {
+          "label": "选项一",
+          "value": "1",
+        },
+        Object {
+          "label": "选项二",
+          "value": "2",
+        },
+      ]
+    }
+    forwardedRef={null}
+    prefixCls="mcore-picker"
+    visible={true}
+  >
+    <Picker
+      cols={Infinity}
+      dataSource={
+        Array [
+          Object {
+            "label": "选项一",
+            "value": "1",
+          },
+          Object {
+            "label": "选项二",
+            "value": "2",
+          },
+        ]
+      }
+      destroy={false}
+      itemRender={[Function]}
+      locale={
+        Object {
+          "cancelText": "取消",
+          "okText": "确定",
+          "title": "请选择",
+        }
+      }
+      localeCode="zh-CN"
+      maskClosable={true}
+      prefixCls="mcore-picker"
+      valueMember="value"
+      visible={true}
+    >
+      <ForwardRef(ForwardedRefComp)
+        destroy={false}
+        onMaskClick={[Function]}
+        visible={true}
+      >
+        <WarnIfDeprecatedComp
+          destroy={false}
+          forwardedRef={null}
+          onMaskClick={[Function]}
+          visible={true}
+        >
+          <Popup
+            destroy={false}
+            onMaskClick={[Function]}
+            prefixCls="mcore-popup"
+            visible={true}
+          >
+            <Portal
+              animationDuration={200}
+              animationType="fade"
+              destroy={false}
+              direction="bottom"
+              handlePortalUnmount={[Function]}
+              mask={true}
+              maskType="normal"
+              onMaskClick={[Function]}
+              prefixCls="mcore-popup"
+              visible={true}
+            >
+              <Portal
+                containerInfo={
+                  <div
+                    class="mcore-popup-container"
+                  >
+                    <div
+                      class="mcore-mask mcore-fade-enter mcore-mask--normal"
+                      style="animation-duration: 200ms;"
+                    />
+                    <div
+                      class="mcore-popup__wrapper"
+                      role="dialog"
+                    >
+                      <div
+                        class="mcore-popup mcore-popup--bottom mcore-popup--show"
+                        role="document"
+                        style="transition-duration: 200ms; transition-property: transform;"
+                      >
+                        <div
+                          class="mcore-picker"
+                        >
+                          <div
+                            class="mcore-picker__header"
+                          >
+                            <div
+                              class="mcore-picker__cancel"
+                            >
+                              取消
+                            </div>
+                            <div
+                              class="mcore-picker__title"
+                            >
+                              请选择
+                            </div>
+                            <div
+                              class="mcore-picker__submit"
+                            >
+                              确定
+                            </div>
+                          </div>
+                          <div
+                            class="mcore-picker-view"
+                          >
+                            <div
+                              class="mcore-picker-view__content"
+                            >
+                              <div
+                                class="mcore-wheel"
+                              >
+                                <div
+                                  class="mcore-wheel__content"
+                                  style="transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 800ms; transform: translate(0px,NaNpx) scale(1);"
+                                >
+                                  <div
+                                    class="mcore-wheel__item mcore-wheel__item--selected"
+                                    style="pointer-events: none; transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 800ms; transform: rotateX(NaNdeg);"
+                                  >
+                                    选项一
+                                  </div>
+                                  <div
+                                    class="mcore-wheel__item"
+                                    style="pointer-events: none; transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1); transition-duration: 800ms; transform: rotateX(NaNdeg);"
+                                  >
+                                    选项二
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="mcore-picker-view__mask mcore-picker-view__mask--top"
+                            />
+                            <div
+                              class="mcore-picker-view__mask mcore-picker-view__mask--bottom"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                }
+              >
+                <Mask
+                  className="mcore-fade-enter"
+                  prefixCls="mcore-mask"
+                  style={
+                    Object {
+                      "WebkitAnimationDuration": "200ms",
+                      "animationDuration": "200ms",
+                    }
+                  }
+                  type="normal"
+                  visible={true}
+                >
+                  <div
+                    className="mcore-mask mcore-fade-enter mcore-mask--normal"
+                    style={
+                      Object {
+                        "WebkitAnimationDuration": "200ms",
+                        "animationDuration": "200ms",
+                      }
+                    }
+                  />
+                </Mask>
+                <div
+                  className="mcore-popup__wrapper"
+                  onClick={[Function]}
+                  role="dialog"
+                  style={Object {}}
+                >
+                  <div
+                    className="mcore-popup mcore-popup--bottom"
+                    role="document"
+                    style={
+                      Object {
+                        "WebkitTransitionDuration": "200ms",
+                        "WebkitTransitionProperty": "transform",
+                        "transitionDuration": "200ms",
+                        "transitionProperty": "transform",
+                      }
+                    }
+                  >
+                    <div
+                      className="mcore-picker"
+                      onClick={[Function]}
+                    >
+                      <div
+                        className="mcore-picker__header"
+                      >
+                        <div
+                          className="mcore-picker__cancel"
+                          onClick={[Function]}
+                        >
+                          取消
+                        </div>
+                        <div
+                          className="mcore-picker__title"
+                        >
+                          请选择
+                        </div>
+                        <div
+                          className="mcore-picker__submit"
+                          onClick={[Function]}
+                        >
+                          确定
+                        </div>
+                      </div>
+                      <PickerView
+                        cols={Infinity}
+                        dataSource={
+                          Array [
+                            Object {
+                              "label": "选项一",
+                              "value": "1",
+                            },
+                            Object {
+                              "label": "选项二",
+                              "value": "2",
+                            },
+                          ]
+                        }
+                        disabled={false}
+                        itemRender={[Function]}
+                        localeCode="zh-CN"
+                        onChange={[Function]}
+                        onTransition={[Function]}
+                        prefixCls="mcore-picker-view"
+                        value={
+                          Array [
+                            "1",
+                          ]
+                        }
+                        valueMember="value"
+                      >
+                        <div
+                          className="mcore-picker-view"
+                        >
+                          <div
+                            className="mcore-picker-view__content"
+                          >
+                            <Wheel
+                              dataSource={
+                                Array [
+                                  Object {
+                                    "label": "选项一",
+                                    "value": "1",
+                                  },
+                                  Object {
+                                    "label": "选项二",
+                                    "value": "2",
+                                  },
+                                ]
+                              }
+                              disabled={false}
+                              itemRender={[Function]}
+                              key="0"
+                              onChange={[Function]}
+                              onTransition={[Function]}
+                              prefixCls="mcore-wheel"
+                              value="1"
+                              valueMember="value"
+                            >
+                              <div
+                                className="mcore-wheel"
+                              >
+                                <div
+                                  className="mcore-wheel__content"
+                                >
+                                  <div
+                                    className="mcore-wheel__item mcore-wheel__item--selected"
+                                    key="0"
+                                  >
+                                    选项一
+                                  </div>
+                                  <div
+                                    className="mcore-wheel__item"
+                                    key="1"
+                                  >
+                                    选项二
+                                  </div>
+                                </div>
+                              </div>
+                            </Wheel>
+                          </div>
+                          <div
+                            className="mcore-picker-view__mask mcore-picker-view__mask--top"
+                          />
+                          <div
+                            className="mcore-picker-view__mask mcore-picker-view__mask--bottom"
+                          />
+                        </div>
+                      </PickerView>
+                    </div>
+                  </div>
+                </div>
+              </Portal>
+            </Portal>
+          </Popup>
+        </WarnIfDeprecatedComp>
+      </ForwardRef(ForwardedRefComp)>
+    </Picker>
+  </LocaleReceiver>
+</ForwardRef(forwardRef)>
+`;
+
+exports[`Picker render custom label 1`] = `
+<ForwardRef(forwardRef)
+  dataSource={
+    Array [
+      Object {
+        "children": Array [
+          Object {
+            "code": "11",
+            "name": "海淀区",
+          },
+          Object {
+            "code": "12",
+            "name": "西城区",
+          },
+        ],
+        "code": "1",
+        "name": "北京市",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "code": "21",
+            "name": "黄埔区",
+          },
+          Object {
+            "code": "22",
+            "name": "虹口区",
+          },
+        ],
+        "code": "2",
+        "name": "上海市",
+      },
+    ]
+  }
+  itemRender={[Function]}
+  valueMember="code"
+>
+  <LocaleReceiver
+    dataSource={
+      Array [
+        Object {
+          "children": Array [
+            Object {
+              "code": "11",
+              "name": "海淀区",
+            },
+            Object {
+              "code": "12",
+              "name": "西城区",
+            },
+          ],
+          "code": "1",
+          "name": "北京市",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "code": "21",
+              "name": "黄埔区",
+            },
+            Object {
+              "code": "22",
+              "name": "虹口区",
+            },
+          ],
+          "code": "2",
+          "name": "上海市",
+        },
+      ]
+    }
+    forwardedRef={null}
+    itemRender={[Function]}
+    valueMember="code"
+  >
+    <Picker
+      cols={Infinity}
+      dataSource={
+        Array [
+          Object {
+            "children": Array [
+              Object {
+                "code": "11",
+                "name": "海淀区",
+              },
+              Object {
+                "code": "12",
+                "name": "西城区",
+              },
+            ],
+            "code": "1",
+            "name": "北京市",
+          },
+          Object {
+            "children": Array [
+              Object {
+                "code": "21",
+                "name": "黄埔区",
+              },
+              Object {
+                "code": "22",
+                "name": "虹口区",
+              },
+            ],
+            "code": "2",
+            "name": "上海市",
+          },
+        ]
+      }
+      destroy={false}
+      itemRender={[Function]}
+      locale={
+        Object {
+          "cancelText": "取消",
+          "okText": "确定",
+          "title": "请选择",
+        }
+      }
+      localeCode="zh-CN"
+      maskClosable={true}
+      prefixCls="mcore-picker"
+      valueMember="code"
+    >
+      <ForwardRef(ForwardedRefComp)
+        destroy={false}
+        onMaskClick={[Function]}
+      >
+        <WarnIfDeprecatedComp
+          destroy={false}
+          forwardedRef={null}
+          onMaskClick={[Function]}
+        >
+          <Popup
+            destroy={false}
+            onMaskClick={[Function]}
+            prefixCls="mcore-popup"
+          />
+        </WarnIfDeprecatedComp>
+      </ForwardRef(ForwardedRefComp)>
+    </Picker>
+  </LocaleReceiver>
+</ForwardRef(forwardRef)>
+`;

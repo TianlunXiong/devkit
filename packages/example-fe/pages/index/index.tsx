@@ -1,27 +1,27 @@
-import React from "react";
-import { Box } from "../components/xstyle";
+import React, { useEffect, useState } from "react";
+import { Button, DateSelect } from 'vikit__ui/index';
+
+console.log(DateSelect)
 
 function Index() {
+  const [d, setD] = useState('ok')
+  // useEffect(() => {
+  //   console.log('ok')
+  // }, [])
   return (
-    <div>
-      Hello1
-      <Box
-        color="pink"
-        textAlign="center"
-        fontSize="36px"
-        p="20px"
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        borderColor="pink"
-        borderWidth="3px"
-        borderStyle="solid"
-        borderRadius="30px"
-      >
-        World
-      </Box>
+    <div onClick={() => setD((v) => v + '1')}>
+      <div>{`123${d}`}</div>
+      <Me />
+      <Button theme="primary">Hi3</Button>
+      <DateSelect placeholder="Please input start date" mode="date" />
     </div>
   );
+}
+
+class Me extends React.Component {
+  render() {
+    return <div>ok</div>
+  }
 }
 
 export default Index;

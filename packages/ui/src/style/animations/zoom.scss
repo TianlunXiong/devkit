@@ -1,0 +1,28 @@
+
+@keyframes mcore-zoom-enter {
+  from {
+    transform: scale3d(.3, .3, .3);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.mcore-zoom-enter {
+  animation: mcore-zoom-enter both cubic-bezier(0.4, 0, 0, 1.5);
+}
+
+@keyframes mcore-zoom-leave {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  to {
+    transform: scale3d(.3, .3, .3);
+  }
+}
+
+.mcore-zoom-leave {
+  animation: mcore-zoom-leave both;
+}

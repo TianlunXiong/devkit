@@ -1,5 +1,5 @@
 {
-  "name": "@vikit/style-system",
+  "name": "@vikit/styled-system",
   "description": "a Design-System library based on JS And Styled-Components",
   "version": "0.0.1-alpha.3",
   "main": "lib/index.js",

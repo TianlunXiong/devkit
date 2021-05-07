@@ -19,5 +19,5 @@
 ## 项目说明
   1. cloud-cli: 用于开发Web前端项目，上传云组件，以及云开发；
   2. nestjs: 基于TS的Web框架，支持依赖注入;
-  3. style-system: 基于styled-components的[设计系统](https://styled-system.com/);
+  3. styled-system: 基于styled-components的[设计系统](https://styled-system.com/);
   4. ui: 基于[Zarm-React](https://zarm.gitee.io)的组件库;

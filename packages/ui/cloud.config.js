@@ -1,8 +1,8 @@
 module.exports = {
   src: {
-    'index': "./src/index.tsx",
+    'mobile': "./src/mobile/index.tsx",
   },
   cloud: {
-    export: ["index"],
+    export: ["mobile"],
   },
 };

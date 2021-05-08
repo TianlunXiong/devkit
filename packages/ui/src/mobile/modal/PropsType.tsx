@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { ContainerType } from '../utils/dom';
+import { ContainerType } from '../../utils/dom';
 
 export interface BaseModalProps {
   shape?: 'radius' | 'rect';

@@ -8,6 +8,10 @@
   "scripts": {
     "clean": "lerna clean"
   },
+  "author": {
+    "name": "xiongtianlun",
+    "email": "418219627@qq.com"
+  },
   "devDependencies": {
     "lerna": "^3.22.1",
     "yarn": "^1.22.10"
